@@ -17,6 +17,7 @@
 		D13315E1234ADAC500869F8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13315DF234ADAC500869F8F /* Main.storyboard */; };
 		D13315E6234ADAC600869F8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13315E4234ADAC600869F8F /* LaunchScreen.storyboard */; };
 		D13315EC234ADAE200869F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D13315CA234ADA8800869F8F /* Assets.xcassets */; };
+		D13315EE234ADD7E00869F8F /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13315ED234ADD7E00869F8F /* LoginStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		D13315E0234ADAC500869F8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D13315E5234ADAC600869F8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D13315E7234ADAC600869F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D13315ED234ADD7E00869F8F /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				D13315C3234ADA8600869F8F /* AppDelegate.swift */,
 				D13315C5234ADA8600869F8F /* ViewController.swift */,
+				D13315ED234ADD7E00869F8F /* LoginStoryboard.storyboard */,
 				D13315C7234ADA8600869F8F /* Main.storyboard */,
 				D13315CC234ADA8800869F8F /* LaunchScreen.storyboard */,
 				D13315CF234ADA8800869F8F /* Info.plist */,
@@ -186,6 +189,7 @@
 				D13315CE234ADA8800869F8F /* LaunchScreen.storyboard in Resources */,
 				D13315CB234ADA8800869F8F /* Assets.xcassets in Resources */,
 				D13315C9234ADA8600869F8F /* Main.storyboard in Resources */,
+				D13315EE234ADD7E00869F8F /* LoginStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
