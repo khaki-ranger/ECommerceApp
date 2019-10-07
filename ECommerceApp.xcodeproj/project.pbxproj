@@ -104,11 +104,10 @@
 		D13315C2234ADA8600869F8F /* ECommerceApp */ = {
 			isa = PBXGroup;
 			children = (
-				D13315C3234ADA8600869F8F /* AppDelegate.swift */,
-				D13315C5234ADA8600869F8F /* ViewController.swift */,
-				D13315ED234ADD7E00869F8F /* LoginStoryboard.storyboard */,
-				D13315C7234ADA8600869F8F /* Main.storyboard */,
-				D13315CC234ADA8800869F8F /* LaunchScreen.storyboard */,
+				D1ABCC39234B193A0017A6E7 /* Model */,
+				D1ABCC38234B19320017A6E7 /* View */,
+				D1ABCC37234B19220017A6E7 /* Controller */,
+				D1ABCC3A234B19430017A6E7 /* Storyboards */,
 				D1ABCC33234B11DC0017A6E7 /* GoogleService-Info.plist */,
 				D13315CF234ADA8800869F8F /* Info.plist */,
 			);
@@ -134,6 +133,39 @@
 				D13315CA234ADA8800869F8F /* Assets.xcassets */,
 			);
 			path = Sheard;
+			sourceTree = "<group>";
+		};
+		D1ABCC37234B19220017A6E7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D13315C3234ADA8600869F8F /* AppDelegate.swift */,
+				D13315C5234ADA8600869F8F /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D1ABCC38234B19320017A6E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D1ABCC39234B193A0017A6E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D1ABCC3A234B19430017A6E7 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D13315ED234ADD7E00869F8F /* LoginStoryboard.storyboard */,
+				D13315C7234ADA8600869F8F /* Main.storyboard */,
+				D13315CC234ADA8800869F8F /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		DC6851B2B27B72FB58F43A98 /* Frameworks */ = {
