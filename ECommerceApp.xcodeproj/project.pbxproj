@@ -26,6 +26,7 @@
 		D1ABCC3E234B1A4D0017A6E7 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC3D234B1A4D0017A6E7 /* RegisterVC.swift */; };
 		D1ABCC41234B207F0017A6E7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC40234B207F0017A6E7 /* Extensions.swift */; };
 		D1ABCC43234B27F80017A6E7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC42234B27F80017A6E7 /* Constants.swift */; };
+		D1ABCC46234B2C630017A6E7 /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC45234B2C630017A6E7 /* RoundedViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		D1ABCC3D234B1A4D0017A6E7 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		D1ABCC40234B207F0017A6E7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D1ABCC42234B27F80017A6E7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D1ABCC45234B2C630017A6E7 /* RoundedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 		D13315EB234ADAD400869F8F /* Sheard */ = {
 			isa = PBXGroup;
 			children = (
+				D1ABCC44234B2C0D0017A6E7 /* View */,
 				D1ABCC3F234B20670017A6E7 /* Utils */,
 				D13315CA234ADA8800869F8F /* Assets.xcassets */,
 			);
@@ -186,6 +189,14 @@
 				D1ABCC42234B27F80017A6E7 /* Constants.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		D1ABCC44234B2C0D0017A6E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D1ABCC45234B2C630017A6E7 /* RoundedViews.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		DC6851B2B27B72FB58F43A98 /* Frameworks */ = {
@@ -429,6 +440,7 @@
 				D13315C6234ADA8600869F8F /* ViewController.swift in Sources */,
 				D1ABCC3E234B1A4D0017A6E7 /* RegisterVC.swift in Sources */,
 				D13315C4234ADA8600869F8F /* AppDelegate.swift in Sources */,
+				D1ABCC46234B2C630017A6E7 /* RoundedViews.swift in Sources */,
 				D1ABCC3C234B1A350017A6E7 /* LoginVC.swift in Sources */,
 				D1ABCC43234B27F80017A6E7 /* Constants.swift in Sources */,
 			);
