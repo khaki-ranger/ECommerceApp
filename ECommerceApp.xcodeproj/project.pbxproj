@@ -25,6 +25,7 @@
 		D1ABCC3C234B1A350017A6E7 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC3B234B1A350017A6E7 /* LoginVC.swift */; };
 		D1ABCC3E234B1A4D0017A6E7 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC3D234B1A4D0017A6E7 /* RegisterVC.swift */; };
 		D1ABCC41234B207F0017A6E7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC40234B207F0017A6E7 /* Extensions.swift */; };
+		D1ABCC43234B27F80017A6E7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC42234B27F80017A6E7 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		D1ABCC3B234B1A350017A6E7 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		D1ABCC3D234B1A4D0017A6E7 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		D1ABCC40234B207F0017A6E7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D1ABCC42234B27F80017A6E7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				D1ABCC40234B207F0017A6E7 /* Extensions.swift */,
+				D1ABCC42234B27F80017A6E7 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				D1ABCC3E234B1A4D0017A6E7 /* RegisterVC.swift in Sources */,
 				D13315C4234ADA8600869F8F /* AppDelegate.swift in Sources */,
 				D1ABCC3C234B1A350017A6E7 /* LoginVC.swift in Sources */,
+				D1ABCC43234B27F80017A6E7 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
