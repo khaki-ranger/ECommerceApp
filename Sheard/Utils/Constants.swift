@@ -24,7 +24,7 @@ struct AppImages {
 }
 
 struct AppColors {
-    static let Blue = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-    static let Red = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-    static let OffWhite = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    static let Blue = #colorLiteral(red: 0.003921568627, green: 0.3411764706, blue: 0.6078431373, alpha: 1)
+    static let Red = #colorLiteral(red: 0.8470588235, green: 0.262745098, blue: 0.08235294118, alpha: 1)
+    static let OffWhite = #colorLiteral(red: 0.8784313725, green: 0.9490196078, blue: 0.9450980392, alpha: 1)
 }
