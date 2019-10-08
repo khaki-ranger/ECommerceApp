@@ -13,15 +13,20 @@ class HomeVC: UIViewController {
     
     // Outlets
     @IBOutlet weak var loginOutBtn: UIBarButtonItem!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        if Auth.auth().currentUser == nil {
+            Auth.auth().signInAnonymously { (result, error) in
+                if let error = error  {
+                    debugPrint(error)
+                }
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if let _ = Auth.auth().currentUser {
+        if let user = Auth.auth().currentUser , !user.isAnonymous {
             // We are logged in
             loginOutBtn.title = "ログアウト"
         } else {
@@ -37,16 +42,21 @@ class HomeVC: UIViewController {
 
     @IBAction func loginOutClicked(_ sender: Any) {
         
-        if let _ = Auth.auth().currentUser {
-            // We are logged in
+        guard let user = Auth.auth().currentUser else { return }
+        if user.isAnonymous {
+            presentLoginController()
+        } else {
             do {
                 try Auth.auth().signOut()
-                presentLoginController()
+                Auth.auth().signInAnonymously { (result, error) in
+                    if let error = error {
+                        debugPrint(error)
+                    }
+                    self.presentLoginController()
+                }
             } catch {
-                debugPrint(error.localizedDescription)
+                debugPrint(error)
             }
-        } else {
-            presentLoginController()
         }
     }
 }

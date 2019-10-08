@@ -18,6 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_login" translatesAutoresizingMaskIntoConstraints="NO" id="oFJ-Ch-8PF">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="ycV-AC-vp5">
                                 <rect key="frame" x="20" y="108" width="374" height="319.5"/>
                                 <subviews>
@@ -106,8 +109,12 @@
                         <constraints>
                             <constraint firstItem="jlc-pk-1C1" firstAttribute="centerX" secondItem="Kan-Le-F7j" secondAttribute="centerX" id="2Tt-C1-cZN"/>
                             <constraint firstItem="ycV-AC-vp5" firstAttribute="leading" secondItem="oR5-3I-MDX" secondAttribute="leading" constant="20" id="EP6-0z-61W"/>
+                            <constraint firstAttribute="bottom" secondItem="oFJ-Ch-8PF" secondAttribute="bottom" id="JN3-W1-5Fl"/>
+                            <constraint firstItem="oFJ-Ch-8PF" firstAttribute="leading" secondItem="oR5-3I-MDX" secondAttribute="leading" id="KAz-40-L6W"/>
+                            <constraint firstItem="oFJ-Ch-8PF" firstAttribute="top" secondItem="oR5-3I-MDX" secondAttribute="top" id="LvY-yF-PEW"/>
                             <constraint firstItem="oR5-3I-MDX" firstAttribute="trailing" secondItem="ycV-AC-vp5" secondAttribute="trailing" constant="20" id="Mcy-eP-nOF"/>
                             <constraint firstItem="jlc-pk-1C1" firstAttribute="centerY" secondItem="fVc-Mg-zKC" secondAttribute="centerY" id="R4U-VT-TdD"/>
+                            <constraint firstItem="oR5-3I-MDX" firstAttribute="trailing" secondItem="oFJ-Ch-8PF" secondAttribute="trailing" id="c6A-dp-qPF"/>
                             <constraint firstItem="ycV-AC-vp5" firstAttribute="top" secondItem="oR5-3I-MDX" secondAttribute="top" constant="20" id="nLx-y9-M06"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oR5-3I-MDX"/>
@@ -131,6 +138,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_register" translatesAutoresizingMaskIntoConstraints="NO" id="8nW-Ds-64u">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="4a5-WN-pTQ">
                                 <rect key="frame" x="20" y="108" width="374" height="280.5"/>
                                 <subviews>
@@ -214,13 +224,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="7ar-aJ-7tv" firstAttribute="trailing" secondItem="RiB-Hl-f1V" secondAttribute="trailing" constant="-6" id="7HV-Xo-bEr"/>
+                            <constraint firstItem="8nW-Ds-64u" firstAttribute="leading" secondItem="ae2-gj-frv" secondAttribute="leading" id="7M3-RA-JEu"/>
+                            <constraint firstItem="8nW-Ds-64u" firstAttribute="top" secondItem="ae2-gj-frv" secondAttribute="top" id="88Z-vT-9ZV"/>
                             <constraint firstItem="ae2-gj-frv" firstAttribute="trailing" secondItem="4a5-WN-pTQ" secondAttribute="trailing" constant="20" id="Btr-xJ-434"/>
                             <constraint firstItem="4a5-WN-pTQ" firstAttribute="top" secondItem="ae2-gj-frv" secondAttribute="top" constant="20" id="Eu8-aX-u7b"/>
                             <constraint firstItem="7ar-aJ-7tv" firstAttribute="centerY" secondItem="RiB-Hl-f1V" secondAttribute="centerY" id="Mt5-ew-Y8w"/>
                             <constraint firstItem="wXD-kV-Jmg" firstAttribute="top" secondItem="4a5-WN-pTQ" secondAttribute="bottom" constant="20" id="OfZ-yx-p6R"/>
                             <constraint firstItem="wXD-kV-Jmg" firstAttribute="centerX" secondItem="3cN-w9-tlb" secondAttribute="centerX" id="Rv2-2G-s4O"/>
+                            <constraint firstItem="ae2-gj-frv" firstAttribute="trailing" secondItem="8nW-Ds-64u" secondAttribute="trailing" id="Vjh-7q-Cot"/>
                             <constraint firstItem="4a5-WN-pTQ" firstAttribute="leading" secondItem="ae2-gj-frv" secondAttribute="leading" constant="20" id="gEf-vl-RXu"/>
                             <constraint firstItem="4OY-kE-TVa" firstAttribute="centerY" secondItem="RGo-gX-BjJ" secondAttribute="centerY" id="iz0-bS-Wxa"/>
+                            <constraint firstAttribute="bottom" secondItem="8nW-Ds-64u" secondAttribute="bottom" id="lyR-2w-lIc"/>
                             <constraint firstItem="4OY-kE-TVa" firstAttribute="trailing" secondItem="RGo-gX-BjJ" secondAttribute="trailing" constant="-6" id="ngv-al-VXu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ae2-gj-frv"/>
@@ -259,6 +273,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bg_login" width="480" height="740"/>
+        <image name="bg_register" width="480" height="740"/>
         <image name="red_check" width="40" height="40"/>
     </resources>
 </document>
