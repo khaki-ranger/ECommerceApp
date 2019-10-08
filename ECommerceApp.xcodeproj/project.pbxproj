@@ -20,6 +20,8 @@
 		D13315E6234ADAC600869F8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13315E4234ADAC600869F8F /* LaunchScreen.storyboard */; };
 		D13315EC234ADAE200869F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D13315CA234ADA8800869F8F /* Assets.xcassets */; };
 		D13315EE234ADD7E00869F8F /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13315ED234ADD7E00869F8F /* LoginStoryboard.storyboard */; };
+		D16594DF234D4B1400086CB2 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16594DD234D4B1400086CB2 /* ForgotPasswordVC.swift */; };
+		D16594E0234D4B1400086CB2 /* ForgotPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D16594DE234D4B1400086CB2 /* ForgotPasswordVC.xib */; };
 		D1ABCC34234B11DC0017A6E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1ABCC33234B11DC0017A6E7 /* GoogleService-Info.plist */; };
 		D1ABCC36234B14560017A6E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1ABCC35234B14560017A6E7 /* GoogleService-Info.plist */; };
 		D1ABCC3C234B1A350017A6E7 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC3B234B1A350017A6E7 /* LoginVC.swift */; };
@@ -50,6 +52,8 @@
 		D13315E5234ADAC600869F8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D13315E7234ADAC600869F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D13315ED234ADD7E00869F8F /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
+		D16594DD234D4B1400086CB2 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		D16594DE234D4B1400086CB2 /* ForgotPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordVC.xib; sourceTree = "<group>"; };
 		D1ABCC33234B11DC0017A6E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D1ABCC35234B14560017A6E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D1ABCC3B234B1A350017A6E7 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 		D13315C2234ADA8600869F8F /* ECommerceApp */ = {
 			isa = PBXGroup;
 			children = (
+				D16594DC234D4AE500086CB2 /* XIBs */,
 				D1ABCC39234B193A0017A6E7 /* Model */,
 				D1ABCC38234B19320017A6E7 /* View */,
 				D1ABCC37234B19220017A6E7 /* Controller */,
@@ -145,6 +150,15 @@
 				D13315CA234ADA8800869F8F /* Assets.xcassets */,
 			);
 			path = Sheard;
+			sourceTree = "<group>";
+		};
+		D16594DC234D4AE500086CB2 /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				D16594DD234D4B1400086CB2 /* ForgotPasswordVC.swift */,
+				D16594DE234D4B1400086CB2 /* ForgotPasswordVC.xib */,
+			);
+			path = XIBs;
 			sourceTree = "<group>";
 		};
 		D1ABCC37234B19220017A6E7 /* Controller */ = {
@@ -295,6 +309,7 @@
 				D13315CB234ADA8800869F8F /* Assets.xcassets in Resources */,
 				D1ABCC34234B11DC0017A6E7 /* GoogleService-Info.plist in Resources */,
 				D13315C9234ADA8600869F8F /* Main.storyboard in Resources */,
+				D16594E0234D4B1400086CB2 /* ForgotPasswordVC.xib in Resources */,
 				D13315EE234ADD7E00869F8F /* LoginStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,6 +457,7 @@
 				D13315C4234ADA8600869F8F /* AppDelegate.swift in Sources */,
 				D1ABCC46234B2C630017A6E7 /* RoundedViews.swift in Sources */,
 				D1ABCC3C234B1A350017A6E7 /* LoginVC.swift in Sources */,
+				D16594DF234D4B1400086CB2 /* ForgotPasswordVC.swift in Sources */,
 				D1ABCC43234B27F80017A6E7 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
