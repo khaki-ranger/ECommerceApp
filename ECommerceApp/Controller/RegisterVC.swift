@@ -51,13 +51,20 @@ class RegisterVC: UIViewController {
             passCheckImg.image = UIImage(named: AppImages.RedCheck)
             confirmPassCheckImg.image = UIImage(named: AppImages.RedCheck)
         }
-        
     }
 
     @IBAction func registerClicked(_ sender: Any) {
         guard let email = emailTxt.text , email.isNotEmpty ,
               let username = usernameTxt.text , username.isNotEmpty ,
-              let password = passwordTxt.text , password.isNotEmpty else { return }
+              let password = passwordTxt.text , password.isNotEmpty else {
+                simpleAlert(title: "Error", msg: "Please fill out all fields.")
+                return
+        }
+        
+        guard let confirmPass = confirmPasswordTxt.text , confirmPass == password else {
+            simpleAlert(title: "Error", msg: "Password do not match.")
+            return
+        }
         
         activityIndicator.startAnimating()
         
@@ -69,7 +76,9 @@ class RegisterVC: UIViewController {
         
         authUser.link(with: credential) { (result, error) in
             if let error = error {
-                debugPrint(error.localizedDescription)
+                debugPrint(error)
+                self.handleFireAuthError(error: error)
+                self.activityIndicator.stopAnimating()
                 return
             }
             
