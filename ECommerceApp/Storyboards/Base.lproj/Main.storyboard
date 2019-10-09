@@ -56,11 +56,43 @@
                         <outlet property="activityIndicator" destination="QZi-ZR-fJx" id="xDb-P6-gud"/>
                         <outlet property="collectionView" destination="26S-U6-sc2" id="kRj-O7-8TG"/>
                         <outlet property="loginOutBtn" destination="Aqr-wp-WR5" id="Vbb-1E-QDc"/>
+                        <segue destination="IBK-hG-ePE" kind="show" identifier="toProductsVC" id="jb6-5c-ql9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="961" y="730"/>
+        </scene>
+        <!--ProductsVC-->
+        <scene sceneID="Mc2-x0-Tg6">
+            <objects>
+                <viewController id="IBK-hG-ePE" customClass="ProductsVC" customModule="ECommerceApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tNa-H9-Fp1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6lf-ZA-DiU">
+                                <rect key="frame" x="20" y="88" width="374" height="808"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="b1u-8o-BV0" firstAttribute="trailing" secondItem="6lf-ZA-DiU" secondAttribute="trailing" constant="20" id="1nn-Az-peY"/>
+                            <constraint firstItem="6lf-ZA-DiU" firstAttribute="leading" secondItem="b1u-8o-BV0" secondAttribute="leading" constant="20" id="MDZ-8v-W4M"/>
+                            <constraint firstAttribute="bottom" secondItem="6lf-ZA-DiU" secondAttribute="bottom" id="XNK-VO-G7N"/>
+                            <constraint firstItem="6lf-ZA-DiU" firstAttribute="top" secondItem="b1u-8o-BV0" secondAttribute="top" id="ynT-Vt-Xjc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="b1u-8o-BV0"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yXh-23-lqr"/>
+                    <connections>
+                        <outlet property="tableView" destination="6lf-ZA-DiU" id="t55-hU-hDy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3qC-eW-ETR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1817" y="730"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xrJ-ch-pdI">
@@ -73,7 +105,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="0nX-20-kRH"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cnd-Rn-DAK"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tUK-85-F7r" userLabel="First Responder" sceneMemberID="firstResponder"/>
