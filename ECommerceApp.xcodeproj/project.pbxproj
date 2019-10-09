@@ -22,6 +22,8 @@
 		D13315EE234ADD7E00869F8F /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13315ED234ADD7E00869F8F /* LoginStoryboard.storyboard */; };
 		D16594DF234D4B1400086CB2 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16594DD234D4B1400086CB2 /* ForgotPasswordVC.swift */; };
 		D16594E0234D4B1400086CB2 /* ForgotPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D16594DE234D4B1400086CB2 /* ForgotPasswordVC.xib */; };
+		D16594E2234D5ABE00086CB2 /* Firebase+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16594E1234D5ABE00086CB2 /* Firebase+Utils.swift */; };
+		D16594E3234D5BF000086CB2 /* Firebase+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16594E1234D5ABE00086CB2 /* Firebase+Utils.swift */; };
 		D1ABCC34234B11DC0017A6E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1ABCC33234B11DC0017A6E7 /* GoogleService-Info.plist */; };
 		D1ABCC36234B14560017A6E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1ABCC35234B14560017A6E7 /* GoogleService-Info.plist */; };
 		D1ABCC3C234B1A350017A6E7 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC3B234B1A350017A6E7 /* LoginVC.swift */; };
@@ -54,6 +56,7 @@
 		D13315ED234ADD7E00869F8F /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
 		D16594DD234D4B1400086CB2 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		D16594DE234D4B1400086CB2 /* ForgotPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordVC.xib; sourceTree = "<group>"; };
+		D16594E1234D5ABE00086CB2 /* Firebase+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase+Utils.swift"; sourceTree = "<group>"; };
 		D1ABCC33234B11DC0017A6E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D1ABCC35234B14560017A6E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D1ABCC3B234B1A350017A6E7 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -201,6 +204,7 @@
 			children = (
 				D1ABCC40234B207F0017A6E7 /* Extensions.swift */,
 				D1ABCC42234B27F80017A6E7 /* Constants.swift */,
+				D16594E1234D5ABE00086CB2 /* Firebase+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -451,6 +455,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D16594E2234D5ABE00086CB2 /* Firebase+Utils.swift in Sources */,
 				D1ABCC41234B207F0017A6E7 /* Extensions.swift in Sources */,
 				D13315C6234ADA8600869F8F /* HomeVC.swift in Sources */,
 				D1ABCC3E234B1A4D0017A6E7 /* RegisterVC.swift in Sources */,
@@ -466,6 +471,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D16594E3234D5BF000086CB2 /* Firebase+Utils.swift in Sources */,
 				D13315DE234ADAC500869F8F /* ViewController.swift in Sources */,
 				D13315DC234ADAC500869F8F /* AppDelegate.swift in Sources */,
 			);
@@ -633,6 +639,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DCYC29YYSD;
 				INFOPLIST_FILE = ECommerceApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -652,6 +659,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DCYC29YYSD;
 				INFOPLIST_FILE = ECommerceApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -671,6 +679,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DCYC29YYSD;
 				INFOPLIST_FILE = ECommerceAppAdmin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -690,6 +699,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DCYC29YYSD;
 				INFOPLIST_FILE = ECommerceAppAdmin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
