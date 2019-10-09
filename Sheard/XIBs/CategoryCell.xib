@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCell" id="gTV-IL-0wX" customClass="CategoryCell" customModule="ECommerceApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="154" height="219"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="154" height="219"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" image="category_1" translatesAutoresizingMaskIntoConstraints="NO" id="hPB-7A-gse">
+                        <rect key="frame" x="0.0" y="0.0" width="154" height="183"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カテゴリ名" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="T8U-Zh-m0j">
+                        <rect key="frame" x="8" y="191" width="138" height="20"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="textColor" red="0.0039215686269999999" green="0.3411764706" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="hPB-7A-gse" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="FLh-Kr-Dr7"/>
+                <constraint firstItem="T8U-Zh-m0j" firstAttribute="top" secondItem="hPB-7A-gse" secondAttribute="bottom" constant="8" id="Xg9-c7-awM"/>
+                <constraint firstItem="T8U-Zh-m0j" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="aln-eo-GAn"/>
+                <constraint firstAttribute="trailing" secondItem="hPB-7A-gse" secondAttribute="trailing" id="hGc-Yp-lmP"/>
+                <constraint firstAttribute="bottom" secondItem="T8U-Zh-m0j" secondAttribute="bottom" constant="8" id="pBs-TN-xEh"/>
+                <constraint firstAttribute="trailing" secondItem="T8U-Zh-m0j" secondAttribute="trailing" constant="8" id="uLF-UN-wE1"/>
+                <constraint firstItem="hPB-7A-gse" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="wAe-4e-xjb"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="154" height="219"/>
+            <connections>
+                <outlet property="categoryImg" destination="hPB-7A-gse" id="MIc-wK-CPz"/>
+                <outlet property="categoryLbl" destination="T8U-Zh-m0j" id="l9C-ic-xaf"/>
+            </connections>
+            <point key="canvasLocation" x="213.04347826086959" y="201.22767857142856"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="category_1" width="700" height="840"/>
+    </resources>
+</document>

@@ -10,30 +10,93 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--HomeVC-->
+        <!--She's-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeVC" customModule="ECommerceApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="26S-U6-sc2">
+                                <rect key="frame" x="10" y="88" width="394" height="808"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mc3-03-ewh">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="QZi-ZR-fJx">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" red="0.84705882349999995" green="0.26274509800000001" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QZi-ZR-fJx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9ma-7P-R2F"/>
+                            <constraint firstItem="26S-U6-sc2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bJw-Nf-T6w"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="26S-U6-sc2" secondAttribute="trailing" constant="10" id="oeG-6x-0J9"/>
+                            <constraint firstItem="QZi-ZR-fJx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="sON-BJ-cvS"/>
+                            <constraint firstItem="26S-U6-sc2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="sub-lO-dbw"/>
+                            <constraint firstAttribute="bottom" secondItem="26S-U6-sc2" secondAttribute="bottom" id="yga-Pf-r6L"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="sbf-y1-rNV">
+                    <navigationItem key="navigationItem" title="She's" id="sbf-y1-rNV">
                         <barButtonItem key="leftBarButtonItem" title="ログイン" id="Aqr-wp-WR5">
                             <connections>
                                 <action selector="loginOutClicked:" destination="BYZ-38-t0r" id="Ty7-CY-DG6"/>
                             </connections>
                         </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="bar_button_cart" id="OaD-Na-kYM"/>
+                            <barButtonItem image="bar_button_heart" id="1F0-b8-Gtt"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="QZi-ZR-fJx" id="xDb-P6-gud"/>
+                        <outlet property="collectionView" destination="26S-U6-sc2" id="kRj-O7-8TG"/>
                         <outlet property="loginOutBtn" destination="Aqr-wp-WR5" id="Vbb-1E-QDc"/>
+                        <segue destination="IBK-hG-ePE" kind="show" identifier="toProductsVC" id="jb6-5c-ql9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="961" y="730"/>
+        </scene>
+        <!--ProductsVC-->
+        <scene sceneID="Mc2-x0-Tg6">
+            <objects>
+                <viewController id="IBK-hG-ePE" customClass="ProductsVC" customModule="ECommerceApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tNa-H9-Fp1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6lf-ZA-DiU">
+                                <rect key="frame" x="2" y="88" width="410" height="808"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="b1u-8o-BV0" firstAttribute="trailing" secondItem="6lf-ZA-DiU" secondAttribute="trailing" constant="2" id="1nn-Az-peY"/>
+                            <constraint firstItem="6lf-ZA-DiU" firstAttribute="leading" secondItem="b1u-8o-BV0" secondAttribute="leading" constant="2" id="MDZ-8v-W4M"/>
+                            <constraint firstAttribute="bottom" secondItem="6lf-ZA-DiU" secondAttribute="bottom" id="XNK-VO-G7N"/>
+                            <constraint firstItem="6lf-ZA-DiU" firstAttribute="top" secondItem="b1u-8o-BV0" secondAttribute="top" id="ynT-Vt-Xjc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="b1u-8o-BV0"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yXh-23-lqr"/>
+                    <connections>
+                        <outlet property="tableView" destination="6lf-ZA-DiU" id="t55-hU-hDy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3qC-eW-ETR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1817" y="730"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xrJ-ch-pdI">
@@ -43,10 +106,16 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="z0a-an-fMw">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.84705882349999995" green="0.26274509800000001" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="0nX-20-kRH"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cnd-Rn-DAK"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tUK-85-F7r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -54,4 +123,8 @@
             <point key="canvasLocation" x="147.82608695652175" y="729.91071428571422"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bar_button_cart" width="27" height="24"/>
+        <image name="bar_button_heart" width="26" height="23"/>
+    </resources>
 </document>
