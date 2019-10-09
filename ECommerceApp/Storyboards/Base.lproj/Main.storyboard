@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="26S-U6-sc2">
-                                <rect key="frame" x="20" y="88" width="374" height="808"/>
+                                <rect key="frame" x="10" y="88" width="394" height="808"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mc3-03-ewh">
                                     <size key="itemSize" width="50" height="50"/>
@@ -38,9 +38,9 @@
                         <constraints>
                             <constraint firstItem="QZi-ZR-fJx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9ma-7P-R2F"/>
                             <constraint firstItem="26S-U6-sc2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bJw-Nf-T6w"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="26S-U6-sc2" secondAttribute="trailing" constant="20" id="oeG-6x-0J9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="26S-U6-sc2" secondAttribute="trailing" constant="10" id="oeG-6x-0J9"/>
                             <constraint firstItem="QZi-ZR-fJx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="sON-BJ-cvS"/>
-                            <constraint firstItem="26S-U6-sc2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="sub-lO-dbw"/>
+                            <constraint firstItem="26S-U6-sc2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="sub-lO-dbw"/>
                             <constraint firstAttribute="bottom" secondItem="26S-U6-sc2" secondAttribute="bottom" id="yga-Pf-r6L"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -72,14 +72,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6lf-ZA-DiU">
-                                <rect key="frame" x="20" y="88" width="374" height="808"/>
+                                <rect key="frame" x="2" y="88" width="410" height="808"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="b1u-8o-BV0" firstAttribute="trailing" secondItem="6lf-ZA-DiU" secondAttribute="trailing" constant="20" id="1nn-Az-peY"/>
-                            <constraint firstItem="6lf-ZA-DiU" firstAttribute="leading" secondItem="b1u-8o-BV0" secondAttribute="leading" constant="20" id="MDZ-8v-W4M"/>
+                            <constraint firstItem="b1u-8o-BV0" firstAttribute="trailing" secondItem="6lf-ZA-DiU" secondAttribute="trailing" constant="2" id="1nn-Az-peY"/>
+                            <constraint firstItem="6lf-ZA-DiU" firstAttribute="leading" secondItem="b1u-8o-BV0" secondAttribute="leading" constant="2" id="MDZ-8v-W4M"/>
                             <constraint firstAttribute="bottom" secondItem="6lf-ZA-DiU" secondAttribute="bottom" id="XNK-VO-G7N"/>
                             <constraint firstItem="6lf-ZA-DiU" firstAttribute="top" secondItem="b1u-8o-BV0" secondAttribute="top" id="ynT-Vt-Xjc"/>
                         </constraints>

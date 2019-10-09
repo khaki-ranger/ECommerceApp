@@ -94,7 +94,7 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = view.frame.width
-        let cellWidth = (width - 50) / 2
+        let cellWidth = (width - 30) / 2
         let cellHeight = cellWidth * 1.2
         return CGSize(width: cellWidth, height: cellHeight)
     }
