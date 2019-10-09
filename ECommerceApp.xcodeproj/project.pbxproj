@@ -45,6 +45,8 @@
 		D1BE2570234D82B700539728 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BE256D234D82B700539728 /* ProductCell.swift */; };
 		D1BE2571234D82B700539728 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1BE256E234D82B700539728 /* ProductCell.xib */; };
 		D1BE2572234D82B700539728 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1BE256E234D82B700539728 /* ProductCell.xib */; };
+		D1BE2575234E1D8000539728 /* ProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BE2573234E1D8000539728 /* ProductDetailVC.swift */; };
+		D1BE2576234E1D8000539728 /* ProductDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1BE2574234E1D8000539728 /* ProductDetailVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +87,8 @@
 		D1BE256A234D81C400539728 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		D1BE256D234D82B700539728 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		D1BE256E234D82B700539728 /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProductCell.xib; path = ../View/ProductCell.xib; sourceTree = "<group>"; };
+		D1BE2573234E1D8000539728 /* ProductDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailVC.swift; sourceTree = "<group>"; };
+		D1BE2574234E1D8000539728 /* ProductDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +186,8 @@
 			children = (
 				D16594DD234D4B1400086CB2 /* ForgotPasswordVC.swift */,
 				D16594DE234D4B1400086CB2 /* ForgotPasswordVC.xib */,
+				D1BE2573234E1D8000539728 /* ProductDetailVC.swift */,
+				D1BE2574234E1D8000539728 /* ProductDetailVC.xib */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -352,6 +358,7 @@
 				D13315CB234ADA8800869F8F /* Assets.xcassets in Resources */,
 				D1ABCC34234B11DC0017A6E7 /* GoogleService-Info.plist in Resources */,
 				D13315C9234ADA8600869F8F /* Main.storyboard in Resources */,
+				D1BE2576234E1D8000539728 /* ProductDetailVC.xib in Resources */,
 				D16594E0234D4B1400086CB2 /* ForgotPasswordVC.xib in Resources */,
 				D13315EE234ADD7E00869F8F /* LoginStoryboard.storyboard in Resources */,
 			);
@@ -501,6 +508,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D16594E2234D5ABE00086CB2 /* Firebase+Utils.swift in Sources */,
+				D1BE2575234E1D8000539728 /* ProductDetailVC.swift in Sources */,
 				D16594E5234D68CD00086CB2 /* Category.swift in Sources */,
 				D1ABCC41234B207F0017A6E7 /* Extensions.swift in Sources */,
 				D13315C6234ADA8600869F8F /* HomeVC.swift in Sources */,

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductDetailVC" customModule="ECommerceApp" customModuleProvider="target">
+            <connections>
+                <outlet property="bgView" destination="sTq-Zp-Bno" id="Fm4-Wl-l5C"/>
+                <outlet property="productImg" destination="0RO-de-X6r" id="YDU-v9-3B5"/>
+                <outlet property="productPrice" destination="kTZ-vL-YEn" id="20h-v0-mM1"/>
+                <outlet property="productTitle" destination="fPs-6a-uCn" id="mNl-1K-19I"/>
+                <outlet property="produecDescription" destination="r4V-Rr-k5n" id="VbG-tf-VuY"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sTq-Zp-Bno">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="paO-CX-XSp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <blurEffect style="extraLight"/>
+                </visualEffectView>
+                <view contentMode="scaleToFill" placeholderIntrinsicWidth="374" placeholderIntrinsicHeight="534.5" translatesAutoresizingMaskIntoConstraints="NO" id="G3M-9q-fjz" customClass="RoundedShadowView" customModule="ECommerceApp" customModuleProvider="target">
+                    <rect key="frame" x="20" y="104.5" width="374" height="687"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4Ad-tP-WlH">
+                            <rect key="frame" x="20" y="20" width="334" height="647"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="product_1" translatesAutoresizingMaskIntoConstraints="NO" id="0RO-de-X6r">
+                                    <rect key="frame" x="0.0" y="0.0" width="334" height="400.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="0RO-de-X6r" secondAttribute="height" multiplier="1:1.2" id="KIP-FZ-13Z"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品名" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPs-6a-uCn">
+                                    <rect key="frame" x="0.0" y="420.5" width="334" height="24"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                    <color key="textColor" red="0.0039215686269999999" green="0.3411764706" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥9,999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTZ-vL-YEn">
+                                    <rect key="frame" x="0.0" y="464.5" width="334" height="23"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                    <color key="textColor" red="0.0039215686269999999" green="0.3411764706" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品説明" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4V-Rr-k5n">
+                                    <rect key="frame" x="0.0" y="507.5" width="334" height="19.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <color key="textColor" red="0.0039215686269999999" green="0.3411764706" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIr-QA-QIr" customClass="RoundedButton" customModule="ECommerceApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="547" width="334" height="40"/>
+                                    <color key="backgroundColor" red="0.84705882349999995" green="0.26274509800000001" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="qd0-Sk-Ram"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <state key="normal" title="カートに入れる">
+                                        <color key="titleColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="addCartClicked:" destination="-1" eventType="touchUpInside" id="8iW-CY-5Pk"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="61E-CD-ouy" customClass="RoundedButton" customModule="ECommerceApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="607" width="334" height="40"/>
+                                    <color key="backgroundColor" red="0.0039215686269999999" green="0.3411764706" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="5P3-fh-h2F"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <state key="normal" title="お買い物をつづける">
+                                        <color key="titleColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="dismissProduct:" destination="-1" eventType="touchUpInside" id="YbX-4o-xLv"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="4Ad-tP-WlH" secondAttribute="trailing" constant="20" id="VsQ-2w-Zbh"/>
+                        <constraint firstItem="4Ad-tP-WlH" firstAttribute="top" secondItem="G3M-9q-fjz" secondAttribute="top" constant="20" id="c2h-wN-YJ8"/>
+                        <constraint firstItem="4Ad-tP-WlH" firstAttribute="leading" secondItem="G3M-9q-fjz" secondAttribute="leading" constant="20" id="jDb-01-ZoC"/>
+                        <constraint firstAttribute="bottom" secondItem="4Ad-tP-WlH" secondAttribute="bottom" constant="20" id="tXk-o6-Xlb"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="G3M-9q-fjz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Ccu-LO-wMo"/>
+                <constraint firstItem="G3M-9q-fjz" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="GTc-QA-7Dr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sTq-Zp-Bno" secondAttribute="trailing" id="RIT-nU-jWx"/>
+                <constraint firstItem="sTq-Zp-Bno" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Tbf-ZN-I4N"/>
+                <constraint firstItem="sTq-Zp-Bno" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Xjg-kT-BMc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="G3M-9q-fjz" secondAttribute="trailing" constant="20" id="kbf-hn-SwI"/>
+                <constraint firstAttribute="bottom" secondItem="sTq-Zp-Bno" secondAttribute="bottom" id="xnl-0v-fR3"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="50.724637681159422" y="35.491071428571423"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="product_1" width="700" height="840"/>
+    </resources>
+</document>
