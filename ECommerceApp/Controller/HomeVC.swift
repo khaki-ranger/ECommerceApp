@@ -40,27 +40,8 @@ class HomeVC: UIViewController {
         }
     }
     
-    func fetchCollection() {
-        let collectionReference = db.collection("categories")
-        
-        listener = collectionReference.addSnapshotListener { (snap, error) in
-            if let error = error {
-                debugPrint(error)
-            }
-            
-            guard let documents = snap?.documents else { return }
-            self.categories.removeAll()
-            for document in documents {
-                let data = document.data()
-                let newCategory = Category.init(data: data)
-                self.categories.append(newCategory)
-            }
-            self.collectionView.reloadData()
-        }
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
-        fetchCollection()
+        setCategoriesListener()
         
         if let user = Auth.auth().currentUser , !user.isAnonymous {
             // We are logged in
@@ -72,6 +53,62 @@ class HomeVC: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         listener.remove()
+        categories.removeAll()
+        collectionView.reloadData()
+    }
+    
+    func setCategoriesListener() {
+        listener = db.collection("categories").addSnapshotListener({ (snap, error) in
+            
+            if let error = error {
+                debugPrint(error.localizedDescription)
+                return
+            }
+            
+            snap?.documentChanges.forEach({ (change) in
+                
+                let data = change.document.data()
+                let category = Category.init(data: data)
+                
+                switch change.type {
+                case .added:
+                    self.onDocumentAdded(change: change, category: category)
+                case .modified:
+                    self.onDocumentModified(change: change, category: category)
+                case .removed:
+                    self.onDocumentRemoved(change: change)
+                }
+            })
+        })
+    }
+    
+    func onDocumentAdded(change: DocumentChange, category: Category) {
+        let newIndex = Int(change.newIndex)
+        categories.insert(category, at: newIndex)
+        collectionView.insertItems(at: [IndexPath(item: newIndex, section: 0)])
+    }
+    
+    func onDocumentModified(change: DocumentChange, category: Category) {
+        if change.newIndex == change.oldIndex {
+            // Item changed, but remained in the same position
+            let index = Int(change.newIndex)
+            categories[index] = category
+            collectionView.reloadItems(at: [IndexPath(item: index, section: 0)])
+        } else {
+            // Item changed and changed position
+            let newIndex = Int(change.newIndex)
+            let oldIndex = Int(change.oldIndex)
+            categories.remove(at: oldIndex)
+            categories.insert(category, at: newIndex)
+            collectionView.moveItem(at: IndexPath(item: oldIndex, section: 0), to: IndexPath(item: newIndex, section: 0))
+        }
+    }
+    
+    func onDocumentRemoved(change: DocumentChange) {
+        let oldIndex = Int(change.oldIndex)
+        categories.remove(at: oldIndex)
+        collectionView.deleteItems(at: [IndexPath(item: oldIndex, section: 0)])
+        
     }
     
     fileprivate func presentLoginController() {
