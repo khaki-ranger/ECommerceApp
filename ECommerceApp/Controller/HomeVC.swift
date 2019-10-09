@@ -19,12 +19,12 @@ class HomeVC: UIViewController {
     // Variables
     var categories = [Category]()
     var selectedCategory: Category!
+    var db: Firestore!
+    var listener: ListenerRegistration!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let category = Category(name: "パンプス", id: "fajsi", imgUrl: "https://img08.magaseek.com/images/item/20190420/50223241300I.jpg?sr.dw=700", isActive: true, timeStamp: Timestamp())
-        categories.append(category)
+        db = Firestore.firestore()
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -40,13 +40,38 @@ class HomeVC: UIViewController {
         }
     }
     
+    func fetchCollection() {
+        let collectionReference = db.collection("categories")
+        
+        listener = collectionReference.addSnapshotListener { (snap, error) in
+            if let error = error {
+                debugPrint(error)
+            }
+            
+            guard let documents = snap?.documents else { return }
+            self.categories.removeAll()
+            for document in documents {
+                let data = document.data()
+                let newCategory = Category.init(data: data)
+                self.categories.append(newCategory)
+            }
+            self.collectionView.reloadData()
+        }
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
+        fetchCollection()
+        
         if let user = Auth.auth().currentUser , !user.isAnonymous {
             // We are logged in
             loginOutBtn.title = "ログアウト"
         } else {
             loginOutBtn.title = "ログイン"
         }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        listener.remove()
     }
     
     fileprivate func presentLoginController() {
