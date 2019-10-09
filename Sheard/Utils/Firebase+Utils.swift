@@ -8,6 +8,12 @@
 
 import Firebase
 
+extension Firestore {
+    var categories: Query {
+        return collection("categories").order(by: "order", descending: true)
+    }
+}
+
 extension Auth {
     func handleFireAuthError(error: Error, vc: UIViewController) {
         if let errorCode = AuthErrorCode(rawValue: error._code) {
