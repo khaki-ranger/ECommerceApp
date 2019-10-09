@@ -17,7 +17,32 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="26S-U6-sc2">
+                                <rect key="frame" x="20" y="88" width="374" height="808"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mc3-03-ewh">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="QZi-ZR-fJx">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" red="0.84705882349999995" green="0.26274509800000001" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QZi-ZR-fJx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9ma-7P-R2F"/>
+                            <constraint firstItem="26S-U6-sc2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bJw-Nf-T6w"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="26S-U6-sc2" secondAttribute="trailing" constant="20" id="oeG-6x-0J9"/>
+                            <constraint firstItem="QZi-ZR-fJx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="sON-BJ-cvS"/>
+                            <constraint firstItem="26S-U6-sc2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="sub-lO-dbw"/>
+                            <constraint firstAttribute="bottom" secondItem="26S-U6-sc2" secondAttribute="bottom" id="yga-Pf-r6L"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="sbf-y1-rNV">
@@ -28,6 +53,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="QZi-ZR-fJx" id="xDb-P6-gud"/>
+                        <outlet property="collectionView" destination="26S-U6-sc2" id="kRj-O7-8TG"/>
                         <outlet property="loginOutBtn" destination="Aqr-wp-WR5" id="Vbb-1E-QDc"/>
                     </connections>
                 </viewController>

@@ -9,6 +9,7 @@ def shared_pods
   pod 'Firebase/Firestore', '6.1.0'
   pod 'Firebase/Storage', '6.1.0'
   pod 'Firebase/Functions', '6.1.0'
+  pod 'Kingfisher', '~> 4.0'
 end
 
 target 'ECommerceApp' do
