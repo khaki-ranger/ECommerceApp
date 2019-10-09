@@ -72,7 +72,6 @@ class HomeVC: UIViewController {
             }
             
             snap?.documentChanges.forEach({ (change) in
-                
                 let data = change.document.data()
                 let category = Category.init(data: data)
                 

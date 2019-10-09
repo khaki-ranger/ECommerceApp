@@ -201,8 +201,8 @@
 				D1ABCC3B234B1A350017A6E7 /* LoginVC.swift */,
 				D1ABCC3D234B1A4D0017A6E7 /* RegisterVC.swift */,
 				D13315C5234ADA8600869F8F /* HomeVC.swift */,
-				D13315C3234ADA8600869F8F /* AppDelegate.swift */,
 				D1BE2567234D815400539728 /* ProductsVC.swift */,
+				D13315C3234ADA8600869F8F /* AppDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
