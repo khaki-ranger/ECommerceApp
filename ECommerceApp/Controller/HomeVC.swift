@@ -23,7 +23,7 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let category = Category(name: "パンプス", id: "fajsi", imgUrl: "https://img08.magaseek.com/images/item/20190912/502607958009.jpg?sr.dw=700", isActive: true, timeStamp: Timestamp())
+        let category = Category(name: "パンプス", id: "fajsi", imgUrl: "https://img08.magaseek.com/images/item/20190420/50223241300I.jpg?sr.dw=700", isActive: true, timeStamp: Timestamp())
         categories.append(category)
         
         collectionView.delegate = self
