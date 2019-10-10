@@ -37,13 +37,20 @@ class AdminProductsVC: ProductsVC {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // セグエによって遷移前準備を分岐
         if segue.identifier == Segues.ToAddEditProduct {
+            // 商品編集画面への遷移前準備
             if let destination = segue.destination as? AddEditProductsVC {
+                // スーパークラス(ProductsVC)のオブジェクトが渡される
                 destination.selectedCategory = category
+                // TableViewの商品をタップした場合は商品の情報が渡される
+                // NavigationBarの商品追加ボタンが押された場合はnilが渡される
                 destination.productToEdit = selectedProduct
             }
         } else if segue.identifier == Segues.ToAddEditCategory {
+            // カテゴリ編集画面への遷移前準備
             if let destination = segue.destination as? AddEditCategoryVC {
+                // スーパークラス(ProductsVC)のオブジェクトが渡される
                 destination.categoryToEdit = category
             }
         }

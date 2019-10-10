@@ -218,8 +218,8 @@
 				D13315DD234ADAC500869F8F /* AdminHomeVC.swift */,
 				D1FCDD20234F21E20040C132 /* AdminProductsVC.swift */,
 				D17CCD24234EB6B500E19BF7 /* AddEditCategoryVC.swift */,
-				D13315DB234ADAC500869F8F /* AppDelegate.swift */,
 				D1FCDD22234F25DF0040C132 /* AddEditProductsVC.swift */,
+				D13315DB234ADAC500869F8F /* AppDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
