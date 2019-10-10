@@ -15,7 +15,7 @@
 		D13315CB234ADA8800869F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D13315CA234ADA8800869F8F /* Assets.xcassets */; };
 		D13315CE234ADA8800869F8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13315CC234ADA8800869F8F /* LaunchScreen.storyboard */; };
 		D13315DC234ADAC500869F8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13315DB234ADAC500869F8F /* AppDelegate.swift */; };
-		D13315DE234ADAC500869F8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13315DD234ADAC500869F8F /* ViewController.swift */; };
+		D13315DE234ADAC500869F8F /* AdminHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13315DD234ADAC500869F8F /* AdminHomeVC.swift */; };
 		D13315E1234ADAC500869F8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13315DF234ADAC500869F8F /* Main.storyboard */; };
 		D13315E6234ADAC600869F8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13315E4234ADAC600869F8F /* LaunchScreen.storyboard */; };
 		D13315EC234ADAE200869F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D13315CA234ADA8800869F8F /* Assets.xcassets */; };
@@ -30,6 +30,13 @@
 		D16594EA234D698400086CB2 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16594E7234D698400086CB2 /* CategoryCell.swift */; };
 		D16594EB234D698400086CB2 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D16594E8234D698400086CB2 /* CategoryCell.xib */; };
 		D16594EC234D698400086CB2 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D16594E8234D698400086CB2 /* CategoryCell.xib */; };
+		D17CCD1E234EB30D00E19BF7 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13315C5234ADA8600869F8F /* HomeVC.swift */; };
+		D17CCD1F234EB41300E19BF7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC42234B27F80017A6E7 /* Constants.swift */; };
+		D17CCD20234EB41C00E19BF7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC40234B207F0017A6E7 /* Extensions.swift */; };
+		D17CCD21234EB43400E19BF7 /* ProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BE2573234E1D8000539728 /* ProductDetailVC.swift */; };
+		D17CCD22234EB43400E19BF7 /* ProductDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1BE2574234E1D8000539728 /* ProductDetailVC.xib */; };
+		D17CCD23234EB47E00E19BF7 /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC45234B2C630017A6E7 /* RoundedViews.swift */; };
+		D17CCD25234EB6B500E19BF7 /* AddEditCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17CCD24234EB6B500E19BF7 /* AddEditCategoryVC.swift */; };
 		D1ABCC34234B11DC0017A6E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1ABCC33234B11DC0017A6E7 /* GoogleService-Info.plist */; };
 		D1ABCC36234B14560017A6E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1ABCC35234B14560017A6E7 /* GoogleService-Info.plist */; };
 		D1ABCC3C234B1A350017A6E7 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC3B234B1A350017A6E7 /* LoginVC.swift */; };
@@ -65,7 +72,7 @@
 		D13315CF234ADA8800869F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D13315D9234ADAC500869F8F /* ECommerceAppAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECommerceAppAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D13315DB234ADAC500869F8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D13315DD234ADAC500869F8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D13315DD234ADAC500869F8F /* AdminHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHomeVC.swift; sourceTree = "<group>"; };
 		D13315E0234ADAC500869F8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D13315E5234ADAC600869F8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D13315E7234ADAC600869F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,6 +83,7 @@
 		D16594E4234D68CD00086CB2 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		D16594E7234D698400086CB2 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		D16594E8234D698400086CB2 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		D17CCD24234EB6B500E19BF7 /* AddEditCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditCategoryVC.swift; sourceTree = "<group>"; };
 		D1ABCC33234B11DC0017A6E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D1ABCC35234B14560017A6E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D1ABCC3B234B1A350017A6E7 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -159,8 +167,7 @@
 		D13315DA234ADAC500869F8F /* ECommerceAppAdmin */ = {
 			isa = PBXGroup;
 			children = (
-				D13315DB234ADAC500869F8F /* AppDelegate.swift */,
-				D13315DD234ADAC500869F8F /* ViewController.swift */,
+				D17CCD26234EB6C100E19BF7 /* Controller */,
 				D13315DF234ADAC500869F8F /* Main.storyboard */,
 				D13315E4234ADAC600869F8F /* LaunchScreen.storyboard */,
 				D1ABCC35234B14560017A6E7 /* GoogleService-Info.plist */,
@@ -199,6 +206,16 @@
 				D1BE256E234D82B700539728 /* ProductCell.xib */,
 			);
 			path = XIBs;
+			sourceTree = "<group>";
+		};
+		D17CCD26234EB6C100E19BF7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D13315DD234ADAC500869F8F /* AdminHomeVC.swift */,
+				D17CCD24234EB6B500E19BF7 /* AddEditCategoryVC.swift */,
+				D13315DB234ADAC500869F8F /* AppDelegate.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		D1ABCC37234B19220017A6E7 /* Controller */ = {
@@ -374,6 +391,7 @@
 				D1BE2572234D82B700539728 /* ProductCell.xib in Resources */,
 				D13315EC234ADAE200869F8F /* Assets.xcassets in Resources */,
 				D13315E1234ADAC500869F8F /* Main.storyboard in Resources */,
+				D17CCD22234EB43400E19BF7 /* ProductDetailVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,12 +548,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				D16594E3234D5BF000086CB2 /* Firebase+Utils.swift in Sources */,
-				D13315DE234ADAC500869F8F /* ViewController.swift in Sources */,
+				D17CCD21234EB43400E19BF7 /* ProductDetailVC.swift in Sources */,
+				D13315DE234ADAC500869F8F /* AdminHomeVC.swift in Sources */,
 				D1BE2569234D815E00539728 /* ProductsVC.swift in Sources */,
+				D17CCD23234EB47E00E19BF7 /* RoundedViews.swift in Sources */,
+				D17CCD1E234EB30D00E19BF7 /* HomeVC.swift in Sources */,
 				D13315DC234ADAC500869F8F /* AppDelegate.swift in Sources */,
+				D17CCD1F234EB41300E19BF7 /* Constants.swift in Sources */,
+				D17CCD25234EB6B500E19BF7 /* AddEditCategoryVC.swift in Sources */,
 				D16594E6234D68CD00086CB2 /* Category.swift in Sources */,
 				D1BE2570234D82B700539728 /* ProductCell.swift in Sources */,
 				D16594EA234D698400086CB2 /* CategoryCell.swift in Sources */,
+				D17CCD20234EB41C00E19BF7 /* Extensions.swift in Sources */,
 				D1BE256C234D81C400539728 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
