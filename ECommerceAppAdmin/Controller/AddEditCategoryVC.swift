@@ -16,6 +16,9 @@ class AddEditCategoryVC: UIViewController {
     @IBOutlet weak var categoryImg: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    // Variables
+    var categoryToEdit : Category?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,7 +38,6 @@ class AddEditCategoryVC: UIViewController {
     }
     
     func uploadImageThenDocument() {
-        
         // UIViewからimageを取得する
         guard let image = categoryImg.image ,
             let categoryName = nameTxt.text , categoryName.isNotEmpty else {
@@ -63,7 +65,7 @@ class AddEditCategoryVC: UIViewController {
                 if let error = error {
                     self.handleError(error: error, msg: "URLの取得に失敗しました")
                 }
-                
+                // 画像URLの取得に成功
                 guard let url = url else { return }
                 // FirestoreのcategoriesコレクションにURLをアップロードして更新する
                 self.uploadDocument(url: url.absoluteString)
