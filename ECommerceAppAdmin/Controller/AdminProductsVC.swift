@@ -47,7 +47,7 @@ class AdminProductsVC: ProductsVC {
                 // NavigationBarの商品追加ボタンが押された場合はnilが渡される
                 destination.productToEdit = selectedProduct
             }
-        } else if segue.identifier == Segues.ToAddEditCategory {
+        } else if segue.identifier == Segues.ToEditCategory {
             // カテゴリ編集画面への遷移前準備
             if let destination = segue.destination as? AddEditCategoryVC {
                 // スーパークラス(ProductsVC)のオブジェクトが渡される

@@ -168,6 +168,7 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="sA0-dZ-UkV" id="DU5-dK-hd7"/>
+                        <outlet property="addBtn" destination="fCj-ck-juY" id="vfc-Rh-Y9A"/>
                         <outlet property="categoryImg" destination="D7U-VK-lMg" id="Y8h-rA-UtK"/>
                         <outlet property="nameTxt" destination="Za3-4b-K6s" id="mSh-uQ-4UC"/>
                     </connections>

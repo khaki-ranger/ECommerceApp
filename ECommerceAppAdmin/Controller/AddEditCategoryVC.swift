@@ -15,6 +15,7 @@ class AddEditCategoryVC: UIViewController {
     @IBOutlet weak var nameTxt: UITextField!
     @IBOutlet weak var categoryImg: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var addBtn: UIButton!
     
     // Variables
     var categoryToEdit : Category?
@@ -26,6 +27,21 @@ class AddEditCategoryVC: UIViewController {
         tap.numberOfTapsRequired = 1
         categoryImg.isUserInteractionEnabled = true
         categoryImg.addGestureRecognizer(tap)
+        
+        // categoryToEditがnilかどうかで、編集か新規作成かを分岐
+        if let category = categoryToEdit {
+            // 編集
+            nameTxt.text = category.name
+            addBtn.setTitle("編集を保存", for: .normal)
+            
+            if let url = URL(string: category.imgUrl) {
+                categoryImg.contentMode = .scaleAspectFill
+                categoryImg.kf.setImage(with: url)
+            }
+        } else {
+            // 新規作成
+            
+        }
     }
     
     @objc func imgTapped(_ tap: UITapGestureRecognizer) {
@@ -79,8 +95,17 @@ class AddEditCategoryVC: UIViewController {
                                      id: "",
                                      imgUrl: url,
                                      timeStamp: Timestamp())
-        docRef = Firestore.firestore().collection("categories").document()
-        category.id = docRef.documentID
+        
+        // categoryToEditがnilかどうかで、編集か新規作成かを分岐
+        if let categoryToEdit = categoryToEdit {
+            // 編集
+            docRef = Firestore.firestore().collection("categories").document(categoryToEdit.id)
+            category.id = categoryToEdit.id
+        } else {
+            // 新規作成
+            docRef = Firestore.firestore().collection("categories").document()
+            category.id = docRef.documentID
+        }
         
         let data = Category.modelToData(category: category)
         docRef.setData(data, merge: true) { (error) in
@@ -110,7 +135,7 @@ extension AddEditCategoryVC : UIImagePickerControllerDelegate, UINavigationContr
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         guard let image = info[.originalImage] as? UIImage else { return }
-        categoryImg.contentMode = .scaleToFill
+        categoryImg.contentMode = .scaleAspectFill
         categoryImg.image = image
         dismiss(animated: true, completion: nil)
     }
