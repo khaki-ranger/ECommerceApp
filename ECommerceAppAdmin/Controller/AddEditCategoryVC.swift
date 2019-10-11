@@ -28,9 +28,8 @@ class AddEditCategoryVC: UIViewController {
         categoryImg.isUserInteractionEnabled = true
         categoryImg.addGestureRecognizer(tap)
         
-        // categoryToEditがnilかどうかで、編集か新規作成かを分岐
+        // categoryToEditがnilでない場合は編集
         if let category = categoryToEdit {
-            // 編集
             nameTxt.text = category.name
             addBtn.setTitle("編集を保存", for: .normal)
             
@@ -38,9 +37,6 @@ class AddEditCategoryVC: UIViewController {
                 categoryImg.contentMode = .scaleAspectFill
                 categoryImg.kf.setImage(with: url)
             }
-        } else {
-            // 新規作成
-            
         }
     }
     
@@ -49,17 +45,19 @@ class AddEditCategoryVC: UIViewController {
     }
 
     @IBAction func addCategoryClicked(_ sender: Any) {
-        activityIndicator.startAnimating()
         uploadImageThenDocument()
     }
     
     func uploadImageThenDocument() {
-        // UIViewからimageを取得する
+        // UIImageViewからimageを取得する
         guard let image = categoryImg.image ,
             let categoryName = nameTxt.text , categoryName.isNotEmpty else {
                 simpleAlert(title: "エラー", msg: "カテゴリ名を入力して、画像を設定してください。")
                 return
         }
+        
+        activityIndicator.startAnimating()
+        
         // 画像名を作成する
         let imageName = UUID()
         // 画像をデータに変更する
@@ -69,7 +67,7 @@ class AddEditCategoryVC: UIViewController {
         // メタデータを設定する
         let metaData = StorageMetadata()
         metaData.contentType = "image/jpg"
-        // データをアップロードする
+        // データをFirestorageにアップロードする
         imageRef.putData(imageData, metadata: metaData) { (metaData, error) in
             
             if let error = error {
@@ -79,11 +77,11 @@ class AddEditCategoryVC: UIViewController {
             imageRef.downloadURL(completion: { (url, error) in
                 
                 if let error = error {
-                    self.handleError(error: error, msg: "URLの取得に失敗しました")
+                    self.handleError(error: error, msg: "画像URLの取得に失敗しました")
                 }
                 // 画像URLの取得に成功
                 guard let url = url else { return }
-                // FirestoreのcategoriesコレクションにURLをアップロードして更新する
+                // FirestoreのcategoriesコレクションにURLをアップロードして更新、および作成する
                 self.uploadDocument(url: url.absoluteString)
             })
         }
