@@ -37,6 +37,7 @@
 		D17CCD22234EB43400E19BF7 /* ProductDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1BE2574234E1D8000539728 /* ProductDetailVC.xib */; };
 		D17CCD23234EB47E00E19BF7 /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC45234B2C630017A6E7 /* RoundedViews.swift */; };
 		D17CCD25234EB6B500E19BF7 /* AddEditCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17CCD24234EB6B500E19BF7 /* AddEditCategoryVC.swift */; };
+		D1A07BB523507C8200E778EC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A07BB423507C8200E778EC /* User.swift */; };
 		D1ABCC34234B11DC0017A6E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1ABCC33234B11DC0017A6E7 /* GoogleService-Info.plist */; };
 		D1ABCC36234B14560017A6E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1ABCC35234B14560017A6E7 /* GoogleService-Info.plist */; };
 		D1ABCC3C234B1A350017A6E7 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC3B234B1A350017A6E7 /* LoginVC.swift */; };
@@ -86,6 +87,7 @@
 		D16594E7234D698400086CB2 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		D16594E8234D698400086CB2 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		D17CCD24234EB6B500E19BF7 /* AddEditCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditCategoryVC.swift; sourceTree = "<group>"; };
+		D1A07BB423507C8200E778EC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D1ABCC33234B11DC0017A6E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D1ABCC35234B14560017A6E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D1ABCC3B234B1A350017A6E7 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 			children = (
 				D16594E4234D68CD00086CB2 /* Category.swift */,
 				D1BE256A234D81C400539728 /* Product.swift */,
+				D1A07BB423507C8200E778EC /* User.swift */,
 			);
 			name = Model;
 			path = ../ECommerceApp/Model;
@@ -539,6 +542,7 @@
 				D1BE2575234E1D8000539728 /* ProductDetailVC.swift in Sources */,
 				D16594E5234D68CD00086CB2 /* Category.swift in Sources */,
 				D1ABCC41234B207F0017A6E7 /* Extensions.swift in Sources */,
+				D1A07BB523507C8200E778EC /* User.swift in Sources */,
 				D13315C6234ADA8600869F8F /* HomeVC.swift in Sources */,
 				D1ABCC3E234B1A4D0017A6E7 /* RegisterVC.swift in Sources */,
 				D1BE256F234D82B700539728 /* ProductCell.swift in Sources */,
