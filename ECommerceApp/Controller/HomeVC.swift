@@ -52,6 +52,9 @@ class HomeVC: UIViewController {
         if let user = Auth.auth().currentUser , !user.isAnonymous {
             // We are logged in
             loginOutBtn.title = "ログアウト"
+            if UserService.userListner == nil {
+                UserService.getCurrentUser()
+            }
         } else {
             loginOutBtn.title = "ログイン"
         }
@@ -101,6 +104,7 @@ class HomeVC: UIViewController {
         } else {
             do {
                 try Auth.auth().signOut()
+                UserService.logoutUser()
                 Auth.auth().signInAnonymously { (result, error) in
                     if let error = error {
                         debugPrint(error)

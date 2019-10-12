@@ -20,6 +20,9 @@
 		D13315E6234ADAC600869F8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13315E4234ADAC600869F8F /* LaunchScreen.storyboard */; };
 		D13315EC234ADAE200869F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D13315CA234ADA8800869F8F /* Assets.xcassets */; };
 		D13315EE234ADD7E00869F8F /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13315ED234ADD7E00869F8F /* LoginStoryboard.storyboard */; };
+		D137B3EF23519FE000E67D9B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D137B3EE23519FE000E67D9B /* UserService.swift */; };
+		D137B3F22351A72900E67D9B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A07BB423507C8200E778EC /* User.swift */; };
+		D137B3F32351A78B00E67D9B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D137B3EE23519FE000E67D9B /* UserService.swift */; };
 		D16594DF234D4B1400086CB2 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16594DD234D4B1400086CB2 /* ForgotPasswordVC.swift */; };
 		D16594E0234D4B1400086CB2 /* ForgotPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D16594DE234D4B1400086CB2 /* ForgotPasswordVC.xib */; };
 		D16594E2234D5ABE00086CB2 /* Firebase+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16594E1234D5ABE00086CB2 /* Firebase+Utils.swift */; };
@@ -80,6 +83,7 @@
 		D13315E5234ADAC600869F8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D13315E7234ADAC600869F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D13315ED234ADD7E00869F8F /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
+		D137B3EE23519FE000E67D9B /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		D16594DD234D4B1400086CB2 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		D16594DE234D4B1400086CB2 /* ForgotPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordVC.xib; sourceTree = "<group>"; };
 		D16594E1234D5ABE00086CB2 /* Firebase+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase+Utils.swift"; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 		D13315C2234ADA8600869F8F /* ECommerceApp */ = {
 			isa = PBXGroup;
 			children = (
+				D137B3ED23519FBA00E67D9B /* Services */,
 				D16594DC234D4AE500086CB2 /* XIBs */,
 				D1ABCC38234B19320017A6E7 /* View */,
 				D1ABCC37234B19220017A6E7 /* Controller */,
@@ -192,6 +197,14 @@
 				D13315CA234ADA8800869F8F /* Assets.xcassets */,
 			);
 			path = Sheard;
+			sourceTree = "<group>";
+		};
+		D137B3ED23519FBA00E67D9B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D137B3EE23519FE000E67D9B /* UserService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		D16594DC234D4AE500086CB2 /* XIBs */ = {
@@ -544,6 +557,7 @@
 				D1ABCC41234B207F0017A6E7 /* Extensions.swift in Sources */,
 				D1A07BB523507C8200E778EC /* User.swift in Sources */,
 				D13315C6234ADA8600869F8F /* HomeVC.swift in Sources */,
+				D137B3EF23519FE000E67D9B /* UserService.swift in Sources */,
 				D1ABCC3E234B1A4D0017A6E7 /* RegisterVC.swift in Sources */,
 				D1BE256F234D82B700539728 /* ProductCell.swift in Sources */,
 				D13315C4234ADA8600869F8F /* AppDelegate.swift in Sources */,
@@ -563,6 +577,7 @@
 			files = (
 				D16594E3234D5BF000086CB2 /* Firebase+Utils.swift in Sources */,
 				D17CCD21234EB43400E19BF7 /* ProductDetailVC.swift in Sources */,
+				D137B3F32351A78B00E67D9B /* UserService.swift in Sources */,
 				D13315DE234ADAC500869F8F /* AdminHomeVC.swift in Sources */,
 				D1BE2569234D815E00539728 /* ProductsVC.swift in Sources */,
 				D17CCD23234EB47E00E19BF7 /* RoundedViews.swift in Sources */,
@@ -574,6 +589,7 @@
 				D16594E6234D68CD00086CB2 /* Category.swift in Sources */,
 				D1BE2570234D82B700539728 /* ProductCell.swift in Sources */,
 				D16594EA234D698400086CB2 /* CategoryCell.swift in Sources */,
+				D137B3F22351A72900E67D9B /* User.swift in Sources */,
 				D17CCD20234EB41C00E19BF7 /* Extensions.swift in Sources */,
 				D1FCDD23234F25E00040C132 /* AddEditProductsVC.swift in Sources */,
 				D1BE256C234D81C400539728 /* Product.swift in Sources */,
