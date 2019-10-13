@@ -82,8 +82,28 @@ class RegisterVC: UIViewController {
                 return
             }
             
+            // アプリ内でユーザーを管理するためのオブジェクトを作成
+            guard let firUser = result?.user else { return }
+            let artUser = User.init(id: firUser.uid, email: email, username: username, stripeId: "")
+            // Firestoreにデータをアップロードする
+            self.createFirestoreUser(user: artUser)
+        }
+    }
+    
+    func createFirestoreUser(user: User) {
+        // FirestoreのDocumentReferenceを作成
+        let newUserRef = Firestore.firestore().collection("users").document(user.id)
+        // Firestoreにアップロードするために、オブジェクトのデータをString : Any型の辞書に変換
+        let data = User.modelToData(user: user)
+        // Firestoreにアップロードする
+        newUserRef.setData(data) { (error) in
+            if let error = error {
+                Auth.auth().handleFireAuthError(error: error, vc: self)
+                debugPrint(error.localizedDescription)
+            } else {
+                self.dismiss(animated: true, completion: nil)
+            }
             self.activityIndicator.stopAnimating()
-            self.dismiss(animated: true, completion: nil)
         }
     }
 }
