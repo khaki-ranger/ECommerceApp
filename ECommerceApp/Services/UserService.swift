@@ -52,7 +52,7 @@ final class _UserService {
             print(self.user)
         })
         
-        // お気に入り商品の情報を格納するサブコレクションのリスナーを取得
+        // お気に入り商品の情報を格納するサブコレクションのリスナーを作成
         let favsRef = userRef.collection("favorites")
         favsListner = favsRef.addSnapshotListener({ (snap, error) in
             
@@ -68,6 +68,26 @@ final class _UserService {
             })
             
         })
+    }
+    
+    // お気に入りの追加、削除をするためのメソッド
+    func favoriteSelected(product: Product) {
+        // Firestoreに、利用中のユーザーのドキュメントのサブコレクションとしてfavoritesコレクションを作成
+        let favsRef = Firestore.firestore().collection("users").document(user.id).collection("favorites")
+        
+        if favorites.contains(product) {
+            // 引数で送られたProductが配列の中に含まれている場合は、
+            // 既にお気に入りに入っていたものを選択したことになるので、お気に入りから削除する
+            favorites.removeAll{ $0 == product }
+            // Firestoreのコレクションからも削除
+            favsRef.document(product.id).delete()
+        } else {
+            // お気に入りに追加する
+            favorites.append(product)
+            // Firestoreのコレクションにも追加
+            let data = Product.modelToData(product: product)
+            favsRef.document(product.id).setData(data)
+        }
     }
     
     func logoutUser() {

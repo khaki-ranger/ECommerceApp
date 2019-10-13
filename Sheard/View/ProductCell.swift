@@ -9,6 +9,10 @@
 import UIKit
 import Kingfisher
 
+protocol ProductCellDelegate : class {
+    func productFavorited(product: Product)
+}
+
 class ProductCell: UITableViewCell {
     
     @IBOutlet weak var productImg: RoundedImageView!
@@ -16,16 +20,22 @@ class ProductCell: UITableViewCell {
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var favoriteBtn: UIButton!
     
+    weak var delegate : ProductCellDelegate?
+    private var product: Product!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    func configureCell(product: Product) {
+    func configureCell(product: Product, delegate: ProductCellDelegate) {
+        self.delegate = delegate
+        self.product = product
+        
         productTitle.text = product.name
         
         if let url = URL(string: product.imgUrl) {
-            let placeholder = UIImage(named: "placeholder")
+            let placeholder = UIImage(named: AppImages.Placeholder)
             let options : KingfisherOptionsInfo = [KingfisherOptionsInfoItem.transition(.fade(0.2))]
             productImg.kf.indicatorType = .activity
             productImg.kf.setImage(with: url, placeholder: placeholder, options: options)
@@ -36,12 +46,19 @@ class ProductCell: UITableViewCell {
         if let price = formatter.string(from: product.price as NSNumber) {
             productPrice.text = price
         }
+        
+        // この商品がユーザーのお気に入りリストの中に含まれているかどうかを判定
+        if UserService.favorites.contains(product) {
+            favoriteBtn.setImage(UIImage(named: AppImages.FillHeart), for: .normal)
+        } else {
+            favoriteBtn.setImage(UIImage(named: AppImages.EmptyHeart), for: .normal)
+        }
     }
     
     @IBAction func addToCartClicked(_ sender: Any) {
     }
     
     @IBAction func favoriteClicked(_ sender: Any) {
+        delegate?.productFavorited(product: product)
     }
-    
 }
