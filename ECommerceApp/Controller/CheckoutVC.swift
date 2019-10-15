@@ -8,8 +8,8 @@
 
 import UIKit
 
-class CheckoutVC: UIViewController {
-
+class CheckoutVC: UIViewController, CartitemCellDelegate {
+    
     // Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var paymentMethodBtn: UIButton!
@@ -48,6 +48,15 @@ class CheckoutVC: UIViewController {
     
     @IBAction func shippingMethodClicked(_ sender: Any) {
     }
+    
+    func removeItemfromCart(product: Product) {
+        StripeCart.removeItemFromCart(item: product)
+        // ショッピングカートから削除したことを、ショッピングカート画面のUIに反映する
+        // ショッピングカートの商品リストテーブルからセルを削除する
+        tableView.reloadData()
+        // 金額表示にも変更を反映する
+        setupPaymentInfo()
+    }
 }
 
 extension CheckoutVC : UITableViewDelegate, UITableViewDataSource {
@@ -60,7 +69,7 @@ extension CheckoutVC : UITableViewDelegate, UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.CartitemCell, for: indexPath) as? CartitemCell {
             
             let product = StripeCart.cartItems[indexPath.row]
-            cell.configureCell(product: product)
+            cell.configureCell(product: product, delegate: self)
             return cell
         }
         return UITableViewCell()

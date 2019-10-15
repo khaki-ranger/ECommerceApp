@@ -29,14 +29,14 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clM-g4-n2y">
-                                <rect key="frame" x="147" y="27" width="188" height="30"/>
+                                <rect key="frame" x="307" y="27" width="28" height="30"/>
                                 <state key="normal" image="red_trash"/>
                                 <connections>
                                     <action selector="removeItemClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="FLb-3v-9eh"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YsO-Mc-X6b">
-                                <rect key="frame" x="72.5" y="17.5" width="66.5" height="49"/>
+                                <rect key="frame" x="76.5" y="17.5" width="66.5" height="49"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xa7-5h-be8">
                                         <rect key="frame" x="0.0" y="0.0" width="66.5" height="20.5"/>
@@ -60,8 +60,8 @@
                             <constraint firstItem="clM-g4-n2y" firstAttribute="centerY" secondItem="7pr-5p-hP9" secondAttribute="centerY" id="Pad-cD-kTN"/>
                             <constraint firstItem="Z3g-5E-uyv" firstAttribute="top" secondItem="7pr-5p-hP9" secondAttribute="top" constant="8" id="RGG-vW-UB8"/>
                             <constraint firstAttribute="trailing" secondItem="clM-g4-n2y" secondAttribute="trailing" constant="12" id="du9-0X-4eZ"/>
-                            <constraint firstItem="YsO-Mc-X6b" firstAttribute="leading" secondItem="Z3g-5E-uyv" secondAttribute="trailing" constant="8" id="f4y-UT-dfk"/>
-                            <constraint firstItem="clM-g4-n2y" firstAttribute="leading" secondItem="YsO-Mc-X6b" secondAttribute="trailing" constant="8" id="nfr-aH-zP2"/>
+                            <constraint firstItem="YsO-Mc-X6b" firstAttribute="leading" secondItem="Z3g-5E-uyv" secondAttribute="trailing" constant="12" id="f4y-UT-dfk"/>
+                            <constraint firstItem="clM-g4-n2y" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YsO-Mc-X6b" secondAttribute="trailing" constant="12" id="nfr-aH-zP2"/>
                             <constraint firstItem="YsO-Mc-X6b" firstAttribute="centerY" secondItem="7pr-5p-hP9" secondAttribute="centerY" id="shH-Mt-4up"/>
                         </constraints>
                     </view>

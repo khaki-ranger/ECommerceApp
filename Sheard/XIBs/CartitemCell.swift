@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol CartitemCellDelegate : class {
+    func removeItemfromCart(product: Product)
+}
+
 class CartitemCell: UITableViewCell {
     
     // Outlets
@@ -15,13 +19,20 @@ class CartitemCell: UITableViewCell {
     @IBOutlet weak var productTitleLbl: UILabel!
     @IBOutlet weak var productPriceLbl: UILabel!
     @IBOutlet weak var removeItemBtn: UIButton!
+    
+    // Variables
+    weak var delegate : CartitemCellDelegate?
+    private var product: Product!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    func configureCell(product: Product) {
+    func configureCell(product: Product, delegate: CartitemCellDelegate) {
+        self.delegate = delegate
+        self.product = product
+        
         productTitleLbl.text = product.name
         productPriceLbl.text = product.price.formattedCurrency()
         if let url = URL(string: product.imgUrl) {
@@ -30,5 +41,6 @@ class CartitemCell: UITableViewCell {
     }
     
     @IBAction func removeItemClicked(_ sender: Any) {
+        delegate?.removeItemfromCart(product: product)
     }
 }

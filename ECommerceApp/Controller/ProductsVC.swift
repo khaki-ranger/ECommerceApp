@@ -10,7 +10,7 @@ import UIKit
 import FirebaseFirestore
 
 class ProductsVC: UIViewController, ProductCellDelegate {
-
+    
     // Outlets
     @IBOutlet weak var tableView: UITableView!
     
@@ -79,8 +79,14 @@ class ProductsVC: UIViewController, ProductCellDelegate {
     
     func productFavorited(product: Product) {
         UserService.favoriteSelected(product: product)
+        // お気に入りボタンを押した商品が、既にお気に入りリストに含まれている場合(お気に入りから削除する場合)は、
+        // indexを返して、お気に入りリスト画面からセルを削除する
         guard let index = products.firstIndex(of: product) else { return }
         tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+    }
+    
+    func productAddtoCart(product: Product) {
+        StripeCart.addItemToCart(item: product)
     }
 }
 
