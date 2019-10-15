@@ -46,7 +46,8 @@ class ProductDetailVC: UIViewController {
     }
     
     @IBAction func addCartClicked(_ sender: Any) {
-        // Add product to cart
+        // シングルトンオブジェクトのメソッドを実行
+        StripeCart.addItemToCart(item: product)
         dismiss(animated: true, completion: nil)
     }
     

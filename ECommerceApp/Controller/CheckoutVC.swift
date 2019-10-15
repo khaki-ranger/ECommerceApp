@@ -20,9 +20,13 @@ class CheckoutVC: UIViewController {
     @IBOutlet weak var totalLbl: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        // カートに入れられている商品を表現するセルをtableViewに表示する
+        tableView.register(UINib(nibName: Identifiers.CartitemCell, bundle: nil), forCellReuseIdentifier: Identifiers.CartitemCell)
 
     }
 
@@ -34,4 +38,26 @@ class CheckoutVC: UIViewController {
     
     @IBAction func shippingMethodClicked(_ sender: Any) {
     }
+}
+
+extension CheckoutVC : UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return StripeCart.cartItems.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.CartitemCell, for: indexPath) as? CartitemCell {
+            
+            let product = StripeCart.cartItems[indexPath.row]
+            cell.configureCell(product: product)
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
 }
