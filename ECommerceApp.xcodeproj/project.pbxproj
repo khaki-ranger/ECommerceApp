@@ -51,6 +51,7 @@
 		D1ABCC41234B207F0017A6E7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC40234B207F0017A6E7 /* Extensions.swift */; };
 		D1ABCC43234B27F80017A6E7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC42234B27F80017A6E7 /* Constants.swift */; };
 		D1ABCC46234B2C630017A6E7 /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC45234B2C630017A6E7 /* RoundedViews.swift */; };
+		D1BBF33B23557EBF009B56E8 /* StripeCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BBF33A23557EBF009B56E8 /* StripeCart.swift */; };
 		D1BE2568234D815400539728 /* ProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BE2567234D815400539728 /* ProductsVC.swift */; };
 		D1BE2569234D815E00539728 /* ProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BE2567234D815400539728 /* ProductsVC.swift */; };
 		D1BE256B234D81C400539728 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BE256A234D81C400539728 /* Product.swift */; };
@@ -105,6 +106,7 @@
 		D1ABCC40234B207F0017A6E7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D1ABCC42234B27F80017A6E7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D1ABCC45234B2C630017A6E7 /* RoundedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViews.swift; sourceTree = "<group>"; };
+		D1BBF33A23557EBF009B56E8 /* StripeCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeCart.swift; sourceTree = "<group>"; };
 		D1BE2567234D815400539728 /* ProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsVC.swift; sourceTree = "<group>"; };
 		D1BE256A234D81C400539728 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		D1BE256D234D82B700539728 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		D13315C2234ADA8600869F8F /* ECommerceApp */ = {
 			isa = PBXGroup;
 			children = (
+				D1A50A8423557E7B0071D299 /* Stripe */,
 				D137B3ED23519FBA00E67D9B /* Services */,
 				D16594DC234D4AE500086CB2 /* XIBs */,
 				D1ABCC38234B19320017A6E7 /* View */,
@@ -244,6 +247,14 @@
 				D13315DB234ADAC500869F8F /* AppDelegate.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		D1A50A8423557E7B0071D299 /* Stripe */ = {
+			isa = PBXGroup;
+			children = (
+				D1BBF33A23557EBF009B56E8 /* StripeCart.swift */,
+			);
+			path = Stripe;
 			sourceTree = "<group>";
 		};
 		D1ABCC37234B19220017A6E7 /* Controller */ = {
@@ -561,6 +572,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1BBF33B23557EBF009B56E8 /* StripeCart.swift in Sources */,
 				D16594E2234D5ABE00086CB2 /* Firebase+Utils.swift in Sources */,
 				D1BE2575234E1D8000539728 /* ProductDetailVC.swift in Sources */,
 				D16594E5234D68CD00086CB2 /* Category.swift in Sources */,
