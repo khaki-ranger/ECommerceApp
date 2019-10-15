@@ -32,8 +32,6 @@ class ProductCell: UITableViewCell {
         self.delegate = delegate
         self.product = product
         
-        productTitle.text = product.name
-        
         if let url = URL(string: product.imgUrl) {
             let placeholder = UIImage(named: AppImages.Placeholder)
             let options : KingfisherOptionsInfo = [KingfisherOptionsInfoItem.transition(.fade(0.2))]
@@ -41,11 +39,8 @@ class ProductCell: UITableViewCell {
             productImg.kf.setImage(with: url, placeholder: placeholder, options: options)
         }
         
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        if let price = formatter.string(from: product.price as NSNumber) {
-            productPrice.text = price
-        }
+        productTitle.text = product.name
+        productPrice.text = product.price.formattedCurrency()
         
         // この商品がユーザーのお気に入りリストの中に含まれているかどうかを判定
         if UserService.favorites.contains(product) {

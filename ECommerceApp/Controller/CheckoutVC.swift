@@ -22,12 +22,22 @@ class CheckoutVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupTableView()
+        setupPaymentInfo()
+    }
+    
+    func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         // カートに入れられている商品を表現するセルをtableViewに表示する
         tableView.register(UINib(nibName: Identifiers.CartitemCell, bundle: nil), forCellReuseIdentifier: Identifiers.CartitemCell)
-
+    }
+    
+    func setupPaymentInfo() {
+        subtotalLbl.text = StripeCart.subtotal.formattedCurrency()
+        processingFeeLbl.text = StripeCart.processingFees.formattedCurrency()
+        shippingCostLbl.text = StripeCart.shippingFees.formattedCurrency()
+        totalLbl.text = StripeCart.total.formattedCurrency()
     }
 
     @IBAction func placeOrderClicked(_ sender: Any) {

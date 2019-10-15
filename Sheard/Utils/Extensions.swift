@@ -22,3 +22,18 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
 }
+
+extension Int {
+    
+    func formattedCurrency() -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        
+        if let jpyString = formatter.string(from: self as NSNumber) {
+            return jpyString
+        }
+        
+        return "¥0"
+    }
+    
+}

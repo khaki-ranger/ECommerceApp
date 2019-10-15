@@ -24,16 +24,11 @@ class ProductDetailVC: UIViewController {
         super.viewDidLoad()
 
         productTitle.text = product.name
+        productPrice.text = product.price.formattedCurrency()
         produecDescription.text = product.productDescription
         
         if let url = URL(string: product.imgUrl) {
             productImg.kf.setImage(with: url)
-        }
-        
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        if let price = formatter.string(from: product.price as NSNumber) {
-            productPrice.text = price
         }
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissProduct(_:)))
