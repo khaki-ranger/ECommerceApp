@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		11987DE611839F0F4DE0FECB /* Pods_ECommerceApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D8669E98167E4CCE75FDDD /* Pods_ECommerceApp.framework */; };
 		759D4F41B63D20E56028451C /* Pods_ECommerceAppAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 151C3555F34C6B6F654CC807 /* Pods_ECommerceAppAdmin.framework */; };
+		D12565D72356F77D00FC9DBF /* StripeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12565D62356F77D00FC9DBF /* StripeApi.swift */; };
 		D13315C4234ADA8600869F8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13315C3234ADA8600869F8F /* AppDelegate.swift */; };
 		D13315C6234ADA8600869F8F /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13315C5234ADA8600869F8F /* HomeVC.swift */; };
 		D13315C9234ADA8600869F8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13315C7234ADA8600869F8F /* Main.storyboard */; };
@@ -73,6 +74,7 @@
 		63E58A56D8D182E1037D728B /* Pods-ECommerceAppAdmin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECommerceAppAdmin.debug.xcconfig"; path = "Target Support Files/Pods-ECommerceAppAdmin/Pods-ECommerceAppAdmin.debug.xcconfig"; sourceTree = "<group>"; };
 		BF61F2093693A8DAAC02FFBA /* Pods-ECommerceAppAdmin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECommerceAppAdmin.release.xcconfig"; path = "Target Support Files/Pods-ECommerceAppAdmin/Pods-ECommerceAppAdmin.release.xcconfig"; sourceTree = "<group>"; };
 		C3B943C50DE220F9DBAFA375 /* Pods-ECommerceApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECommerceApp.debug.xcconfig"; path = "Target Support Files/Pods-ECommerceApp/Pods-ECommerceApp.debug.xcconfig"; sourceTree = "<group>"; };
+		D12565D62356F77D00FC9DBF /* StripeApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeApi.swift; sourceTree = "<group>"; };
 		D13315C0234ADA8600869F8F /* ECommerceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECommerceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D13315C3234ADA8600869F8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D13315C5234ADA8600869F8F /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				D1BBF33A23557EBF009B56E8 /* StripeCart.swift */,
+				D12565D62356F77D00FC9DBF /* StripeApi.swift */,
 			);
 			path = Stripe;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -471,6 +475,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -575,6 +580,7 @@
 				D1BBF33B23557EBF009B56E8 /* StripeCart.swift in Sources */,
 				D16594E2234D5ABE00086CB2 /* Firebase+Utils.swift in Sources */,
 				D1BE2575234E1D8000539728 /* ProductDetailVC.swift in Sources */,
+				D12565D72356F77D00FC9DBF /* StripeApi.swift in Sources */,
 				D16594E5234D68CD00086CB2 /* Category.swift in Sources */,
 				D1ABCC41234B207F0017A6E7 /* Extensions.swift in Sources */,
 				D1A07BB523507C8200E778EC /* User.swift in Sources */,

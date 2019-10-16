@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Stripe
 
 class CheckoutVC: UIViewController, CartitemCellDelegate {
     
@@ -20,12 +21,17 @@ class CheckoutVC: UIViewController, CartitemCellDelegate {
     @IBOutlet weak var totalLbl: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    // Variables
+    var paymentContext: STPPaymentContext!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         setupPaymentInfo()
+        setupStripeConfig()
     }
     
+    // カートに入れられている商品を表現するテーブルを設定するためのメソッド
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -33,20 +39,43 @@ class CheckoutVC: UIViewController, CartitemCellDelegate {
         tableView.register(UINib(nibName: Identifiers.CartitemCell, bundle: nil), forCellReuseIdentifier: Identifiers.CartitemCell)
     }
     
+    // 請求金額表示部分のUIに金額を表示するためのメソッド
     func setupPaymentInfo() {
         subtotalLbl.text = StripeCart.subtotal.formattedCurrency()
         processingFeeLbl.text = StripeCart.processingFees.formattedCurrency()
         shippingCostLbl.text = StripeCart.shippingFees.formattedCurrency()
         totalLbl.text = StripeCart.total.formattedCurrency()
     }
+    
+    // 請求に関する設定をするメソッド
+    func setupStripeConfig() {
+        let config = STPPaymentConfiguration.shared()
+        // ユーザーがカードを追加して、Stripeに登録する設定を有効にする
+        config.createCardSources = true
+        // 請求先住所を入力を求める設定を無効にする
+        config.requiredBillingAddressFields = .none
+        // 配送先情報の入力でユーザーに求められる項目の設定
+        config.requiredShippingAddressFields = [.postalAddress]
+        
+        let customerContext = STPCustomerContext(keyProvider: StripeApi)
+        paymentContext = STPPaymentContext(customerContext: customerContext, configuration: config, theme: .default())
+        
+        // 請求金額を設定
+        paymentContext.paymentAmount = StripeCart.total
+        
+        paymentContext.delegate = self
+        paymentContext.hostViewController = self
+    }
 
     @IBAction func placeOrderClicked(_ sender: Any) {
     }
     
     @IBAction func paymentMethodClicked(_ sender: Any) {
+        paymentContext.pushPaymentOptionsViewController()
     }
     
     @IBAction func shippingMethodClicked(_ sender: Any) {
+        paymentContext.pushShippingViewController()
     }
     
     func removeItemfromCart(product: Product) {
@@ -56,6 +85,27 @@ class CheckoutVC: UIViewController, CartitemCellDelegate {
         tableView.reloadData()
         // 金額表示にも変更を反映する
         setupPaymentInfo()
+        // Stripeの請求金額にも変更を反映する
+        paymentContext.paymentAmount = StripeCart.total
+    }
+}
+
+extension CheckoutVC : STPPaymentContextDelegate {
+    
+    func paymentContextDidChange(_ paymentContext: STPPaymentContext) {
+        
+    }
+    
+    func paymentContext(_ paymentContext: STPPaymentContext, didFailToLoadWithError error: Error) {
+        
+    }
+    
+    func paymentContext(_ paymentContext: STPPaymentContext, didCreatePaymentResult paymentResult: STPPaymentResult, completion: @escaping STPErrorBlock) {
+        
+    }
+    
+    func paymentContext(_ paymentContext: STPPaymentContext, didFinishWith status: STPPaymentStatus, error: Error?) {
+        
     }
 }
 
