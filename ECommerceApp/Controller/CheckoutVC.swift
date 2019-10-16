@@ -94,6 +94,21 @@ extension CheckoutVC : STPPaymentContextDelegate {
     
     func paymentContextDidChange(_ paymentContext: STPPaymentContext) {
         
+        // ユーザーが支払方法を設定した後の処理
+        if let paymentMethod = paymentContext.selectedPaymentOption {
+            paymentMethodBtn.setTitle(paymentMethod.label, for: .normal)
+        } else {
+            paymentMethodBtn.setTitle("お支払い方法", for: .normal)
+        }
+        
+        // ユーザーが配送方法を設定した後の処理
+        if let shippingMethid = paymentContext.selectedShippingMethod {
+            shippingMethidBtn.setTitle(shippingMethid.label, for: .normal)
+            StripeCart.shippingFees = Int(truncating: shippingMethid.amount)
+            setupPaymentInfo()
+        } else {
+            shippingMethidBtn.setTitle("配送方法", for: .normal)
+        }
     }
     
     func paymentContext(_ paymentContext: STPPaymentContext, didFailToLoadWithError error: Error) {
@@ -106,6 +121,30 @@ extension CheckoutVC : STPPaymentContextDelegate {
     
     func paymentContext(_ paymentContext: STPPaymentContext, didFinishWith status: STPPaymentStatus, error: Error?) {
         
+    }
+    
+    func paymentContext(_ paymentContext: STPPaymentContext, didUpdateShippingAddress address: STPAddress, completion: @escaping STPShippingMethodsCompletionBlock) {
+        
+        let request = PKPaymentRequest()
+        request.currencyCode = "JPY"
+        
+        let jp = PKShippingMethod()
+        jp.amount = 490
+        jp.label = "JP"
+        jp.detail = "3-5営業日"
+        jp.identifier = "jp"
+        
+        let yamato = PKShippingMethod()
+        yamato.amount = 740
+        yamato.label = "ヤマト運輸"
+        yamato.detail = "1-2営業日"
+        yamato.identifier = "yamato"
+        
+        if address.country == "JP" {
+            completion(.valid, nil, [jp, yamato], jp)
+        } else {
+            completion(.invalid, nil, nil, nil)
+        }
     }
 }
 
