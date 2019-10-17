@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		11987DE611839F0F4DE0FECB /* Pods_ECommerceApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D8669E98167E4CCE75FDDD /* Pods_ECommerceApp.framework */; };
 		759D4F41B63D20E56028451C /* Pods_ECommerceAppAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 151C3555F34C6B6F654CC807 /* Pods_ECommerceAppAdmin.framework */; };
+		D116781C2358367C00DD991F /* StripeCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BBF33A23557EBF009B56E8 /* StripeCart.swift */; };
+		D116781D235840FA00DD991F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC3B234B1A350017A6E7 /* LoginVC.swift */; };
+		D116781E2358413D00DD991F /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16594DD234D4B1400086CB2 /* ForgotPasswordVC.swift */; };
+		D116781F2358414D00DD991F /* ForgotPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D16594DE234D4B1400086CB2 /* ForgotPasswordVC.xib */; };
+		D11678202358447700DD991F /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13315ED234ADD7E00869F8F /* LoginStoryboard.storyboard */; };
 		D12565D72356F77D00FC9DBF /* StripeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12565D62356F77D00FC9DBF /* StripeApi.swift */; };
 		D13315C4234ADA8600869F8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13315C3234ADA8600869F8F /* AppDelegate.swift */; };
 		D13315C6234ADA8600869F8F /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13315C5234ADA8600869F8F /* HomeVC.swift */; };
@@ -431,8 +436,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D11678202358447700DD991F /* LoginStoryboard.storyboard in Resources */,
 				D16594EC234D698400086CB2 /* CategoryCell.xib in Resources */,
 				D13315E6234ADAC600869F8F /* LaunchScreen.storyboard in Resources */,
+				D116781F2358414D00DD991F /* ForgotPasswordVC.xib in Resources */,
 				D1ABCC36234B14560017A6E7 /* GoogleService-Info.plist in Resources */,
 				D1BE2572234D82B700539728 /* ProductCell.xib in Resources */,
 				D13315EC234ADAE200869F8F /* Assets.xcassets in Resources */,
@@ -613,11 +620,14 @@
 				D17CCD23234EB47E00E19BF7 /* RoundedViews.swift in Sources */,
 				D17CCD1E234EB30D00E19BF7 /* HomeVC.swift in Sources */,
 				D13315DC234ADAC500869F8F /* AppDelegate.swift in Sources */,
+				D116781E2358413D00DD991F /* ForgotPasswordVC.swift in Sources */,
+				D116781C2358367C00DD991F /* StripeCart.swift in Sources */,
 				D1FCDD21234F21E20040C132 /* AdminProductsVC.swift in Sources */,
 				D17CCD1F234EB41300E19BF7 /* Constants.swift in Sources */,
 				D17CCD25234EB6B500E19BF7 /* AddEditCategoryVC.swift in Sources */,
 				D16594E6234D68CD00086CB2 /* Category.swift in Sources */,
 				D1BE2570234D82B700539728 /* ProductCell.swift in Sources */,
+				D116781D235840FA00DD991F /* LoginVC.swift in Sources */,
 				D16594EA234D698400086CB2 /* CategoryCell.swift in Sources */,
 				D137B3F22351A72900E67D9B /* User.swift in Sources */,
 				D17CCD20234EB41C00E19BF7 /* Extensions.swift in Sources */,

@@ -13,7 +13,7 @@ class AdminHomeVC: HomeVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.leftBarButtonItem?.isEnabled = false
+//        navigationItem.leftBarButtonItem?.isEnabled = false
         let addCategoryBtn = UIBarButtonItem(title: "カテゴリ追加", style: .plain, target: self, action: #selector(addCategory))
         navigationItem.rightBarButtonItem = addCategoryBtn
     }

@@ -55,4 +55,12 @@ class AdminProductsVC: ProductsVC {
             }
         }
     }
+    
+    override func productFavorited(product: Product) {
+        return
+    }
+    
+    override func productAddtoCart(product: Product) {
+        return
+    }
 }
