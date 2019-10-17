@@ -28,6 +28,7 @@ class _StripeApi: NSObject, STPCustomerEphemeralKeyProvider {
             if let error = error {
                 debugPrint(error.localizedDescription)
                 completion(nil, error)
+                return
             }
             
             guard let key = result?.data as? [String: Any] else {

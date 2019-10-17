@@ -112,7 +112,18 @@ extension CheckoutVC : STPPaymentContextDelegate {
     }
     
     func paymentContext(_ paymentContext: STPPaymentContext, didFailToLoadWithError error: Error) {
-        
+        activityIndicator.stopAnimating()
+
+        let alertController = UIAlertController(title: "エラー", message: error.localizedDescription, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "キャンセル", style: .cancel) { (action) in
+            self.navigationController?.popViewController(animated: true)
+        }
+        let retry = UIAlertAction(title: "再読み込み", style: .default) { (action) in
+            self.paymentContext.retryLoading()
+        }
+        alertController.addAction(cancel)
+        alertController.addAction(retry)
+        present(alertController, animated: true, completion: nil)
     }
     
     func paymentContext(_ paymentContext: STPPaymentContext, didCreatePaymentResult paymentResult: STPPaymentResult, completion: @escaping STPErrorBlock) {
