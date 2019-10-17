@@ -8,6 +8,7 @@
 
 import UIKit
 import Stripe
+import FirebaseFunctions
 
 class CheckoutVC: UIViewController, CartitemCellDelegate {
     
@@ -68,6 +69,8 @@ class CheckoutVC: UIViewController, CartitemCellDelegate {
     }
 
     @IBAction func placeOrderClicked(_ sender: Any) {
+        paymentContext.requestPayment()
+        activityIndicator.startAnimating()
     }
     
     @IBAction func paymentMethodClicked(_ sender: Any) {
@@ -112,6 +115,8 @@ extension CheckoutVC : STPPaymentContextDelegate {
     }
     
     func paymentContext(_ paymentContext: STPPaymentContext, didFailToLoadWithError error: Error) {
+        // ショッピングカート画面に遷移後に、ユーザーがStripeIDを保持していないなどの理由で
+        // 一時キーの生成に失敗した場合にエラーが呼び出された際の処理
         activityIndicator.stopAnimating()
 
         let alertController = UIAlertController(title: "エラー", message: error.localizedDescription, preferredStyle: .alert)
@@ -128,10 +133,59 @@ extension CheckoutVC : STPPaymentContextDelegate {
     
     func paymentContext(_ paymentContext: STPPaymentContext, didCreatePaymentResult paymentResult: STPPaymentResult, completion: @escaping STPErrorBlock) {
         
+        // サーバーとの通信障害に対応するためにユニークなキーを作成(https://stripe.com/jp/blog/idempotency)
+        let idempotency = UUID().uuidString.replacingOccurrences(of: "-", with: "")
+        
+        // StripeAPIの処理を担当するCloudfunctionsのメソッドに渡すためのデータをセット
+        let data : [String: Any] = [
+            "total" : StripeCart.total,
+            "customerId" : UserService.user.stripeId,
+            "idempotency" : idempotency
+        ]
+        
+        // StripeAPIの処理を担当するCloudfunctionsのメソッドを呼び出す
+        Functions.functions().httpsCallable("createCharge").call(data) { (result, error) in
+            
+            if let error = error {
+                debugPrint(error.localizedDescription)
+                self.simpleAlert(title: "エラー", msg: "お支払い処理に失敗しました")
+                completion(error)
+                return
+            }
+            
+            // Stripeの支払処理に成功
+            StripeCart.clearCart()
+            StripeCart.shippingFees = 0
+            self.tableView.reloadData()
+            self.setupPaymentInfo()
+            completion(nil)
+        }
     }
     
     func paymentContext(_ paymentContext: STPPaymentContext, didFinishWith status: STPPaymentStatus, error: Error?) {
+        // 支払処理が終了した後に呼び出される処理
+        let title: String
+        let message: String
         
+        switch status {
+        case .error:
+            activityIndicator.stopAnimating()
+            title = "エラー"
+            message = error?.localizedDescription ?? ""
+        case .success:
+            activityIndicator.stopAnimating()
+            title = "購入完了"
+            message = "お買い求めありがとうございます！"
+        case .userCancellation:
+            return
+        }
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .default) { (action) in
+            self.navigationController?.popViewController(animated: true)
+        }
+        alertController.addAction(action)
+        present(alertController, animated: true, completion: nil)
     }
     
     func paymentContext(_ paymentContext: STPPaymentContext, didUpdateShippingAddress address: STPAddress, completion: @escaping STPShippingMethodsCompletionBlock) {
