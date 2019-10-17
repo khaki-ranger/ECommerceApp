@@ -19,7 +19,7 @@ target 'ECommerceApp' do
 
   # Pods for ECommerceApp
   shared_pods
-
+  pod 'Stripe', '15.0.1'
 end
 
 target 'ECommerceAppAdmin' do
@@ -28,5 +28,4 @@ target 'ECommerceAppAdmin' do
 
   # Pods for ECommerceAppAdmin
   shared_pods
-
 end

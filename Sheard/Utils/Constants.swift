@@ -35,6 +35,7 @@ struct AppColors {
 struct Identifiers {
     static let CategoryCell = "CategoryCell"
     static let ProductCell = "ProductCell"
+    static let CartitemCell = "CartitemCell"
 }
 
 struct Segues {

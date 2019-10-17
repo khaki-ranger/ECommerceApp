@@ -118,6 +118,7 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - Protobuf (3.10.0)
+  - Stripe (15.0.1)
 
 DEPENDENCIES:
   - Firebase/Auth (= 6.1.0)
@@ -127,6 +128,7 @@ DEPENDENCIES:
   - Firebase/Storage (= 6.1.0)
   - IQKeyboardManagerSwift (= 6.3.0)
   - Kingfisher (~> 4.0)
+  - Stripe (= 15.0.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -150,6 +152,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - Protobuf
+    - Stripe
 
 SPEC CHECKSUMS:
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
@@ -172,7 +175,8 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: a4dc852ad69c027ca2166ed287b856697814375b
+  Stripe: 2c4d0a88817361a102886315ff452d90f65e898b
 
-PODFILE CHECKSUM: 4faf5208ce0100de92770d0eb90dfa5700decbef
+PODFILE CHECKSUM: 0fe6bf2fb5f3095999dc16e7b013faf5a682230e
 
 COCOAPODS: 1.6.1

@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		11987DE611839F0F4DE0FECB /* Pods_ECommerceApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D8669E98167E4CCE75FDDD /* Pods_ECommerceApp.framework */; };
 		759D4F41B63D20E56028451C /* Pods_ECommerceAppAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 151C3555F34C6B6F654CC807 /* Pods_ECommerceAppAdmin.framework */; };
+		D116781C2358367C00DD991F /* StripeCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BBF33A23557EBF009B56E8 /* StripeCart.swift */; };
+		D116781D235840FA00DD991F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC3B234B1A350017A6E7 /* LoginVC.swift */; };
+		D116781E2358413D00DD991F /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16594DD234D4B1400086CB2 /* ForgotPasswordVC.swift */; };
+		D116781F2358414D00DD991F /* ForgotPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D16594DE234D4B1400086CB2 /* ForgotPasswordVC.xib */; };
+		D11678202358447700DD991F /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13315ED234ADD7E00869F8F /* LoginStoryboard.storyboard */; };
+		D12565D72356F77D00FC9DBF /* StripeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12565D62356F77D00FC9DBF /* StripeApi.swift */; };
 		D13315C4234ADA8600869F8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13315C3234ADA8600869F8F /* AppDelegate.swift */; };
 		D13315C6234ADA8600869F8F /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13315C5234ADA8600869F8F /* HomeVC.swift */; };
 		D13315C9234ADA8600869F8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13315C7234ADA8600869F8F /* Main.storyboard */; };
@@ -41,6 +47,9 @@
 		D17CCD23234EB47E00E19BF7 /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC45234B2C630017A6E7 /* RoundedViews.swift */; };
 		D17CCD25234EB6B500E19BF7 /* AddEditCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17CCD24234EB6B500E19BF7 /* AddEditCategoryVC.swift */; };
 		D1A07BB523507C8200E778EC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A07BB423507C8200E778EC /* User.swift */; };
+		D1A50A7F2355641A0071D299 /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A50A7E2355641A0071D299 /* CheckoutVC.swift */; };
+		D1A50A82235569B10071D299 /* CartitemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A50A80235569B10071D299 /* CartitemCell.swift */; };
+		D1A50A83235569B10071D299 /* CartitemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1A50A81235569B10071D299 /* CartitemCell.xib */; };
 		D1ABCC34234B11DC0017A6E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1ABCC33234B11DC0017A6E7 /* GoogleService-Info.plist */; };
 		D1ABCC36234B14560017A6E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1ABCC35234B14560017A6E7 /* GoogleService-Info.plist */; };
 		D1ABCC3C234B1A350017A6E7 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC3B234B1A350017A6E7 /* LoginVC.swift */; };
@@ -48,6 +57,7 @@
 		D1ABCC41234B207F0017A6E7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC40234B207F0017A6E7 /* Extensions.swift */; };
 		D1ABCC43234B27F80017A6E7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC42234B27F80017A6E7 /* Constants.swift */; };
 		D1ABCC46234B2C630017A6E7 /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC45234B2C630017A6E7 /* RoundedViews.swift */; };
+		D1BBF33B23557EBF009B56E8 /* StripeCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BBF33A23557EBF009B56E8 /* StripeCart.swift */; };
 		D1BE2568234D815400539728 /* ProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BE2567234D815400539728 /* ProductsVC.swift */; };
 		D1BE2569234D815E00539728 /* ProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BE2567234D815400539728 /* ProductsVC.swift */; };
 		D1BE256B234D81C400539728 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BE256A234D81C400539728 /* Product.swift */; };
@@ -69,6 +79,7 @@
 		63E58A56D8D182E1037D728B /* Pods-ECommerceAppAdmin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECommerceAppAdmin.debug.xcconfig"; path = "Target Support Files/Pods-ECommerceAppAdmin/Pods-ECommerceAppAdmin.debug.xcconfig"; sourceTree = "<group>"; };
 		BF61F2093693A8DAAC02FFBA /* Pods-ECommerceAppAdmin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECommerceAppAdmin.release.xcconfig"; path = "Target Support Files/Pods-ECommerceAppAdmin/Pods-ECommerceAppAdmin.release.xcconfig"; sourceTree = "<group>"; };
 		C3B943C50DE220F9DBAFA375 /* Pods-ECommerceApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECommerceApp.debug.xcconfig"; path = "Target Support Files/Pods-ECommerceApp/Pods-ECommerceApp.debug.xcconfig"; sourceTree = "<group>"; };
+		D12565D62356F77D00FC9DBF /* StripeApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeApi.swift; sourceTree = "<group>"; };
 		D13315C0234ADA8600869F8F /* ECommerceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECommerceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D13315C3234ADA8600869F8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D13315C5234ADA8600869F8F /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -92,6 +103,9 @@
 		D16594E8234D698400086CB2 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		D17CCD24234EB6B500E19BF7 /* AddEditCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditCategoryVC.swift; sourceTree = "<group>"; };
 		D1A07BB423507C8200E778EC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D1A50A7E2355641A0071D299 /* CheckoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVC.swift; sourceTree = "<group>"; };
+		D1A50A80235569B10071D299 /* CartitemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CartitemCell.swift; path = ../XIBs/CartitemCell.swift; sourceTree = "<group>"; };
+		D1A50A81235569B10071D299 /* CartitemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartitemCell.xib; sourceTree = "<group>"; };
 		D1ABCC33234B11DC0017A6E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D1ABCC35234B14560017A6E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D1ABCC3B234B1A350017A6E7 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -99,6 +113,7 @@
 		D1ABCC40234B207F0017A6E7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D1ABCC42234B27F80017A6E7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D1ABCC45234B2C630017A6E7 /* RoundedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViews.swift; sourceTree = "<group>"; };
+		D1BBF33A23557EBF009B56E8 /* StripeCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeCart.swift; sourceTree = "<group>"; };
 		D1BE2567234D815400539728 /* ProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsVC.swift; sourceTree = "<group>"; };
 		D1BE256A234D81C400539728 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		D1BE256D234D82B700539728 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
@@ -164,6 +179,7 @@
 		D13315C2234ADA8600869F8F /* ECommerceApp */ = {
 			isa = PBXGroup;
 			children = (
+				D1A50A8423557E7B0071D299 /* Stripe */,
 				D137B3ED23519FBA00E67D9B /* Services */,
 				D16594DC234D4AE500086CB2 /* XIBs */,
 				D1ABCC38234B19320017A6E7 /* View */,
@@ -223,6 +239,7 @@
 			children = (
 				D16594E8234D698400086CB2 /* CategoryCell.xib */,
 				D1BE256E234D82B700539728 /* ProductCell.xib */,
+				D1A50A81235569B10071D299 /* CartitemCell.xib */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -239,6 +256,15 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		D1A50A8423557E7B0071D299 /* Stripe */ = {
+			isa = PBXGroup;
+			children = (
+				D1BBF33A23557EBF009B56E8 /* StripeCart.swift */,
+				D12565D62356F77D00FC9DBF /* StripeApi.swift */,
+			);
+			path = Stripe;
+			sourceTree = "<group>";
+		};
 		D1ABCC37234B19220017A6E7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +272,7 @@
 				D1ABCC3D234B1A4D0017A6E7 /* RegisterVC.swift */,
 				D13315C5234ADA8600869F8F /* HomeVC.swift */,
 				D1BE2567234D815400539728 /* ProductsVC.swift */,
+				D1A50A7E2355641A0071D299 /* CheckoutVC.swift */,
 				D13315C3234ADA8600869F8F /* AppDelegate.swift */,
 			);
 			path = Controller;
@@ -295,6 +322,7 @@
 				D1ABCC45234B2C630017A6E7 /* RoundedViews.swift */,
 				D16594E7234D698400086CB2 /* CategoryCell.swift */,
 				D1BE256D234D82B700539728 /* ProductCell.swift */,
+				D1A50A80235569B10071D299 /* CartitemCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -397,6 +425,7 @@
 				D13315CB234ADA8800869F8F /* Assets.xcassets in Resources */,
 				D1ABCC34234B11DC0017A6E7 /* GoogleService-Info.plist in Resources */,
 				D13315C9234ADA8600869F8F /* Main.storyboard in Resources */,
+				D1A50A83235569B10071D299 /* CartitemCell.xib in Resources */,
 				D1BE2576234E1D8000539728 /* ProductDetailVC.xib in Resources */,
 				D16594E0234D4B1400086CB2 /* ForgotPasswordVC.xib in Resources */,
 				D13315EE234ADD7E00869F8F /* LoginStoryboard.storyboard in Resources */,
@@ -407,8 +436,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D11678202358447700DD991F /* LoginStoryboard.storyboard in Resources */,
 				D16594EC234D698400086CB2 /* CategoryCell.xib in Resources */,
 				D13315E6234ADAC600869F8F /* LaunchScreen.storyboard in Resources */,
+				D116781F2358414D00DD991F /* ForgotPasswordVC.xib in Resources */,
 				D1ABCC36234B14560017A6E7 /* GoogleService-Info.plist in Resources */,
 				D1BE2572234D82B700539728 /* ProductCell.xib in Resources */,
 				D13315EC234ADAE200869F8F /* Assets.xcassets in Resources */,
@@ -435,6 +466,7 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -450,6 +482,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -551,18 +584,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1BBF33B23557EBF009B56E8 /* StripeCart.swift in Sources */,
 				D16594E2234D5ABE00086CB2 /* Firebase+Utils.swift in Sources */,
 				D1BE2575234E1D8000539728 /* ProductDetailVC.swift in Sources */,
+				D12565D72356F77D00FC9DBF /* StripeApi.swift in Sources */,
 				D16594E5234D68CD00086CB2 /* Category.swift in Sources */,
 				D1ABCC41234B207F0017A6E7 /* Extensions.swift in Sources */,
 				D1A07BB523507C8200E778EC /* User.swift in Sources */,
 				D13315C6234ADA8600869F8F /* HomeVC.swift in Sources */,
 				D137B3EF23519FE000E67D9B /* UserService.swift in Sources */,
+				D1A50A82235569B10071D299 /* CartitemCell.swift in Sources */,
 				D1ABCC3E234B1A4D0017A6E7 /* RegisterVC.swift in Sources */,
 				D1BE256F234D82B700539728 /* ProductCell.swift in Sources */,
 				D13315C4234ADA8600869F8F /* AppDelegate.swift in Sources */,
 				D1ABCC46234B2C630017A6E7 /* RoundedViews.swift in Sources */,
 				D1ABCC3C234B1A350017A6E7 /* LoginVC.swift in Sources */,
+				D1A50A7F2355641A0071D299 /* CheckoutVC.swift in Sources */,
 				D1BE2568234D815400539728 /* ProductsVC.swift in Sources */,
 				D16594DF234D4B1400086CB2 /* ForgotPasswordVC.swift in Sources */,
 				D1ABCC43234B27F80017A6E7 /* Constants.swift in Sources */,
@@ -583,11 +620,14 @@
 				D17CCD23234EB47E00E19BF7 /* RoundedViews.swift in Sources */,
 				D17CCD1E234EB30D00E19BF7 /* HomeVC.swift in Sources */,
 				D13315DC234ADAC500869F8F /* AppDelegate.swift in Sources */,
+				D116781E2358413D00DD991F /* ForgotPasswordVC.swift in Sources */,
+				D116781C2358367C00DD991F /* StripeCart.swift in Sources */,
 				D1FCDD21234F21E20040C132 /* AdminProductsVC.swift in Sources */,
 				D17CCD1F234EB41300E19BF7 /* Constants.swift in Sources */,
 				D17CCD25234EB6B500E19BF7 /* AddEditCategoryVC.swift in Sources */,
 				D16594E6234D68CD00086CB2 /* Category.swift in Sources */,
 				D1BE2570234D82B700539728 /* ProductCell.swift in Sources */,
+				D116781D235840FA00DD991F /* LoginVC.swift in Sources */,
 				D16594EA234D698400086CB2 /* CategoryCell.swift in Sources */,
 				D137B3F22351A72900E67D9B /* User.swift in Sources */,
 				D17CCD20234EB41C00E19BF7 /* Extensions.swift in Sources */,

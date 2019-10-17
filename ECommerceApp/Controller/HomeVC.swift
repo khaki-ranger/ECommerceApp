@@ -97,6 +97,11 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func favoritesClicked(_ sender: Any) {
+        if UserService.isGuest {
+            self.simpleAlert(title: "ようこそゲスト様", msg: "お気に入り機能はユーザー専用の機能です。ログインまたは、新規ユーザー登録の上ご利用ください。")
+            return
+        }
+        
         performSegue(withIdentifier: Segues.ToFavorites, sender: self)
     }
 
