@@ -41,6 +41,11 @@ class ProductDetailVC: UIViewController {
     }
     
     @IBAction func addCartClicked(_ sender: Any) {
+        if UserService.isGuest {
+            self.simpleAlert(title: "ようこそゲスト様", msg: "商品のお買い求めには、ログインまたは新規ユーザー登録をお願いいたします。")
+            return
+        }
+        
         // シングルトンオブジェクトのメソッドを実行
         StripeCart.addItemToCart(item: product)
         dismiss(animated: true, completion: nil)

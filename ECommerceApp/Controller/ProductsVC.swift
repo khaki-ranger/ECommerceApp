@@ -78,6 +78,11 @@ class ProductsVC: UIViewController, ProductCellDelegate {
     }
     
     func productFavorited(product: Product) {
+        if UserService.isGuest {
+            self.simpleAlert(title: "ようこそゲスト様", msg: "お気に入り機能はユーザー専用の機能です。ログインまたは、新規ユーザー登録の上ご利用ください。")
+            return
+        }
+        
         UserService.favoriteSelected(product: product)
         // お気に入りボタンを押した商品が、既にお気に入りリストに含まれている場合(お気に入りから削除する場合)は、
         // indexを返して、お気に入りリスト画面からセルを削除する
@@ -86,6 +91,11 @@ class ProductsVC: UIViewController, ProductCellDelegate {
     }
     
     func productAddtoCart(product: Product) {
+        if UserService.isGuest {
+            self.simpleAlert(title: "ようこそゲスト様", msg: "商品のお買い求めには、ログインまたは新規ユーザー登録をお願いいたします。")
+            return
+        }
+        
         StripeCart.addItemToCart(item: product)
     }
 }
