@@ -112,7 +112,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oR5-3I-MDX"/>
                     </view>
-                    <navigationItem key="navigationItem" id="NIE-W1-sIU"/>
+                    <navigationItem key="navigationItem" id="NIE-W1-sIU">
+                        <barButtonItem key="backBarButtonItem" title="戻る" id="gwq-bK-xAJ"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="jlc-pk-1C1" id="3RO-GS-dkW"/>
                         <outlet property="emailTxt" destination="sK0-B2-YY2" id="ZW6-YJ-y34"/>

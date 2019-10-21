@@ -331,6 +331,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ljt-tP-PA0"/>
                     </view>
+                    <navigationItem key="navigationItem" id="GLA-KY-Fzh">
+                        <barButtonItem key="backBarButtonItem" title="戻る" id="Tjl-F7-Z23"/>
+                        <barButtonItem key="rightBarButtonItem" image="bar_button_cart" id="KfD-Be-jtb">
+                            <connections>
+                                <segue destination="vFq-fI-a3c" kind="show" id="L4C-Ic-Hty"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="productDeacription" destination="bKW-wq-INx" id="9N3-Bu-wZi"/>
                         <outlet property="productImg" destination="j3D-sd-opC" id="h61-8P-GSd"/>
@@ -412,6 +420,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="jb6-5c-ql9"/>
-        <segue reference="fOh-Qt-7jD"/>
+        <segue reference="L4C-Ic-Hty"/>
     </inferredMetricsTieBreakers>
 </document>
