@@ -26,6 +26,7 @@ class ProductsVC: UIViewController, ProductCellDelegate {
         super.viewDidLoad()
         db = Firestore.firestore()
         setupTableView()
+        self.navigationItem.title = category.name
     }
     
     func setupTableView() {

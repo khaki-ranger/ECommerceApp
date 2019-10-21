@@ -275,9 +275,68 @@
                     <view key="view" contentMode="scaleToFill" id="SMd-mS-d3u">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="374" placeholderIntrinsicHeight="339.5" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="jxg-j7-g3R">
+                                <rect key="frame" x="20" y="108" width="374" height="550"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="product_1" translatesAutoresizingMaskIntoConstraints="NO" id="j3D-sd-opC">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="449"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="j3D-sd-opC" secondAttribute="height" multiplier="1:1.2" id="Deh-3Y-5Km"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品名" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BqJ-GA-8qQ">
+                                        <rect key="frame" x="0.0" y="461" width="374" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥99,999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSb-7u-Qr4">
+                                        <rect key="frame" x="0.0" y="497" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="説明文" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKW-wq-INx">
+                                        <rect key="frame" x="0.0" y="529.5" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33P-Kr-1vC" customClass="RoundedButton" customModule="ECommerceApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="802" width="374" height="40"/>
+                                <color key="backgroundColor" red="0.84705882349999995" green="0.26274509800000001" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="qJ4-Pq-Uiu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="カートに入れる">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addCartClicked:" destination="KNK-Jw-M90" eventType="touchUpInside" id="mrd-3u-2Zl"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ljt-tP-PA0" firstAttribute="trailing" secondItem="jxg-j7-g3R" secondAttribute="trailing" constant="20" id="GLd-NL-hlv"/>
+                            <constraint firstItem="ljt-tP-PA0" firstAttribute="trailing" secondItem="33P-Kr-1vC" secondAttribute="trailing" constant="20" id="KC8-fI-9wG"/>
+                            <constraint firstItem="33P-Kr-1vC" firstAttribute="leading" secondItem="ljt-tP-PA0" secondAttribute="leading" constant="20" id="UsF-dy-u0q"/>
+                            <constraint firstItem="ljt-tP-PA0" firstAttribute="bottom" secondItem="33P-Kr-1vC" secondAttribute="bottom" constant="20" id="fU5-AQ-AEw"/>
+                            <constraint firstItem="jxg-j7-g3R" firstAttribute="top" secondItem="ljt-tP-PA0" secondAttribute="top" constant="20" id="kip-tU-1KN"/>
+                            <constraint firstItem="jxg-j7-g3R" firstAttribute="leading" secondItem="ljt-tP-PA0" secondAttribute="leading" constant="20" id="t8o-6U-bv3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ljt-tP-PA0"/>
                     </view>
+                    <connections>
+                        <outlet property="productDeacription" destination="bKW-wq-INx" id="9N3-Bu-wZi"/>
+                        <outlet property="productImg" destination="j3D-sd-opC" id="h61-8P-GSd"/>
+                        <outlet property="productPrice" destination="hSb-7u-Qr4" id="hYV-o9-p8q"/>
+                        <outlet property="productTitle" destination="BqJ-GA-8qQ" id="1fi-vb-ggq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cm5-Fs-QSX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -349,6 +408,7 @@
     <resources>
         <image name="bar_button_cart" width="27" height="24"/>
         <image name="bar_button_heart" width="26" height="23"/>
+        <image name="product_1" width="700" height="840"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="jb6-5c-ql9"/>
