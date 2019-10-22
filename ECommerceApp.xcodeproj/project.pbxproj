@@ -58,6 +58,7 @@
 		D1ABCC41234B207F0017A6E7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC40234B207F0017A6E7 /* Extensions.swift */; };
 		D1ABCC43234B27F80017A6E7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC42234B27F80017A6E7 /* Constants.swift */; };
 		D1ABCC46234B2C630017A6E7 /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC45234B2C630017A6E7 /* RoundedViews.swift */; };
+		D1B1EDD7235EF20B0057F2E6 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18289CF235D86600082A431 /* DetailVC.swift */; };
 		D1BBF33B23557EBF009B56E8 /* StripeCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BBF33A23557EBF009B56E8 /* StripeCart.swift */; };
 		D1BE2568234D815400539728 /* ProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BE2567234D815400539728 /* ProductsVC.swift */; };
 		D1BE2569234D815E00539728 /* ProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BE2567234D815400539728 /* ProductsVC.swift */; };
@@ -629,6 +630,7 @@
 				D1FCDD21234F21E20040C132 /* AdminProductsVC.swift in Sources */,
 				D17CCD1F234EB41300E19BF7 /* Constants.swift in Sources */,
 				D17CCD25234EB6B500E19BF7 /* AddEditCategoryVC.swift in Sources */,
+				D1B1EDD7235EF20B0057F2E6 /* DetailVC.swift in Sources */,
 				D16594E6234D68CD00086CB2 /* Category.swift in Sources */,
 				D1BE2570234D82B700539728 /* ProductCell.swift in Sources */,
 				D116781D235840FA00DD991F /* LoginVC.swift in Sources */,

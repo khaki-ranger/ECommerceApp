@@ -11,10 +11,11 @@ import UIKit
 class AdminProductsVC: ProductsVC {
     
     // Variables
-    var selectedProduct: Product?
+    var adminSelectedProduct: Product?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = ""
         
         let editCategoryBtn = UIBarButtonItem(title: "カテゴリ編集", style: .plain, target: self, action: #selector(editCategory))
         let newProductBtn = UIBarButtonItem(title: "商品追加", style: .plain, target: self, action: #selector(newProduct))
@@ -31,7 +32,7 @@ class AdminProductsVC: ProductsVC {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // 選択されたセルから、商品の情報を取得
-        selectedProduct = products[indexPath.row]
+        adminSelectedProduct = products[indexPath.row]
         // 商品編集画面に遷移
         performSegue(withIdentifier: Segues.ToAddEditProduct, sender: self)
     }
@@ -45,7 +46,7 @@ class AdminProductsVC: ProductsVC {
                 destination.selectedCategory = category
                 // TableViewの商品をタップした場合は商品の情報が渡される
                 // NavigationBarの商品追加ボタンが押された場合はnilが渡される
-                destination.productToEdit = selectedProduct
+                destination.productToEdit = adminSelectedProduct
             }
         } else if segue.identifier == Segues.ToEditCategory {
             // カテゴリ編集画面への遷移前準備
