@@ -16,7 +16,7 @@ class AddEditProductsVC: UIViewController {
     @IBOutlet weak var productNameTxt: UITextField!
     @IBOutlet weak var productPriceTxt: UITextField!
     @IBOutlet weak var productDescTxt: UITextView!
-    @IBOutlet weak var productImgView: UIImageView!
+    @IBOutlet weak var productImgView1: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var addBtn: RoundedButton!
     
@@ -33,8 +33,8 @@ class AddEditProductsVC: UIViewController {
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(imgTapped(_:)))
         tap.numberOfTapsRequired = 1
-        productImgView.isUserInteractionEnabled = true
-        productImgView.addGestureRecognizer(tap)
+        productImgView1.isUserInteractionEnabled = true
+        productImgView1.addGestureRecognizer(tap)
         
         // productToEditがnilでない場合は編集
         if let product = productToEdit {
@@ -44,8 +44,8 @@ class AddEditProductsVC: UIViewController {
             addBtn.setTitle("編集を保存", for: .normal)
             
             if let url = URL(string: product.imgUrl) {
-                productImgView.contentMode = .scaleAspectFill
-                productImgView.kf.setImage(with: url)
+                productImgView1.contentMode = .scaleAspectFill
+                productImgView1.kf.setImage(with: url)
             }
         }
     }
@@ -60,7 +60,7 @@ class AddEditProductsVC: UIViewController {
     
     func uploadImageThenDocument() {
         // UIImageViewからimageを取得する
-        guard let image = productImgView.image ,
+        guard let image = productImgView1.image ,
             let name = productNameTxt.text , name.isNotEmpty ,
             let description = productDescTxt.text , description.isNotEmpty ,
             let priceString = productPriceTxt.text , priceString.isNotEmpty ,
@@ -153,8 +153,8 @@ extension AddEditProductsVC : UIImagePickerControllerDelegate, UINavigationContr
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         guard let image = info[.originalImage] as? UIImage else { return }
-        productImgView.contentMode = .scaleAspectFill
-        productImgView.image = image
+        productImgView1.contentMode = .scaleAspectFill
+        productImgView1.image = image
         dismiss(animated: true, completion: nil)
     }
     

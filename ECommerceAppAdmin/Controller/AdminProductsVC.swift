@@ -22,6 +22,13 @@ class AdminProductsVC: ProductsVC {
         navigationItem.setRightBarButtonItems([editCategoryBtn, newProductBtn], animated: false)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        // User側のスーパークラスの実装を継承して、Firestoreのリスナーを解放
+        super.viewDidDisappear(true)
+        // 商品編集画面から戻った後で、商品追加画面に遷移するために初期化
+        adminSelectedProduct = nil
+    }
+    
     @objc func editCategory() {
         performSegue(withIdentifier: Segues.ToEditCategory, sender: self)
     }
