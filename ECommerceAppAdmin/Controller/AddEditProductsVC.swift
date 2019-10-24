@@ -112,43 +112,51 @@ class AddEditProductsVC: UIViewController {
     }
     
     func uploadImagesThenDocument() {
-        //        guard let image = productImgView1.image ,
-        //            let name = productNameTxt.text , name.isNotEmpty ,
-        //            let description = productDescTxt.text , description.isNotEmpty ,
-        //            let priceString = productPriceTxt.text , priceString.isNotEmpty ,
-        //            let price = Int(priceString) else {
-        //                simpleAlert(title: "エラー", msg: "商品名、価格、説明文および商品画像を設定してください。")
-        //                return
-        //        }
-        //
-        //        self.name = name
-        //        self.productDescription = description
-        //        self.price = price
-        //
-        //        activityIndicator.startAnimating()
+        // メイン画像が設定されているかどうかチェック
+        guard let _ = productImgView1.image else {
+            simpleAlert(title: "エラー", msg: "商品画像を1枚以上設定してください。")
+            return
+        }
+        
+        // その他入力項目のバリデーションチェック
+        guard let name = productNameTxt.text , name.isNotEmpty ,
+            let description = productDescTxt.text , description.isNotEmpty ,
+            let priceString = productPriceTxt.text , priceString.isNotEmpty ,
+            let price = Int(priceString) else {
+                simpleAlert(title: "エラー", msg: "商品名、価格、説明文を設定してください。")
+                return
+        }
+        
+        self.name = name
+        self.productDescription = description
+        self.price = price
+        
+        activityIndicator.startAnimating()
         
         // 選択された画像を取得する
-        var images = [UIImage]()
+        var productImages = [UIImage]()
         productImgViews.forEach { (productImgView) in
             if let image = productImgView.image {
-                images.append(image)
+                productImages.append(image)
             }
         }
+        
+        // Firestoreにアップロードした画像のURLを格納する配列
+        var imageUrls = [String]()
         
         // 複数のタスクを集約的に扱って同期させる
         let dispatchGroup = DispatchGroup()
         // 直列処理キュー / attribute指定なし
         let dispatchQueue = DispatchQueue(label: "ecommerceapp.queue")
         
-        images.forEach { (image) in
+        productImages.forEach { (image) in
             dispatchGroup.enter()
             dispatchQueue.async(group: dispatchGroup) {
                 [weak self] in
                 self?.asyncProcess(image: image) {
                     (url: String) -> Void in
                     // 1枚の画像をアップロードする処理が完了
-                    print("1枚の画像をアップロードする処理が完了")
-                    print(url)
+                    imageUrls.append(url)
                     dispatchGroup.leave()
                 }
             }
@@ -157,9 +165,8 @@ class AddEditProductsVC: UIViewController {
         // 全ての非同期処理完了後にメインスレッドで処理
         dispatchGroup.notify(queue: .main) {
             // 全ての画像をアップロードする処理が完了
-            print("全ての画像をアップロードする処理が完了")
             // FirestoreのproductsコレクションにURLをアップロードして更新、および作成する
-            //                self.uploadDocument(url: url.absoluteString)
+            self.uploadDocument(images: imageUrls)
         }
     }
     
@@ -194,15 +201,17 @@ class AddEditProductsVC: UIViewController {
         }
     }
     
-    func uploadDocument(url: String) {
+    func uploadDocument(images: [String]) {
+        let productImages = getMainImageAndSubImages(images: images)
         var docRef: DocumentReference!
         var product = Product.init(name: name,
                                    id: "",
                                    category: selectedCategory.id,
                                    price: price,
                                    productDescription: productDescription,
-                                   imgUrl: url)
-        
+                                   imgUrl: productImages.mainImage,
+                                   subImages: productImages.subImages)
+
         // productToEditがnilかどうかで、編集か新規作成かを分岐
         if let productToEdit = productToEdit {
             // 編集
@@ -213,16 +222,29 @@ class AddEditProductsVC: UIViewController {
             docRef = Firestore.firestore().collection("products").document()
             product.id = docRef.documentID
         }
-        
+
         let data = Product.modelToData(product: product)
         docRef.setData(data, merge: true) { (error) in
             if let error = error {
                 self.handleError(error: error, msg: "商品データのアップロードに失敗しました")
             }
-            
+
             self.navigationController?.popViewController(animated: true)
         }
-        
+    }
+    
+    // メイン画像とサブ画像に分けるためのメソッド
+    private func getMainImageAndSubImages(images: [String]) -> (mainImage: String, subImages: [String]) {
+        var subImages = [String]()
+        let mainImage = images.first ?? ""
+        var count = 0
+        images.forEach { (image) in
+            if count > 0 {
+                subImages.append(image)
+            }
+            count += 1
+        }
+        return (mainImage, subImages)
     }
     
     func handleError(error: Error, msg: String) {
