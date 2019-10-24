@@ -262,19 +262,19 @@
                                             <constraint firstAttribute="width" secondItem="BPC-0J-lye" secondAttribute="height" multiplier="1:1.2" id="0AO-2Z-EDD"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="qOG-7f-Ws8">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qOG-7f-Ws8">
                                         <rect key="frame" x="77" y="0.0" width="66.5" height="80"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="9mO-jf-zMU">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9mO-jf-zMU">
                                         <rect key="frame" x="153.5" y="0.0" width="67" height="80"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="QF2-Et-L1G">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QF2-Et-L1G">
                                         <rect key="frame" x="230.5" y="0.0" width="66.5" height="80"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="D1Y-Am-l6W">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D1Y-Am-l6W">
                                         <rect key="frame" x="307" y="0.0" width="67" height="80"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
@@ -290,6 +290,10 @@
                                     <constraint firstItem="qOG-7f-Ws8" firstAttribute="width" secondItem="BPC-0J-lye" secondAttribute="width" id="eel-WM-MIA"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="mW8-GA-7Cv">
+                                <rect key="frame" x="188.5" y="514" width="37" height="37"/>
+                                <color key="color" red="0.0039215686269999999" green="0.3411764706" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cu0-cF-UnH" customClass="RoundedButton" customModule="ECommerceAppAdmin" customModuleProvider="target">
                                 <rect key="frame" x="20" y="802" width="374" height="40"/>
                                 <color key="backgroundColor" red="0.84705882349999995" green="0.26274509800000001" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -303,10 +307,6 @@
                                     <action selector="addClicked:" destination="Y2K-RC-PSQ" eventType="touchUpInside" id="aqd-ac-2bg"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="mW8-GA-7Cv">
-                                <rect key="frame" x="188.5" y="514" width="37" height="37"/>
-                                <color key="color" red="0.0039215686269999999" green="0.3411764706" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -339,6 +339,10 @@
                         <outlet property="addBtn" destination="Cu0-cF-UnH" id="acw-JH-u0L"/>
                         <outlet property="productDescTxt" destination="35Y-5c-1Jf" id="ZS2-5U-GbQ"/>
                         <outlet property="productImgView1" destination="BPC-0J-lye" id="2gR-Q4-fvE"/>
+                        <outlet property="productImgView2" destination="qOG-7f-Ws8" id="bPe-dT-h54"/>
+                        <outlet property="productImgView3" destination="9mO-jf-zMU" id="hWe-u0-FgH"/>
+                        <outlet property="productImgView4" destination="QF2-Et-L1G" id="wgS-Qa-eKz"/>
+                        <outlet property="productImgView5" destination="D1Y-Am-l6W" id="ycV-NX-sh6"/>
                         <outlet property="productNameTxt" destination="eTe-og-1za" id="y1b-u4-73f"/>
                         <outlet property="productPriceTxt" destination="ble-Zo-166" id="nlp-5C-GVm"/>
                     </connections>
