@@ -16,6 +16,7 @@ struct Product {
     var price: Int
     var productDescription: String
     var imgUrl: String
+    var subImages: [String]
     var timeStamp: Timestamp
     var stock: Int
     
@@ -26,6 +27,7 @@ struct Product {
         price: Int,
         productDescription: String,
         imgUrl: String,
+        subImages: [String],
         timeStamp: Timestamp = Timestamp(),
         stock: Int = 0) {
         
@@ -35,6 +37,7 @@ struct Product {
         self.price = price
         self.productDescription = productDescription
         self.imgUrl = imgUrl
+        self.subImages = subImages
         self.timeStamp = timeStamp
         self.stock = stock
     }
@@ -46,6 +49,7 @@ struct Product {
         self.price = data["price"] as? Int ?? 0
         self.productDescription = data["productDescription"] as? String ?? ""
         self.imgUrl = data["imgUrl"] as? String ?? ""
+        self.subImages = data["subImages"] as? [String] ?? [String]()
         self.timeStamp = data["timeStamp"] as? Timestamp ?? Timestamp()
         self.stock = data["stock"] as? Int ?? 0
     }
@@ -60,6 +64,7 @@ struct Product {
             "price": product.price,
             "productDescription": product.productDescription,
             "imgUrl": product.imgUrl,
+            "subImages": product.subImages,
             "timeStamp": product.timeStamp,
             "stock": product.stock
         ]

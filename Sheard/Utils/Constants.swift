@@ -36,10 +36,12 @@ struct Identifiers {
     static let CategoryCell = "CategoryCell"
     static let ProductCell = "ProductCell"
     static let CartitemCell = "CartitemCell"
+    static let ProductImageCell = "ProductImageCell"
 }
 
 struct Segues {
     static let ToProducts = "toProductsVC"
+    static let ToDetail = "ToDetail"
     static let ToAddEditCategory = "toAddEditCategory"
     static let ToEditCategory = "ToEditCategory"
     static let ToAddEditProduct = "ToAddEditProduct"

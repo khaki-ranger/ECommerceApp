@@ -20,11 +20,13 @@ class ProductsVC: UIViewController, ProductCellDelegate {
     var db: Firestore!
     var listener: ListenerRegistration!
     var showFavorites = false
+    var selectedProduct: Product!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         db = Firestore.firestore()
         setupTableView()
+        self.navigationItem.title = category.name
     }
     
     func setupTableView() {
@@ -145,15 +147,19 @@ extension ProductsVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = ProductDetailVC()
-        let selectedProduct = products[indexPath.row]
-        vc.product = selectedProduct
-        vc.modalTransitionStyle = .crossDissolve
-        vc.modalPresentationStyle = .overCurrentContext
-        present(vc, animated: true, completion: nil)
+        selectedProduct = products[indexPath.row]
+        performSegue(withIdentifier: Segues.ToDetail, sender: self)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segues.ToDetail {
+            if let destination = segue.destination as? DetailVC {
+                destination.product = selectedProduct
+            }
+        }
     }
 }

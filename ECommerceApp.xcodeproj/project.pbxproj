@@ -29,6 +29,8 @@
 		D137B3EF23519FE000E67D9B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D137B3EE23519FE000E67D9B /* UserService.swift */; };
 		D137B3F22351A72900E67D9B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A07BB423507C8200E778EC /* User.swift */; };
 		D137B3F32351A78B00E67D9B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D137B3EE23519FE000E67D9B /* UserService.swift */; };
+		D13C18562362923A00599687 /* ProductImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13C18542362923A00599687 /* ProductImageCell.swift */; };
+		D13C18572362923A00599687 /* ProductImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D13C18552362923A00599687 /* ProductImageCell.xib */; };
 		D16594DF234D4B1400086CB2 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16594DD234D4B1400086CB2 /* ForgotPasswordVC.swift */; };
 		D16594E0234D4B1400086CB2 /* ForgotPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D16594DE234D4B1400086CB2 /* ForgotPasswordVC.xib */; };
 		D16594E2234D5ABE00086CB2 /* Firebase+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16594E1234D5ABE00086CB2 /* Firebase+Utils.swift */; };
@@ -46,6 +48,7 @@
 		D17CCD22234EB43400E19BF7 /* ProductDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1BE2574234E1D8000539728 /* ProductDetailVC.xib */; };
 		D17CCD23234EB47E00E19BF7 /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC45234B2C630017A6E7 /* RoundedViews.swift */; };
 		D17CCD25234EB6B500E19BF7 /* AddEditCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17CCD24234EB6B500E19BF7 /* AddEditCategoryVC.swift */; };
+		D18289D0235D86600082A431 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18289CF235D86600082A431 /* DetailVC.swift */; };
 		D1A07BB523507C8200E778EC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A07BB423507C8200E778EC /* User.swift */; };
 		D1A50A7F2355641A0071D299 /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A50A7E2355641A0071D299 /* CheckoutVC.swift */; };
 		D1A50A82235569B10071D299 /* CartitemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A50A80235569B10071D299 /* CartitemCell.swift */; };
@@ -57,6 +60,7 @@
 		D1ABCC41234B207F0017A6E7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC40234B207F0017A6E7 /* Extensions.swift */; };
 		D1ABCC43234B27F80017A6E7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC42234B27F80017A6E7 /* Constants.swift */; };
 		D1ABCC46234B2C630017A6E7 /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABCC45234B2C630017A6E7 /* RoundedViews.swift */; };
+		D1B1EDD7235EF20B0057F2E6 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18289CF235D86600082A431 /* DetailVC.swift */; };
 		D1BBF33B23557EBF009B56E8 /* StripeCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BBF33A23557EBF009B56E8 /* StripeCart.swift */; };
 		D1BE2568234D815400539728 /* ProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BE2567234D815400539728 /* ProductsVC.swift */; };
 		D1BE2569234D815E00539728 /* ProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BE2567234D815400539728 /* ProductsVC.swift */; };
@@ -95,6 +99,8 @@
 		D13315E7234ADAC600869F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D13315ED234ADD7E00869F8F /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
 		D137B3EE23519FE000E67D9B /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		D13C18542362923A00599687 /* ProductImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageCell.swift; sourceTree = "<group>"; };
+		D13C18552362923A00599687 /* ProductImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductImageCell.xib; sourceTree = "<group>"; };
 		D16594DD234D4B1400086CB2 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		D16594DE234D4B1400086CB2 /* ForgotPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordVC.xib; sourceTree = "<group>"; };
 		D16594E1234D5ABE00086CB2 /* Firebase+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase+Utils.swift"; sourceTree = "<group>"; };
@@ -102,6 +108,7 @@
 		D16594E7234D698400086CB2 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		D16594E8234D698400086CB2 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		D17CCD24234EB6B500E19BF7 /* AddEditCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditCategoryVC.swift; sourceTree = "<group>"; };
+		D18289CF235D86600082A431 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		D1A07BB423507C8200E778EC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D1A50A7E2355641A0071D299 /* CheckoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVC.swift; sourceTree = "<group>"; };
 		D1A50A80235569B10071D299 /* CartitemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CartitemCell.swift; path = ../XIBs/CartitemCell.swift; sourceTree = "<group>"; };
@@ -230,6 +237,8 @@
 				D16594DE234D4B1400086CB2 /* ForgotPasswordVC.xib */,
 				D1BE2573234E1D8000539728 /* ProductDetailVC.swift */,
 				D1BE2574234E1D8000539728 /* ProductDetailVC.xib */,
+				D13C18542362923A00599687 /* ProductImageCell.swift */,
+				D13C18552362923A00599687 /* ProductImageCell.xib */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -272,6 +281,7 @@
 				D1ABCC3D234B1A4D0017A6E7 /* RegisterVC.swift */,
 				D13315C5234ADA8600869F8F /* HomeVC.swift */,
 				D1BE2567234D815400539728 /* ProductsVC.swift */,
+				D18289CF235D86600082A431 /* DetailVC.swift */,
 				D1A50A7E2355641A0071D299 /* CheckoutVC.swift */,
 				D13315C3234ADA8600869F8F /* AppDelegate.swift */,
 			);
@@ -423,6 +433,7 @@
 				D1BE2571234D82B700539728 /* ProductCell.xib in Resources */,
 				D16594EB234D698400086CB2 /* CategoryCell.xib in Resources */,
 				D13315CB234ADA8800869F8F /* Assets.xcassets in Resources */,
+				D13C18572362923A00599687 /* ProductImageCell.xib in Resources */,
 				D1ABCC34234B11DC0017A6E7 /* GoogleService-Info.plist in Resources */,
 				D13315C9234ADA8600869F8F /* Main.storyboard in Resources */,
 				D1A50A83235569B10071D299 /* CartitemCell.xib in Resources */,
@@ -589,6 +600,7 @@
 				D1BE2575234E1D8000539728 /* ProductDetailVC.swift in Sources */,
 				D12565D72356F77D00FC9DBF /* StripeApi.swift in Sources */,
 				D16594E5234D68CD00086CB2 /* Category.swift in Sources */,
+				D13C18562362923A00599687 /* ProductImageCell.swift in Sources */,
 				D1ABCC41234B207F0017A6E7 /* Extensions.swift in Sources */,
 				D1A07BB523507C8200E778EC /* User.swift in Sources */,
 				D13315C6234ADA8600869F8F /* HomeVC.swift in Sources */,
@@ -597,6 +609,7 @@
 				D1ABCC3E234B1A4D0017A6E7 /* RegisterVC.swift in Sources */,
 				D1BE256F234D82B700539728 /* ProductCell.swift in Sources */,
 				D13315C4234ADA8600869F8F /* AppDelegate.swift in Sources */,
+				D18289D0235D86600082A431 /* DetailVC.swift in Sources */,
 				D1ABCC46234B2C630017A6E7 /* RoundedViews.swift in Sources */,
 				D1ABCC3C234B1A350017A6E7 /* LoginVC.swift in Sources */,
 				D1A50A7F2355641A0071D299 /* CheckoutVC.swift in Sources */,
@@ -625,6 +638,7 @@
 				D1FCDD21234F21E20040C132 /* AdminProductsVC.swift in Sources */,
 				D17CCD1F234EB41300E19BF7 /* Constants.swift in Sources */,
 				D17CCD25234EB6B500E19BF7 /* AddEditCategoryVC.swift in Sources */,
+				D1B1EDD7235EF20B0057F2E6 /* DetailVC.swift in Sources */,
 				D16594E6234D68CD00086CB2 /* Category.swift in Sources */,
 				D1BE2570234D82B700539728 /* ProductCell.swift in Sources */,
 				D116781D235840FA00DD991F /* LoginVC.swift in Sources */,
