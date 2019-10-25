@@ -52,9 +52,20 @@ class AddEditProductsVC: UIViewController {
             productDescTxt.text = product.productDescription
             addBtn.setTitle("編集を保存", for: .normal)
             
+            // メイン画像をセット
             if let url = URL(string: product.imgUrl) {
                 productImgView1.contentMode = .scaleAspectFill
                 productImgView1.kf.setImage(with: url)
+            }
+            
+            // サブ画像をセット
+            var count = 0
+            while count < product.subImages.count {
+                if let url = URL(string: product.subImages[count]) {
+                    productImgViews[count + 1].contentMode = .scaleAspectFill
+                    productImgViews[count + 1].kf.setImage(with: url)
+                }
+                count += 1
             }
         }
     }
@@ -117,7 +128,7 @@ class AddEditProductsVC: UIViewController {
             simpleAlert(title: "エラー", msg: "商品画像を1枚以上設定してください。")
             return
         }
-        
+
         // その他入力項目のバリデーションチェック
         guard let name = productNameTxt.text , name.isNotEmpty ,
             let description = productDescTxt.text , description.isNotEmpty ,
@@ -126,16 +137,16 @@ class AddEditProductsVC: UIViewController {
                 simpleAlert(title: "エラー", msg: "商品名、価格、説明文を設定してください。")
                 return
         }
-        
+
         self.name = name
         self.productDescription = description
         self.price = price
-        
+
         activityIndicator.startAnimating()
         
         // 選択された画像を取得する
         var productImages = [UIImage]()
-        productImgViews.forEach { (productImgView) in
+        for productImgView in productImgViews {
             if let image = productImgView.image {
                 productImages.append(image)
             }
@@ -143,28 +154,29 @@ class AddEditProductsVC: UIViewController {
         
         // Firestoreにアップロードした画像のURLを格納する配列
         var imageUrls = [String]()
-        
         // 複数のタスクを集約的に扱って同期させる
         let dispatchGroup = DispatchGroup()
         // 直列処理キュー / attribute指定なし
         let dispatchQueue = DispatchQueue(label: "ecommerceapp.queue")
         
-        productImages.forEach { (image) in
+        for (index, image) in productImages.enumerated() {
             dispatchGroup.enter()
             dispatchQueue.async(group: dispatchGroup) {
                 [weak self] in
-                self?.asyncProcess(image: image) {
-                    (url: String) -> Void in
+                self?.asyncProcess(number: index, image: image) {
+                    (number: Int, url: String) -> Void in
                     // 1枚の画像をアップロードする処理が完了
+                    print("#\(number) End")
                     imageUrls.append(url)
                     dispatchGroup.leave()
                 }
             }
         }
-        
+
         // 全ての非同期処理完了後にメインスレッドで処理
         dispatchGroup.notify(queue: .main) {
             // 全ての画像をアップロードする処理が完了
+            print(imageUrls)
             // FirestoreのproductsコレクションにURLをアップロードして更新、および作成する
             self.uploadDocument(images: imageUrls)
         }
@@ -172,7 +184,9 @@ class AddEditProductsVC: UIViewController {
     
     // 非同期処理
     // Firestorageに1枚の画像をアップロードする処理
-    private func asyncProcess(image: UIImage, outerCompletion: @escaping (_ url: String) -> Void) {
+    private func asyncProcess(number: Int, image: UIImage, outerCompletion: @escaping (_ number: Int, _ url: String) -> Void) {
+        print("#\(number) Start")
+        
         // 画像名を作成する
         let imageName = UUID()
         // 画像をデータに変更する
@@ -188,6 +202,7 @@ class AddEditProductsVC: UIViewController {
             if let error = error {
                 self.handleError(error: error, msg: "画像のアップロードに失敗しました")
             }
+            
             // アップロードが成功したらURLを取得する
             imageRef.downloadURL(completion: { (url, error) in
                 
@@ -196,7 +211,8 @@ class AddEditProductsVC: UIViewController {
                 }
                 // 画像URLの取得に成功
                 guard let url = url else { return }
-                outerCompletion(url.absoluteString)
+                print(url)
+                outerCompletion(number, url.absoluteString)
             })
         }
     }
@@ -238,9 +254,9 @@ class AddEditProductsVC: UIViewController {
         var subImages = [String]()
         let mainImage = images.first ?? ""
         var count = 0
-        images.forEach { (image) in
+        while count < images.count {
             if count > 0 {
-                subImages.append(image)
+                subImages.append(images[count])
             }
             count += 1
         }
