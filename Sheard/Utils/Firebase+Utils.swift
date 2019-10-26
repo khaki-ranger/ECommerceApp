@@ -10,7 +10,7 @@ import Firebase
 
 extension Firestore {
     var categories: Query {
-        return collection("categories").order(by: "order", descending: true)
+        return collection("categories").order(by: "order", descending: false)
     }
     
     func products(category: String) -> Query {
