@@ -25,12 +25,7 @@ class RightBarButtonItem {
     init(navigation: UINavigationItem, cartBtnDelegate: CartBarButtonItemDelegate) {
         self.cartBtnDelegate = cartBtnDelegate
         
-        cartBtn = UIButton(type: .system)
-        cartBtn.setImage(UIImage(named: "bar_button_cart"), for: .normal)
-        cartBtn.contentEdgeInsets.left = 10
-        cartBtn.imageEdgeInsets.left = -10
-        cartBtn.addTarget(self, action: #selector(cartBtnClicked), for: .touchUpInside)
-        let cartBarButtonItem = UIBarButtonItem(customView: cartBtn)
+        let cartBarButtonItem = setCartButtonItem()
         navigation.rightBarButtonItem = cartBarButtonItem
     }
     
@@ -38,15 +33,19 @@ class RightBarButtonItem {
         self.cartBtnDelegate = cartBtnDelegate
         self.favoritesBtnDelegate = favoritesBtnDelegate
         
+        let cartBarButtonItem = setCartButtonItem()
         let favoritesBarButtonItem = UIBarButtonItem(image: UIImage(named: "bar_button_heart"), style: .plain, target: self, action: #selector(favoritesClicked))
-        
+        navigation.rightBarButtonItems = [cartBarButtonItem, favoritesBarButtonItem]
+    }
+    
+    private func setCartButtonItem() -> UIBarButtonItem {
         cartBtn = UIButton(type: .system)
         cartBtn.setImage(UIImage(named: "bar_button_cart"), for: .normal)
         cartBtn.contentEdgeInsets.left = 10
         cartBtn.imageEdgeInsets.left = -10
         cartBtn.addTarget(self, action: #selector(cartBtnClicked), for: .touchUpInside)
         let cartBarButtonItem = UIBarButtonItem(customView: cartBtn)
-        navigation.rightBarButtonItems = [cartBarButtonItem, favoritesBarButtonItem]
+        return cartBarButtonItem
     }
     
     // お気に入りボタンが押されたことをプロトコルの適合先に通知する

@@ -23,7 +23,6 @@ class DetailVC: UIViewController, CartBarButtonItemDelegate {
     var product: Product!
     var productImages = [String]()
     var rightBarButtonItem: RightBarButtonItem!
-//    var cartBtn: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
