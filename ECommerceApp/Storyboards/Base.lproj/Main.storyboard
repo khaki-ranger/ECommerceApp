@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--She's-->
+        <!--Shop-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeVC" customModule="ECommerceApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -45,7 +45,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="She's" id="sbf-y1-rNV">
+                    <navigationItem key="navigationItem" title="Shop" id="sbf-y1-rNV">
                         <barButtonItem key="leftBarButtonItem" title="ログイン" id="Aqr-wp-WR5">
                             <connections>
                                 <action selector="loginOutClicked:" destination="BYZ-38-t0r" id="Ty7-CY-DG6"/>
@@ -271,7 +271,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RuT-Er-jSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1816" y="-8"/>
+            <point key="canvasLocation" x="1816" y="1554"/>
         </scene>
         <!--DetailVC-->
         <scene sceneID="obo-41-gtf">
@@ -466,6 +466,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="jb6-5c-ql9"/>
-        <segue reference="L4C-Ic-Hty"/>
+        <segue reference="fOh-Qt-7jD"/>
     </inferredMetricsTieBreakers>
 </document>
