@@ -48,4 +48,5 @@ struct Segues {
     static let ToEditCategory = "ToEditCategory"
     static let ToAddEditProduct = "ToAddEditProduct"
     static let ToFavorites = "toFavorites"
+    static let ToShoppingCart = "ToShoppingCart"
 }

@@ -21,12 +21,36 @@ class HomeVC: UIViewController {
     var selectedCategory: Category!
     var db: Firestore!
     var listener: ListenerRegistration!
+    var cartBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         db = Firestore.firestore()
         setupCollectionView()
         setupInitialAnonymouseUser()
+        setupRightBarButtonItems()
+        changeCartItemsText()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        setCategoriesListener()
+        changeCartItemsText()
+        
+        if let user = Auth.auth().currentUser , !user.isAnonymous {
+            // We are logged in
+            loginOutBtn.title = "ログアウト"
+            if UserService.userListner == nil {
+                UserService.getCurrentUser()
+            }
+        } else {
+            loginOutBtn.title = "ログイン"
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        listener.remove()
+        categories.removeAll()
+        collectionView.reloadData()
     }
     
     func setupCollectionView() {
@@ -44,26 +68,6 @@ class HomeVC: UIViewController {
                 }
             }
         }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        setCategoriesListener()
-        
-        if let user = Auth.auth().currentUser , !user.isAnonymous {
-            // We are logged in
-            loginOutBtn.title = "ログアウト"
-            if UserService.userListner == nil {
-                UserService.getCurrentUser()
-            }
-        } else {
-            loginOutBtn.title = "ログイン"
-        }
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        listener.remove()
-        categories.removeAll()
-        collectionView.reloadData()
     }
     
     func setCategoriesListener() {
@@ -95,15 +99,6 @@ class HomeVC: UIViewController {
         let controller = storyboard.instantiateViewController(withIdentifier: StoryboardId.LoginVC)
         present(controller, animated: true, completion: nil)
     }
-    
-    @IBAction func favoritesClicked(_ sender: Any) {
-        if UserService.isGuest {
-            self.simpleAlert(title: "ようこそゲスト様", msg: "お気に入り機能はユーザー専用の機能です。ログインまたは、新規ユーザー登録の上ご利用ください。")
-            return
-        }
-        
-        performSegue(withIdentifier: Segues.ToFavorites, sender: self)
-    }
 
     @IBAction func loginOutClicked(_ sender: Any) {
         
@@ -126,6 +121,40 @@ class HomeVC: UIViewController {
                 Auth.auth().handleFireAuthError(error: error, vc: self)
             }
         }
+    }
+    
+    // ナビゲーションコントローラーの右側のボタンを設定
+    private func setupRightBarButtonItems() {
+        let favoritesBarButtonItem = UIBarButtonItem(image: UIImage(named: "bar_button_heart"), style: .plain, target: self, action: #selector(favoritesClicked))
+        cartBtn = UIButton(type: .system)
+        cartBtn.setImage(UIImage(named: "bar_button_cart"), for: .normal)
+        cartBtn.contentEdgeInsets.left = 10
+        cartBtn.imageEdgeInsets.left = -10
+        cartBtn.addTarget(self, action: #selector(cartBtnClicked), for: .touchUpInside)
+        let cartBarButtonItem = UIBarButtonItem(customView: cartBtn)
+        navigationItem.rightBarButtonItems = [cartBarButtonItem, favoritesBarButtonItem]
+    }
+    
+    // カートに入っている商品数を変更するメソッド
+    private func changeCartItemsText() {
+        let cartItemsCount = String(StripeCart.cartItems.count)
+        cartBtn.setTitle(cartItemsCount, for: .normal)
+    }
+    
+    // ナビゲーションバーのカートボタンを押した際の挙動を制御するメソッド
+    @objc func cartBtnClicked() {
+        // CheckoutVCに遷移
+        performSegue(withIdentifier: Segues.ToShoppingCart, sender: self)
+    }
+    
+    // お気に入りボタンを押した際の挙動を制御するメソッド
+    @objc func favoritesClicked() {
+        if UserService.isGuest {
+            self.simpleAlert(title: "ようこそゲスト様", msg: "お気に入り機能はユーザー専用の機能です。ログインまたは、新規ユーザー登録の上ご利用ください。")
+            return
+        }
+        // お気に入り商品リストに遷移
+        performSegue(withIdentifier: Segues.ToFavorites, sender: self)
     }
 }
 
@@ -186,6 +215,7 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Segues.ToProducts {
+            // 各カテゴリの商品一覧への遷移の場合
             if let destination = segue.destination as? ProductsVC {
                 destination.category = selectedCategory
             }

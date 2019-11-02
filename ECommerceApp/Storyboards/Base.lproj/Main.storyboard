@@ -51,18 +51,6 @@
                                 <action selector="loginOutClicked:" destination="BYZ-38-t0r" id="Ty7-CY-DG6"/>
                             </connections>
                         </barButtonItem>
-                        <rightBarButtonItems>
-                            <barButtonItem image="bar_button_cart" id="OaD-Na-kYM">
-                                <connections>
-                                    <segue destination="vFq-fI-a3c" kind="show" id="fOh-Qt-7jD"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="bar_button_heart" id="1F0-b8-Gtt">
-                                <connections>
-                                    <action selector="favoritesClicked:" destination="BYZ-38-t0r" id="Zze-a1-Xmt"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="QZi-ZR-fJx" id="xDb-P6-gud"/>
@@ -70,6 +58,7 @@
                         <outlet property="loginOutBtn" destination="Aqr-wp-WR5" id="Vbb-1E-QDc"/>
                         <segue destination="IBK-hG-ePE" kind="show" identifier="toProductsVC" id="jb6-5c-ql9"/>
                         <segue destination="IBK-hG-ePE" kind="show" identifier="toFavorites" id="FVE-Xo-KqI"/>
+                        <segue destination="vFq-fI-a3c" kind="show" identifier="ToShoppingCart" id="L2d-Lj-feV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -375,11 +364,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="GLA-KY-Fzh">
                         <barButtonItem key="backBarButtonItem" title="戻る" id="Tjl-F7-Z23"/>
-                        <barButtonItem key="rightBarButtonItem" image="bar_button_cart" id="KfD-Be-jtb">
-                            <connections>
-                                <segue destination="vFq-fI-a3c" kind="show" id="L4C-Ic-Hty"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="nextBtn" destination="P5q-tg-Pfz" id="lRK-h0-4LJ"/>
@@ -389,6 +373,7 @@
                         <outlet property="productPrice" destination="hSb-7u-Qr4" id="hYV-o9-p8q"/>
                         <outlet property="productTitle" destination="BqJ-GA-8qQ" id="1fi-vb-ggq"/>
                         <outlet property="slideImageView" destination="A1E-Kd-LD1" id="5Kb-rz-tYp"/>
+                        <segue destination="vFq-fI-a3c" kind="show" identifier="ToShoppingCart" id="oq1-H9-212"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cm5-Fs-QSX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -417,16 +402,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="b1u-8o-BV0"/>
                     </view>
-                    <navigationItem key="navigationItem" id="yXh-23-lqr">
-                        <barButtonItem key="rightBarButtonItem" image="bar_button_cart" id="F8f-Ho-dXW">
-                            <connections>
-                                <segue destination="vFq-fI-a3c" kind="show" id="zcF-ZI-qX9"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="yXh-23-lqr"/>
                     <connections>
                         <outlet property="tableView" destination="6lf-ZA-DiU" id="t55-hU-hDy"/>
                         <segue destination="KNK-Jw-M90" kind="show" identifier="ToDetail" id="DU5-Ns-PYK"/>
+                        <segue destination="vFq-fI-a3c" kind="show" identifier="ToShoppingCart" id="cIU-Qx-Tnt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qC-eW-ETR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -459,13 +439,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bar_button_cart" width="27" height="24"/>
-        <image name="bar_button_heart" width="26" height="23"/>
         <image name="next" width="23" height="23"/>
         <image name="prev" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="jb6-5c-ql9"/>
-        <segue reference="fOh-Qt-7jD"/>
+        <segue reference="L2d-Lj-feV"/>
     </inferredMetricsTieBreakers>
 </document>
