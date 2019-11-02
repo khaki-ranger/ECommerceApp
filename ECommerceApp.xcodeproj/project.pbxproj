@@ -15,6 +15,7 @@
 		D116781F2358414D00DD991F /* ForgotPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D16594DE234D4B1400086CB2 /* ForgotPasswordVC.xib */; };
 		D11678202358447700DD991F /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13315ED234ADD7E00869F8F /* LoginStoryboard.storyboard */; };
 		D12565D72356F77D00FC9DBF /* StripeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12565D62356F77D00FC9DBF /* StripeApi.swift */; };
+		D13005A1236DB9B00080B28E /* RightBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13005A0236DB9B00080B28E /* RightBarButtonItem.swift */; };
 		D13315C4234ADA8600869F8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13315C3234ADA8600869F8F /* AppDelegate.swift */; };
 		D13315C6234ADA8600869F8F /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13315C5234ADA8600869F8F /* HomeVC.swift */; };
 		D13315C9234ADA8600869F8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13315C7234ADA8600869F8F /* Main.storyboard */; };
@@ -84,6 +85,7 @@
 		BF61F2093693A8DAAC02FFBA /* Pods-ECommerceAppAdmin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECommerceAppAdmin.release.xcconfig"; path = "Target Support Files/Pods-ECommerceAppAdmin/Pods-ECommerceAppAdmin.release.xcconfig"; sourceTree = "<group>"; };
 		C3B943C50DE220F9DBAFA375 /* Pods-ECommerceApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECommerceApp.debug.xcconfig"; path = "Target Support Files/Pods-ECommerceApp/Pods-ECommerceApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D12565D62356F77D00FC9DBF /* StripeApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeApi.swift; sourceTree = "<group>"; };
+		D13005A0236DB9B00080B28E /* RightBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RightBarButtonItem.swift; path = ECommerceApp/XIBs/RightBarButtonItem.swift; sourceTree = SOURCE_ROOT; };
 		D13315C0234ADA8600869F8F /* ECommerceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECommerceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D13315C3234ADA8600869F8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D13315C5234ADA8600869F8F /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 		D1ABCC38234B19320017A6E7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D13005A0236DB9B00080B28E /* RightBarButtonItem.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -612,6 +615,7 @@
 				D18289D0235D86600082A431 /* DetailVC.swift in Sources */,
 				D1ABCC46234B2C630017A6E7 /* RoundedViews.swift in Sources */,
 				D1ABCC3C234B1A350017A6E7 /* LoginVC.swift in Sources */,
+				D13005A1236DB9B00080B28E /* RightBarButtonItem.swift in Sources */,
 				D1A50A7F2355641A0071D299 /* CheckoutVC.swift in Sources */,
 				D1BE2568234D815400539728 /* ProductsVC.swift in Sources */,
 				D16594DF234D4B1400086CB2 /* ForgotPasswordVC.swift in Sources */,

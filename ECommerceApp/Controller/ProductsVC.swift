@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseFirestore
 
-class ProductsVC: UIViewController, ProductCellDelegate {
+class ProductsVC: UIViewController, ProductCellDelegate, CartBarButtonItemDelegate {
     
     // Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -21,14 +21,14 @@ class ProductsVC: UIViewController, ProductCellDelegate {
     var listener: ListenerRegistration!
     var showFavorites = false
     var selectedProduct: Product!
-    var cartBtn: UIButton!
+    var rightBarButtonItem: RightBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         db = Firestore.firestore()
         setupTableView()
-        setupRightBarButtonItems()
-        changeCartItemsText()
+        rightBarButtonItem = RightBarButtonItem(navigation: navigationItem, cartBtnDelegate: self)
+        rightBarButtonItem.changeCartItemsText()
         if let categoryName = category?.name {
             self.navigationItem.title = categoryName
         }
@@ -36,7 +36,7 @@ class ProductsVC: UIViewController, ProductCellDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         setProductListner()
-        changeCartItemsText()
+        rightBarButtonItem.changeCartItemsText()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -107,30 +107,12 @@ class ProductsVC: UIViewController, ProductCellDelegate {
         }
         
         StripeCart.addItemToCart(item: product)
-        changeCartItemsText()
+        rightBarButtonItem.changeCartItemsText()
     }
     
-    // ナビゲーションコントローラーの右側のボタンを設定
-    private func setupRightBarButtonItems() {
-        cartBtn = UIButton(type: .system)
-        cartBtn.setImage(UIImage(named: "bar_button_cart"), for: .normal)
-        cartBtn.contentEdgeInsets.left = 10
-        cartBtn.imageEdgeInsets.left = -10
-        cartBtn.addTarget(self, action: #selector(cartBtnClicked), for: .touchUpInside)
-        let cartBarButtonItem = UIBarButtonItem(customView: cartBtn)
-        navigationItem.rightBarButtonItem = cartBarButtonItem
-    }
-    
-    // ナビゲーションバーのカートボタンを押した際の挙動を制御するメソッド
-    @objc func cartBtnClicked() {
-        // CheckoutVCに遷移
+    func cartButtonClicked() {
+        // ショッピングカート画面（CheckoutVC）に遷移
         performSegue(withIdentifier: Segues.ToShoppingCart, sender: self)
-    }
-    
-    // カートに入っている商品数を変更するメソッド
-    private func changeCartItemsText() {
-        let cartItemsCount = String(StripeCart.cartItems.count)
-        cartBtn.setTitle(cartItemsCount, for: .normal)
     }
 }
 
