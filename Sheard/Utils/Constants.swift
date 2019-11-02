@@ -27,9 +27,11 @@ struct AppImages {
 }
 
 struct AppColors {
-    static let Blue = #colorLiteral(red: 0.003921568627, green: 0.3411764706, blue: 0.6078431373, alpha: 1)
-    static let Red = #colorLiteral(red: 0.8470588235, green: 0.262745098, blue: 0.08235294118, alpha: 1)
-    static let OffWhite = #colorLiteral(red: 0.8784313725, green: 0.9490196078, blue: 0.9450980392, alpha: 1)
+    static let Themecolor = #colorLiteral(red: 0.8470588235, green: 0.262745098, blue: 0.08235294118, alpha: 1)
+    static let BackgroundColor = #colorLiteral(red: 0.9843137255, green: 0.9137254902, blue: 0.9058823529, alpha: 1)
+    static let TextColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
+    static let ClikableTextColor = #colorLiteral(red: 0.003921568627, green: 0.3411764706, blue: 0.6078431373, alpha: 1)
+    static let SubmitButtonColor = #colorLiteral(red: 0.8470588235, green: 0.262745098, blue: 0.08235294118, alpha: 1)
 }
 
 struct Identifiers {
@@ -46,4 +48,5 @@ struct Segues {
     static let ToEditCategory = "ToEditCategory"
     static let ToAddEditProduct = "ToAddEditProduct"
     static let ToFavorites = "toFavorites"
+    static let ToShoppingCart = "ToShoppingCart"
 }

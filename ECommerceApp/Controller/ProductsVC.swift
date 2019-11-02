@@ -21,28 +21,34 @@ class ProductsVC: UIViewController, ProductCellDelegate {
     var listener: ListenerRegistration!
     var showFavorites = false
     var selectedProduct: Product!
+    var cartBtn: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         db = Firestore.firestore()
         setupTableView()
-        self.navigationItem.title = category.name
-    }
-    
-    func setupTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(UINib(nibName: Identifiers.ProductCell, bundle: nil), forCellReuseIdentifier: Identifiers.ProductCell)
+        setupRightBarButtonItems()
+        changeCartItemsText()
+        if let categoryName = category?.name {
+            self.navigationItem.title = categoryName
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         setProductListner()
+        changeCartItemsText()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         listener.remove()
         products.removeAll()
         tableView.reloadData()
+    }
+    
+    func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: Identifiers.ProductCell, bundle: nil), forCellReuseIdentifier: Identifiers.ProductCell)
     }
     
     func setProductListner() {
@@ -79,6 +85,7 @@ class ProductsVC: UIViewController, ProductCellDelegate {
         })
     }
     
+    // お気に入りボタンを押した際の挙動を制御するメソッド
     func productFavorited(product: Product) {
         if UserService.isGuest {
             self.simpleAlert(title: "ようこそゲスト様", msg: "お気に入り機能はユーザー専用の機能です。ログインまたは、新規ユーザー登録の上ご利用ください。")
@@ -92,6 +99,7 @@ class ProductsVC: UIViewController, ProductCellDelegate {
         tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
     }
     
+    // カートに入れるボタンを押した際の挙動を制御するメソッド
     func productAddtoCart(product: Product) {
         if UserService.isGuest {
             self.simpleAlert(title: "ようこそゲスト様", msg: "商品のお買い求めには、ログインまたは新規ユーザー登録をお願いいたします。")
@@ -99,6 +107,30 @@ class ProductsVC: UIViewController, ProductCellDelegate {
         }
         
         StripeCart.addItemToCart(item: product)
+        changeCartItemsText()
+    }
+    
+    // ナビゲーションコントローラーの右側のボタンを設定
+    private func setupRightBarButtonItems() {
+        cartBtn = UIButton(type: .system)
+        cartBtn.setImage(UIImage(named: "bar_button_cart"), for: .normal)
+        cartBtn.contentEdgeInsets.left = 10
+        cartBtn.imageEdgeInsets.left = -10
+        cartBtn.addTarget(self, action: #selector(cartBtnClicked), for: .touchUpInside)
+        let cartBarButtonItem = UIBarButtonItem(customView: cartBtn)
+        navigationItem.rightBarButtonItem = cartBarButtonItem
+    }
+    
+    // ナビゲーションバーのカートボタンを押した際の挙動を制御するメソッド
+    @objc func cartBtnClicked() {
+        // CheckoutVCに遷移
+        performSegue(withIdentifier: Segues.ToShoppingCart, sender: self)
+    }
+    
+    // カートに入っている商品数を変更するメソッド
+    private func changeCartItemsText() {
+        let cartItemsCount = String(StripeCart.cartItems.count)
+        cartBtn.setTitle(cartItemsCount, for: .normal)
     }
 }
 
