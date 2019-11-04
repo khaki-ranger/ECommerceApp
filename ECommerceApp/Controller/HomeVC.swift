@@ -22,6 +22,8 @@ class HomeVC: UIViewController, CartBarButtonItemDelegate, FavoritesButtonItemDe
     var db: Firestore!
     var listener: ListenerRegistration!
     var rightBarButtonItem: RightBarButtonItem!
+    private let sectionInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0) // レイアウト設定
+    private let itemsPerRow: CGFloat = 3 // 1行あたりのアイテム数
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -182,10 +184,11 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = view.frame.width
-        let cellWidth = (width - 30) / 2
-        let cellHeight = cellWidth * 1.2
-        return CGSize(width: cellWidth, height: cellHeight)
+        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let availableWidth = view.frame.width - paddingSpace
+        let widthPerItem = availableWidth / itemsPerRow
+        let heightPerItem = widthPerItem * 1.2
+        return CGSize(width: widthPerItem, height: heightPerItem)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
