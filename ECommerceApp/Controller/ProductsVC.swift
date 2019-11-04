@@ -29,9 +29,6 @@ class ProductsVC: UIViewController, ProductCellDelegate, CartBarButtonItemDelega
         setupTableView()
         rightBarButtonItem = RightBarButtonItem(navigation: navigationItem, cartBtnDelegate: self)
         rightBarButtonItem.changeCartItemsText()
-        if let categoryName = category?.name {
-            self.navigationItem.title = categoryName
-        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -51,15 +48,18 @@ class ProductsVC: UIViewController, ProductCellDelegate, CartBarButtonItemDelega
         tableView.register(UINib(nibName: Identifiers.ProductCell, bundle: nil), forCellReuseIdentifier: Identifiers.ProductCell)
     }
     
+    // テーブルに表示されるデータの参照を制御するメソッド
     func setProductListner() {
         
         var ref: Query!
         if showFavorites {
             // お気に入りリストの場合
             ref = db.collection("users").document(UserService.user.id).collection("favorites")
+            self.navigationItem.title = "お気に入り"
         } else {
             // 通常のリストの場合
             ref = db.products(category: category.id)
+            self.navigationItem.title = category.name
         }
         
         listener = ref.addSnapshotListener({(snap, error) in
@@ -85,7 +85,7 @@ class ProductsVC: UIViewController, ProductCellDelegate, CartBarButtonItemDelega
         })
     }
     
-    // お気に入りボタンを押した際の挙動を制御するメソッド
+    // セルのお気に入りボタンを押した際の挙動を制御するメソッド
     func productFavorited(product: Product) {
         if UserService.isGuest {
             self.simpleAlert(title: "ようこそゲスト様", msg: "お気に入り機能はユーザー専用の機能です。ログインまたは、新規ユーザー登録の上ご利用ください。")
@@ -99,7 +99,7 @@ class ProductsVC: UIViewController, ProductCellDelegate, CartBarButtonItemDelega
         tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
     }
     
-    // カートに入れるボタンを押した際の挙動を制御するメソッド
+    // セルのカートに入れるボタンを押した際の挙動を制御するメソッド
     func productAddtoCart(product: Product) {
         if UserService.isGuest {
             self.simpleAlert(title: "ようこそゲスト様", msg: "商品のお買い求めには、ログインまたは新規ユーザー登録をお願いいたします。")
@@ -110,6 +110,7 @@ class ProductsVC: UIViewController, ProductCellDelegate, CartBarButtonItemDelega
         rightBarButtonItem.changeCartItemsText()
     }
     
+    // ナビゲーションバーのカートボタンを押した際の挙動を制御するメソッド
     func cartButtonClicked() {
         // ショッピングカート画面（CheckoutVC）に遷移
         performSegue(withIdentifier: Segues.ToShoppingCart, sender: self)
