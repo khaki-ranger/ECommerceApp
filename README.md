@@ -1,13 +1,13 @@
 # ECommerceApp
 単一オーナー型（非モール型）のネットショップアプリ
 
-## 特徴
+### 特徴
 
 1. 1つのプロジェクト内に一般利用者向けと、ショップオーナー向けの2つのアプリを内包しています。
 2. データ永続化やユーザー認証等のサーバー側の処理にはFirebaseを使用しています。
 3. UI作成には、主に Interface Builder（ストーリーボード）を利用しました。また、UITableViewCell等一部のViewでXIBを使用しています。
 
-## 機能一覧
+### 機能一覧
 
 #### 共通
 - カテゴリ一覧表示 - UICollectionView
@@ -27,12 +27,12 @@
 - カテゴリ作成、編集 - Firebase Firestore
 - 商品作成、編集 - Firebase Firestore
 
-## 利用イメージ
+### 利用イメージ
 
 #### カスタマーサイド
 #### オーナーサイド
 
-## 使用技術一覧
+### 使用技術一覧
 
 - サーバー - Firebase
 - データベース、永続化 - Firebase Firestore
@@ -42,27 +42,27 @@
 - カート、決済 - StripeAPI
 - 画像キャッシュ - Kingfisher
 
-## 使用言語
+### 使用言語
 
 - Swift5.0.1
 
-## 開発環境
+### 開発環境
 
 - Xcode10.3
 
-## デプロイターゲット
+### デプロイターゲット
 
 - 10.0
 
-## 設計・デザインパターン
+### 設計・デザインパターン
 
 - MVC
 
-## UI作成方法
+### UI作成方法
 
 - Interface Builder（ストーリーボード）
 
-## 使用したライブラリ
+### 使用したライブラリ
 
 #### Firebase関連
 - Firebase/Core 6.1.0
@@ -77,8 +77,8 @@
 - [IQKeyboardManagerSwift 6.3.0](https://github.com/hackiftekhar/IQKeyboardManager)
 - [Kingfisher 4.0](https://github.com/onevcat/Kingfisher)
 
-## 使用API
+### 使用API
 
 - [StripeAPI](https://stripe.com/docs/api)
 
-## 自動テスト
+### 自動テスト
