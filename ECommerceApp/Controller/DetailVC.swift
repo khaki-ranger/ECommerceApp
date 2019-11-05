@@ -42,6 +42,10 @@ class DetailVC: UIViewController, CartBarButtonItemDelegate {
         productDeacription.text = product.productDescription
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        rightBarButtonItem.changeCartItemsText()
+    }
+    
     private func setupCollectionView() {
         slideImageView.delegate = self
         slideImageView.dataSource = self
