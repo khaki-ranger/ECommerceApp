@@ -10,22 +10,28 @@
 ## 機能一覧
 
 #### 共通
-- ユーザー認証 - Firebase Authentication
-- 匿名ユーザー - Firebase Authentication
-- パスワード再設定 - Firebase Authentication
-- Oauth認証（Facebook認証）
-- カテゴリ一覧表示 - UICollectionView
-- 商品一覧表示 - UITableView
+| 機能 | 実現方法 |
+----|----
+|ユーザー認証 |Firebase Authentication |
+|匿名ユーザー |Firebase Authentication |
+|パスワード再設定 |Firebase Authentication |
+|Oauth認証（Facebook認証） |xxx |
+|カテゴリ一覧表示 |UICollectionView |
+|商品一覧表示 |UITableView |
 
 #### カスタマーサイド
-- 複数画像表示 - UICollectionView
-- 可変コンテンツ表示 - UIScrollView
-- お気に入り商品 - Firebase Firestore
-- ショッピングカート、決済 - StripeAPI
+| 機能 | 実現方法 |
+----|----
+|複数画像表示 |UICollectionView |
+|可変コンテンツ表示 |UIScrollView |
+|お気に入り商品 |Firebase Firestore |
+|ショッピングカート、決済 |StripeAPI |
 
 #### オーナーサイド
-- カテゴリ作成、編集 - Firebase Firestore
-- 商品作成、編集 - Firebase Firestore
+| 機能 | 実現方法 |
+----|----
+|カテゴリ作成、編集 |Firebase Firestore |
+|商品作成、編集 |Firebase Firestore |
 
 ## 利用イメージ
 
@@ -43,7 +49,7 @@
 
 ## 使用技術一覧
 
-| 目的 | 実現手段 |
+| 目的 | 実現方法 |
 ----|----
 |サーバー |Firebase |
 |データベース（データ永続化）|Firebase Firestore |
