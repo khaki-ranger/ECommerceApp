@@ -2,10 +2,10 @@
 単一オーナー型（非モール型）のネットショップアプリ
 
 ## 特徴
-
-1. 1つのプロジェクト内に一般利用者向けと、ショップオーナー向けの2つのアプリを内包しています。
+1. 一つのプロジェクト内に一般利用者向けと、ショップオーナー向けの二つのアプリを内包しています。
 2. データ永続化やユーザー認証等のサーバー側の処理にはFirebaseを使用しています。
 3. UI作成には、主に Interface Builder（ストーリーボード）を利用しました。また、UITableViewCell等一部のViewでXIBを使用しています。
+4. メインのストーリーボードとは別に、ログイン周り専用のストーリーボードを設けました。
 
 ## 機能一覧
 
@@ -43,13 +43,15 @@
 
 ## 使用技術一覧
 
-- サーバー - Firebase
-- データベース、永続化 - Firebase Firestore
-- 画像ストレージ - Firebase Firestorage
-- ユーザー、セッション管理 - Firebase Authentication
-- 外部API通信 - Firebase CloudFunctions
-- カート、決済 - StripeAPI
-- 画像キャッシュ - Kingfisher
+| 目的 | 実現手段 |
+----|----
+|サーバー |Firebase |
+|データベース（データ永続化）|Firebase Firestore |
+|画像ストレージ |Firebase Firestorage |
+|ユーザー、セッション管理 |Firebase Authentication |
+|外部API通信 |Firebase CloudFunctions |
+|カート、決済 |StripeAPI |
+|画像キャッシュ |Kingfisher |
 
 ## 設計・デザインパターン
 
@@ -59,7 +61,7 @@
 
 - Interface Builder（ストーリーボード）
 
-## 使用したライブラリ
+## 使用ライブラリ
 
 #### Firebase関連
 - Firebase/Core 6.1.0
