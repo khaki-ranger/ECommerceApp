@@ -10,12 +10,12 @@
 ## 機能一覧
 
 #### 共通
-- カテゴリ一覧表示 - UICollectionView
-- 商品一覧表示 - UITableView
 - ユーザー認証 - Firebase Authentication
 - 匿名ユーザー - Firebase Authentication
 - パスワード再設定 - Firebase Authentication
 - Oauth認証（Facebook認証）
+- カテゴリ一覧表示 - UICollectionView
+- 商品一覧表示 - UITableView
 
 #### カスタマーサイド
 - 複数画像表示 - UICollectionView
@@ -30,7 +30,16 @@
 ## 利用イメージ
 
 #### カスタマーサイド
+
 #### オーナーサイド
+
+## 開発環境・使用言語
+
+- Xcode10.3 / Swift5.0.1
+
+## 対応OS（デプロイターゲット）
+
+- iOS10.0
 
 ## 使用技術一覧
 
@@ -41,18 +50,6 @@
 - 外部API通信 - Firebase CloudFunctions
 - カート、決済 - StripeAPI
 - 画像キャッシュ - Kingfisher
-
-## 使用言語
-
-- Swift5.0.1
-
-## 開発環境
-
-- Xcode10.3
-
-## デプロイターゲット
-
-- 10.0
 
 ## 設計・デザインパターン
 
