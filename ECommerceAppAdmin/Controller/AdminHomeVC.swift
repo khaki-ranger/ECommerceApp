@@ -14,8 +14,17 @@ class AdminHomeVC: HomeVC {
         super.viewDidLoad()
         
 //        navigationItem.leftBarButtonItem?.isEnabled = false
+        hiddenRightBarButtonItem()
+        
         let addCategoryBtn = UIBarButtonItem(title: "カテゴリ追加", style: .plain, target: self, action: #selector(addCategory))
         navigationItem.rightBarButtonItem = addCategoryBtn
+    }
+    
+    // CustomerFaceのカートボタンとお気に入りボタンを非表示にするためのメソッド
+    private func hiddenRightBarButtonItem() {
+        rightBarButtonItem.cartBtn.isHidden = true
+        rightBarButtonItem.favoritesBarButtonItem.isEnabled = false
+        rightBarButtonItem.favoritesBarButtonItem.tintColor = UIColor.clear
     }
     
     @objc func addCategory() {

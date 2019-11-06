@@ -21,6 +21,7 @@ class RightBarButtonItem {
     weak var cartBtnDelegate: CartBarButtonItemDelegate?
     weak var favoritesBtnDelegate: FavoritesButtonItemDelegate?
     var cartBtn: UIButton!
+    var favoritesBarButtonItem: UIBarButtonItem!
     
     init(navigation: UINavigationItem, cartBtnDelegate: CartBarButtonItemDelegate) {
         self.cartBtnDelegate = cartBtnDelegate
@@ -34,7 +35,7 @@ class RightBarButtonItem {
         self.favoritesBtnDelegate = favoritesBtnDelegate
         
         let cartBarButtonItem = setCartButtonItem()
-        let favoritesBarButtonItem = UIBarButtonItem(image: UIImage(named: "bar_button_heart"), style: .plain, target: self, action: #selector(favoritesClicked))
+        favoritesBarButtonItem = UIBarButtonItem(image: UIImage(named: "bar_button_heart"), style: .plain, target: self, action: #selector(favoritesClicked))
         navigation.rightBarButtonItems = [cartBarButtonItem, favoritesBarButtonItem]
     }
     
