@@ -22,6 +22,5 @@ class AdminHomeVC: HomeVC {
         performSegue(withIdentifier: Segues.ToAddEditCategory, sender: self)
     }
 
-
 }
 

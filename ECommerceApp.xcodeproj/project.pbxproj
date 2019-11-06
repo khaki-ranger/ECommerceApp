@@ -32,6 +32,9 @@
 		D137B3F32351A78B00E67D9B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D137B3EE23519FE000E67D9B /* UserService.swift */; };
 		D13C18562362923A00599687 /* ProductImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13C18542362923A00599687 /* ProductImageCell.swift */; };
 		D13C18572362923A00599687 /* ProductImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D13C18552362923A00599687 /* ProductImageCell.xib */; };
+		D1473D082372C00300999EFE /* RightBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13005A0236DB9B00080B28E /* RightBarButtonItem.swift */; };
+		D1473D092372C04700999EFE /* ProductImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13C18542362923A00599687 /* ProductImageCell.swift */; };
+		D1473D0A2372C04700999EFE /* ProductImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D13C18552362923A00599687 /* ProductImageCell.xib */; };
 		D16594DF234D4B1400086CB2 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16594DD234D4B1400086CB2 /* ForgotPasswordVC.swift */; };
 		D16594E0234D4B1400086CB2 /* ForgotPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D16594DE234D4B1400086CB2 /* ForgotPasswordVC.xib */; };
 		D16594E2234D5ABE00086CB2 /* Firebase+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16594E1234D5ABE00086CB2 /* Firebase+Utils.swift */; };
@@ -453,6 +456,7 @@
 				D11678202358447700DD991F /* LoginStoryboard.storyboard in Resources */,
 				D16594EC234D698400086CB2 /* CategoryCell.xib in Resources */,
 				D13315E6234ADAC600869F8F /* LaunchScreen.storyboard in Resources */,
+				D1473D0A2372C04700999EFE /* ProductImageCell.xib in Resources */,
 				D116781F2358414D00DD991F /* ForgotPasswordVC.xib in Resources */,
 				D1ABCC36234B14560017A6E7 /* GoogleService-Info.plist in Resources */,
 				D1BE2572234D82B700539728 /* ProductCell.xib in Resources */,
@@ -634,6 +638,7 @@
 				D137B3F32351A78B00E67D9B /* UserService.swift in Sources */,
 				D13315DE234ADAC500869F8F /* AdminHomeVC.swift in Sources */,
 				D1BE2569234D815E00539728 /* ProductsVC.swift in Sources */,
+				D1473D092372C04700999EFE /* ProductImageCell.swift in Sources */,
 				D17CCD23234EB47E00E19BF7 /* RoundedViews.swift in Sources */,
 				D17CCD1E234EB30D00E19BF7 /* HomeVC.swift in Sources */,
 				D13315DC234ADAC500869F8F /* AppDelegate.swift in Sources */,
@@ -644,6 +649,7 @@
 				D17CCD25234EB6B500E19BF7 /* AddEditCategoryVC.swift in Sources */,
 				D1B1EDD7235EF20B0057F2E6 /* DetailVC.swift in Sources */,
 				D16594E6234D68CD00086CB2 /* Category.swift in Sources */,
+				D1473D082372C00300999EFE /* RightBarButtonItem.swift in Sources */,
 				D1BE2570234D82B700539728 /* ProductCell.swift in Sources */,
 				D116781D235840FA00DD991F /* LoginVC.swift in Sources */,
 				D16594EA234D698400086CB2 /* CategoryCell.swift in Sources */,
