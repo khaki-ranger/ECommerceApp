@@ -18,7 +18,7 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationItem.title = "ログイン"
     }
 
     @IBAction func forgotPassClicked(_ sender: Any) {
