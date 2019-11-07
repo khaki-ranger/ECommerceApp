@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseFirestore
 
-class ProductsVC: UIViewController, ProductCellDelegate {
+class ProductsVC: UIViewController, ProductCellDelegate, CartBarButtonItemDelegate {
     
     // Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -21,22 +21,19 @@ class ProductsVC: UIViewController, ProductCellDelegate {
     var listener: ListenerRegistration!
     var showFavorites = false
     var selectedProduct: Product!
-    var cartBtn: UIButton!
+    var rightBarButtonItem: RightBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         db = Firestore.firestore()
         setupTableView()
-        setupRightBarButtonItems()
-        changeCartItemsText()
-        if let categoryName = category?.name {
-            self.navigationItem.title = categoryName
-        }
+        rightBarButtonItem = RightBarButtonItem(navigation: navigationItem, cartBtnDelegate: self)
+        rightBarButtonItem.changeCartItemsText()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         setProductListner()
-        changeCartItemsText()
+        rightBarButtonItem.changeCartItemsText()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -51,15 +48,18 @@ class ProductsVC: UIViewController, ProductCellDelegate {
         tableView.register(UINib(nibName: Identifiers.ProductCell, bundle: nil), forCellReuseIdentifier: Identifiers.ProductCell)
     }
     
+    // テーブルに表示されるデータの参照を制御するメソッド
     func setProductListner() {
         
         var ref: Query!
         if showFavorites {
             // お気に入りリストの場合
             ref = db.collection("users").document(UserService.user.id).collection("favorites")
+            self.navigationItem.title = "お気に入り"
         } else {
             // 通常のリストの場合
             ref = db.products(category: category.id)
+            self.navigationItem.title = category.name
         }
         
         listener = ref.addSnapshotListener({(snap, error) in
@@ -85,7 +85,7 @@ class ProductsVC: UIViewController, ProductCellDelegate {
         })
     }
     
-    // お気に入りボタンを押した際の挙動を制御するメソッド
+    // セルのお気に入りボタンを押した際の挙動を制御するメソッド
     func productFavorited(product: Product) {
         if UserService.isGuest {
             self.simpleAlert(title: "ようこそゲスト様", msg: "お気に入り機能はユーザー専用の機能です。ログインまたは、新規ユーザー登録の上ご利用ください。")
@@ -99,7 +99,7 @@ class ProductsVC: UIViewController, ProductCellDelegate {
         tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
     }
     
-    // カートに入れるボタンを押した際の挙動を制御するメソッド
+    // セルのカートに入れるボタンを押した際の挙動を制御するメソッド
     func productAddtoCart(product: Product) {
         if UserService.isGuest {
             self.simpleAlert(title: "ようこそゲスト様", msg: "商品のお買い求めには、ログインまたは新規ユーザー登録をお願いいたします。")
@@ -107,30 +107,13 @@ class ProductsVC: UIViewController, ProductCellDelegate {
         }
         
         StripeCart.addItemToCart(item: product)
-        changeCartItemsText()
-    }
-    
-    // ナビゲーションコントローラーの右側のボタンを設定
-    private func setupRightBarButtonItems() {
-        cartBtn = UIButton(type: .system)
-        cartBtn.setImage(UIImage(named: "bar_button_cart"), for: .normal)
-        cartBtn.contentEdgeInsets.left = 10
-        cartBtn.imageEdgeInsets.left = -10
-        cartBtn.addTarget(self, action: #selector(cartBtnClicked), for: .touchUpInside)
-        let cartBarButtonItem = UIBarButtonItem(customView: cartBtn)
-        navigationItem.rightBarButtonItem = cartBarButtonItem
+        rightBarButtonItem.changeCartItemsText()
     }
     
     // ナビゲーションバーのカートボタンを押した際の挙動を制御するメソッド
-    @objc func cartBtnClicked() {
-        // CheckoutVCに遷移
+    func cartButtonClicked() {
+        // ショッピングカート画面（CheckoutVC）に遷移
         performSegue(withIdentifier: Segues.ToShoppingCart, sender: self)
-    }
-    
-    // カートに入っている商品数を変更するメソッド
-    private func changeCartItemsText() {
-        let cartItemsCount = String(StripeCart.cartItems.count)
-        cartBtn.setTitle(cartItemsCount, for: .normal)
     }
 }
 
@@ -184,7 +167,7 @@ extension ProductsVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 160
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

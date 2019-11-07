@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailVC: UIViewController {
+class DetailVC: UIViewController, CartBarButtonItemDelegate {
     
     // Outlets
     @IBOutlet weak var slideImageView: UICollectionView!
@@ -22,7 +22,7 @@ class DetailVC: UIViewController {
     // Variables
     var product: Product!
     var productImages = [String]()
-    var cartBtn: UIButton!
+    var rightBarButtonItem: RightBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,13 +33,17 @@ class DetailVC: UIViewController {
         
         setupCollectionView()
         setupPageControll()
-        setupRightBarButtonItems()
-        changeCartItemsText()
+        rightBarButtonItem = RightBarButtonItem(navigation: navigationItem, cartBtnDelegate: self)
+        rightBarButtonItem.changeCartItemsText()
         controlOfNextBtnAndPrevBtn()
         
         productTitle.text = product.name
         productPrice.text = product.price.formattedCurrency()
         productDeacription.text = product.productDescription
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        rightBarButtonItem.changeCartItemsText()
     }
     
     private func setupCollectionView() {
@@ -101,27 +105,9 @@ class DetailVC: UIViewController {
         }
     }
     
-    // ナビゲーションコントローラーの右側のボタンを設定
-    private func setupRightBarButtonItems() {
-        cartBtn = UIButton(type: .system)
-        cartBtn.setImage(UIImage(named: "bar_button_cart"), for: .normal)
-        cartBtn.contentEdgeInsets.left = 10
-        cartBtn.imageEdgeInsets.left = -10
-        cartBtn.addTarget(self, action: #selector(cartBtnClicked), for: .touchUpInside)
-        let cartBarButtonItem = UIBarButtonItem(customView: cartBtn)
-        navigationItem.rightBarButtonItem = cartBarButtonItem
-    }
-    
-    // ナビゲーションバーのカートボタンを押した際の挙動を制御するメソッド
-    @objc func cartBtnClicked() {
-        // CheckoutVCに遷移
+    func cartButtonClicked() {
+        // ショッピングカート画面（CheckoutVC）に遷移
         performSegue(withIdentifier: Segues.ToShoppingCart, sender: self)
-    }
-    
-    // カートに入っている商品数を変更するメソッド
-    private func changeCartItemsText() {
-        let cartItemsCount = String(StripeCart.cartItems.count)
-        cartBtn.setTitle(cartItemsCount, for: .normal)
     }
 }
 

@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class HomeVC: UIViewController {
+class HomeVC: UIViewController, CartBarButtonItemDelegate, FavoritesButtonItemDelegate {
     
     // Outlets
     @IBOutlet weak var loginOutBtn: UIBarButtonItem!
@@ -21,20 +21,22 @@ class HomeVC: UIViewController {
     var selectedCategory: Category!
     var db: Firestore!
     var listener: ListenerRegistration!
-    var cartBtn: UIButton!
+    var rightBarButtonItem: RightBarButtonItem!
+    private let sectionInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0) // レイアウト設定
+    private let itemsPerRow: CGFloat = 3 // 1行あたりのアイテム数
     
     override func viewDidLoad() {
         super.viewDidLoad()
         db = Firestore.firestore()
         setupCollectionView()
         setupInitialAnonymouseUser()
-        setupRightBarButtonItems()
-        changeCartItemsText()
+        rightBarButtonItem = RightBarButtonItem(navigation: navigationItem, cartBtnDelegate: self, favoritesBtnDelegate: self)
+        rightBarButtonItem.changeCartItemsText()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         setCategoriesListener()
-        changeCartItemsText()
+        rightBarButtonItem.changeCartItemsText()
         
         if let user = Auth.auth().currentUser , !user.isAnonymous {
             // We are logged in
@@ -123,32 +125,12 @@ class HomeVC: UIViewController {
         }
     }
     
-    // ナビゲーションコントローラーの右側のボタンを設定
-    private func setupRightBarButtonItems() {
-        let favoritesBarButtonItem = UIBarButtonItem(image: UIImage(named: "bar_button_heart"), style: .plain, target: self, action: #selector(favoritesClicked))
-        cartBtn = UIButton(type: .system)
-        cartBtn.setImage(UIImage(named: "bar_button_cart"), for: .normal)
-        cartBtn.contentEdgeInsets.left = 10
-        cartBtn.imageEdgeInsets.left = -10
-        cartBtn.addTarget(self, action: #selector(cartBtnClicked), for: .touchUpInside)
-        let cartBarButtonItem = UIBarButtonItem(customView: cartBtn)
-        navigationItem.rightBarButtonItems = [cartBarButtonItem, favoritesBarButtonItem]
-    }
-    
-    // カートに入っている商品数を変更するメソッド
-    private func changeCartItemsText() {
-        let cartItemsCount = String(StripeCart.cartItems.count)
-        cartBtn.setTitle(cartItemsCount, for: .normal)
-    }
-    
-    // ナビゲーションバーのカートボタンを押した際の挙動を制御するメソッド
-    @objc func cartBtnClicked() {
-        // CheckoutVCに遷移
+    func cartButtonClicked() {
+        // ショッピングカート画面（CheckoutVC）に遷移
         performSegue(withIdentifier: Segues.ToShoppingCart, sender: self)
     }
     
-    // お気に入りボタンを押した際の挙動を制御するメソッド
-    @objc func favoritesClicked() {
+    func favoritesButtonClicked() {
         if UserService.isGuest {
             self.simpleAlert(title: "ようこそゲスト様", msg: "お気に入り機能はユーザー専用の機能です。ログインまたは、新規ユーザー登録の上ご利用ください。")
             return
@@ -202,10 +184,11 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = view.frame.width
-        let cellWidth = (width - 30) / 2
-        let cellHeight = cellWidth * 1.2
-        return CGSize(width: cellWidth, height: cellHeight)
+        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let availableWidth = view.frame.width - paddingSpace
+        let widthPerItem = availableWidth / itemsPerRow
+        let heightPerItem = widthPerItem * 1.2
+        return CGSize(width: widthPerItem, height: heightPerItem)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

@@ -37,7 +37,7 @@
             </objects>
             <point key="canvasLocation" x="228.98550724637684" y="765.40178571428567"/>
         </scene>
-        <!--Admin-->
+        <!--店舗管理-->
         <scene sceneID="s4l-IH-nne">
             <objects>
                 <viewController id="5xj-Yt-1V2" customClass="AdminHomeVC" customModule="ECommerceAppAdmin" customModuleProvider="target" sceneMemberID="viewController">
@@ -46,13 +46,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MrT-QI-PrH">
-                                <rect key="frame" x="10" y="88" width="394" height="808"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RBL-kv-bqS">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="RBL-kv-bqS">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
@@ -64,15 +64,15 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Qhb-DH-7az" firstAttribute="centerX" secondItem="dAc-xl-m8U" secondAttribute="centerX" id="6o1-pB-8Gc"/>
-                            <constraint firstItem="ZjC-fG-88X" firstAttribute="trailing" secondItem="MrT-QI-PrH" secondAttribute="trailing" constant="10" id="EEn-Ix-Deh"/>
+                            <constraint firstItem="ZjC-fG-88X" firstAttribute="trailing" secondItem="MrT-QI-PrH" secondAttribute="trailing" id="EEn-Ix-Deh"/>
                             <constraint firstAttribute="bottom" secondItem="MrT-QI-PrH" secondAttribute="bottom" id="H1v-Xf-8dc"/>
-                            <constraint firstItem="MrT-QI-PrH" firstAttribute="leading" secondItem="ZjC-fG-88X" secondAttribute="leading" constant="10" id="Hy3-cn-IGg"/>
+                            <constraint firstItem="MrT-QI-PrH" firstAttribute="leading" secondItem="ZjC-fG-88X" secondAttribute="leading" id="Hy3-cn-IGg"/>
                             <constraint firstItem="MrT-QI-PrH" firstAttribute="top" secondItem="ZjC-fG-88X" secondAttribute="top" id="Vcn-gq-2pJ"/>
                             <constraint firstItem="Qhb-DH-7az" firstAttribute="centerY" secondItem="dAc-xl-m8U" secondAttribute="centerY" id="wqp-u7-oVQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZjC-fG-88X"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Admin" id="79R-rv-4OK">
+                    <navigationItem key="navigationItem" title="店舗管理" id="79R-rv-4OK">
                         <barButtonItem key="leftBarButtonItem" title="ログイン" id="bpo-C6-Kgt">
                             <connections>
                                 <action selector="loginOutClicked:" destination="5xj-Yt-1V2" id="YYN-Oh-jxs"/>
@@ -219,26 +219,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品名を入力してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOp-64-gGq">
+                                <rect key="frame" x="103" y="108" width="208" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="商品名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eTe-og-1za">
-                                <rect key="frame" x="20" y="108" width="374" height="30"/>
+                                <rect key="frame" x="20" y="140.5" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="価格を入力してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CL-ya-zd8">
+                                <rect key="frame" x="111.5" y="190.5" width="191" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="価格" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ble-Zo-166">
-                                <rect key="frame" x="20" y="150" width="374" height="30"/>
+                                <rect key="frame" x="20" y="223" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="説明文を入力してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1F-1Q-EPI">
-                                <rect key="frame" x="103" y="200" width="208" height="20.5"/>
+                                <rect key="frame" x="103" y="273" width="208" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="35Y-5c-1Jf">
-                                <rect key="frame" x="20" y="232.5" width="374" height="128"/>
+                                <rect key="frame" x="20" y="305.5" width="374" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="Idm-Wf-oJo"/>
@@ -247,13 +259,13 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="画像を追加してください" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iuu-wG-yw0">
-                                <rect key="frame" x="111.5" y="380.5" width="191" height="20.5"/>
+                                <rect key="frame" x="111.5" y="453.5" width="191" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4Dc-7S-eeI">
-                                <rect key="frame" x="20" y="414" width="374" height="80"/>
+                                <rect key="frame" x="20" y="487" width="374" height="80"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="BPC-0J-lye">
                                         <rect key="frame" x="0.0" y="0.0" width="67" height="80"/>
@@ -291,7 +303,7 @@
                                 </constraints>
                             </stackView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="mW8-GA-7Cv">
-                                <rect key="frame" x="188.5" y="514" width="37" height="37"/>
+                                <rect key="frame" x="188.5" y="587" width="37" height="37"/>
                                 <color key="color" red="0.0039215686269999999" green="0.3411764706" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cu0-cF-UnH" customClass="RoundedButton" customModule="ECommerceAppAdmin" customModuleProvider="target">
@@ -311,20 +323,24 @@
                         </subviews>
                         <color key="backgroundColor" red="0.98431372549019602" green="0.9137254901960784" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="eTe-og-1za" firstAttribute="top" secondItem="ZOp-64-gGq" secondAttribute="bottom" constant="12" id="64Z-j8-EAn"/>
                             <constraint firstItem="35Y-5c-1Jf" firstAttribute="leading" secondItem="rI2-xU-orm" secondAttribute="leading" constant="20" id="8Hi-pQ-f2S"/>
                             <constraint firstItem="35Y-5c-1Jf" firstAttribute="top" secondItem="X1F-1Q-EPI" secondAttribute="bottom" constant="12" id="Azk-up-ckd"/>
+                            <constraint firstItem="5CL-ya-zd8" firstAttribute="centerX" secondItem="XaQ-tk-Jdr" secondAttribute="centerX" id="Bo2-J5-RIc"/>
                             <constraint firstItem="rI2-xU-orm" firstAttribute="trailing" secondItem="Cu0-cF-UnH" secondAttribute="trailing" constant="20" id="MCf-tE-VDR"/>
-                            <constraint firstItem="eTe-og-1za" firstAttribute="top" secondItem="rI2-xU-orm" secondAttribute="top" constant="20" id="PLJ-PL-XWP"/>
                             <constraint firstItem="Iuu-wG-yw0" firstAttribute="top" secondItem="35Y-5c-1Jf" secondAttribute="bottom" constant="20" id="T2M-Pj-D71"/>
                             <constraint firstItem="Iuu-wG-yw0" firstAttribute="centerX" secondItem="XaQ-tk-Jdr" secondAttribute="centerX" id="Tqg-HC-lDd"/>
+                            <constraint firstItem="ble-Zo-166" firstAttribute="top" secondItem="5CL-ya-zd8" secondAttribute="bottom" constant="12" id="ZbI-FI-GPC"/>
                             <constraint firstItem="ble-Zo-166" firstAttribute="leading" secondItem="rI2-xU-orm" secondAttribute="leading" constant="20" id="aS0-Dp-c5C"/>
                             <constraint firstItem="eTe-og-1za" firstAttribute="leading" secondItem="rI2-xU-orm" secondAttribute="leading" constant="20" id="cRA-K8-WGB"/>
                             <constraint firstItem="X1F-1Q-EPI" firstAttribute="top" secondItem="ble-Zo-166" secondAttribute="bottom" constant="20" id="d1H-Ac-YOu"/>
+                            <constraint firstItem="ZOp-64-gGq" firstAttribute="top" secondItem="rI2-xU-orm" secondAttribute="top" constant="20" id="dLd-7g-B7K"/>
                             <constraint firstItem="4Dc-7S-eeI" firstAttribute="leading" secondItem="rI2-xU-orm" secondAttribute="leading" constant="20" id="dMK-Pk-Wbm"/>
+                            <constraint firstItem="5CL-ya-zd8" firstAttribute="top" secondItem="eTe-og-1za" secondAttribute="bottom" constant="20" id="fzg-tf-tGl"/>
                             <constraint firstItem="mW8-GA-7Cv" firstAttribute="centerX" secondItem="XaQ-tk-Jdr" secondAttribute="centerX" id="gOL-4C-xtS"/>
+                            <constraint firstItem="ZOp-64-gGq" firstAttribute="centerX" secondItem="XaQ-tk-Jdr" secondAttribute="centerX" id="gQ2-J8-lir"/>
                             <constraint firstItem="4Dc-7S-eeI" firstAttribute="top" secondItem="Iuu-wG-yw0" secondAttribute="bottom" constant="13" id="laY-jo-8IE"/>
                             <constraint firstItem="rI2-xU-orm" firstAttribute="trailing" secondItem="35Y-5c-1Jf" secondAttribute="trailing" constant="20" id="mYc-Eh-Wih"/>
-                            <constraint firstItem="ble-Zo-166" firstAttribute="top" secondItem="eTe-og-1za" secondAttribute="bottom" constant="12" id="nLw-Jn-8u5"/>
                             <constraint firstItem="rI2-xU-orm" firstAttribute="trailing" secondItem="eTe-og-1za" secondAttribute="trailing" constant="20" id="rk7-gS-4Xg"/>
                             <constraint firstItem="rI2-xU-orm" firstAttribute="trailing" secondItem="ble-Zo-166" secondAttribute="trailing" constant="20" id="sJn-sB-Pj7"/>
                             <constraint firstItem="mW8-GA-7Cv" firstAttribute="top" secondItem="4Dc-7S-eeI" secondAttribute="bottom" constant="20" id="t8F-Az-3t0"/>
@@ -357,6 +373,6 @@
         <image name="camera" width="24" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MNX-bb-Ce4"/>
+        <segue reference="vuT-Ip-eWy"/>
     </inferredMetricsTieBreakers>
 </document>
