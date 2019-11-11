@@ -10,7 +10,7 @@
 ## 機能一覧
 
 #### 共通
-| 機能 | 実現方法 |
+| 内容 | 実現方法 |
 ----|----
 |ユーザー認証 |Firebase Authentication |
 |匿名ユーザー |Firebase Authentication |
@@ -20,7 +20,7 @@
 |商品一覧表示 |UITableView |
 
 #### カスタマーサイド
-| 機能 | 実現方法 |
+| 内容 | 実現方法 |
 ----|----
 |複数画像表示 |UICollectionView |
 |可変コンテンツ表示 |UIScrollView |
@@ -28,7 +28,7 @@
 |ショッピングカート、決済 |StripeAPI |
 
 #### オーナーサイド
-| 機能 | 実現方法 |
+| 内容 | 実現方法 |
 ----|----
 |カテゴリ作成、編集 |Firebase Firestore |
 |商品作成、編集 |Firebase Firestore |
@@ -49,7 +49,7 @@
 
 ## 使用技術一覧
 
-| 目的 | 実現方法 |
+| 内容 | 実現方法 |
 ----|----
 |サーバー |Firebase |
 |データベース（データ永続化）|Firebase Firestore |
