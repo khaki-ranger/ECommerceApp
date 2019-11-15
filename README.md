@@ -41,6 +41,8 @@
 
 #### オーナーサイド
 
+![オーナーサイド](https://github.com/khaki-ranger/Assets/blob/master/ECommerceApp/ownerFace.jpg?raw=true "オーナーサイド")
+
 ## 開発環境・使用言語
 
 - Xcode10.3 / Swift5.0.1
