@@ -37,6 +37,8 @@
 
 #### カスタマーサイド
 
+![カスタマーサイド](https://github.com/khaki-ranger/Assets/blob/master/ECommerceApp/customerFace.jpg?raw=true "カスタマーサイド")
+
 #### オーナーサイド
 
 ## 開発環境・使用言語
