@@ -7,10 +7,20 @@
 3. UI作成には、主に Interface Builder（ストーリーボード）を利用しました。また、UITableViewCell等一部のViewでXIBを使用しています。
 4. メインのストーリーボードとは別に、ログイン周り専用のストーリーボードを設けました。
 
+## 利用イメージ
+
+#### カスタマーサイド
+
+![カスタマーサイド](https://github.com/khaki-ranger/Assets/blob/master/ECommerceApp/customerFace.jpg?raw=true "カスタマーサイド")
+
+#### オーナーサイド
+
+![オーナーサイド](https://github.com/khaki-ranger/Assets/blob/master/ECommerceApp/ownerFace.jpg?raw=true "オーナーサイド")
+
 ## 機能一覧
 
 #### 共通
-| 機能 | 実現方法 |
+| 内容 | 実現方法 |
 ----|----
 |ユーザー認証 |Firebase Authentication |
 |匿名ユーザー |Firebase Authentication |
@@ -20,7 +30,7 @@
 |商品一覧表示 |UITableView |
 
 #### カスタマーサイド
-| 機能 | 実現方法 |
+| 内容 | 実現方法 |
 ----|----
 |複数画像表示 |UICollectionView |
 |可変コンテンツ表示 |UIScrollView |
@@ -28,16 +38,10 @@
 |ショッピングカート、決済 |StripeAPI |
 
 #### オーナーサイド
-| 機能 | 実現方法 |
+| 内容 | 実現方法 |
 ----|----
 |カテゴリ作成、編集 |Firebase Firestore |
 |商品作成、編集 |Firebase Firestore |
-
-## 利用イメージ
-
-#### カスタマーサイド
-
-#### オーナーサイド
 
 ## 開発環境・使用言語
 
@@ -49,7 +53,7 @@
 
 ## 使用技術一覧
 
-| 目的 | 実現方法 |
+| 内容 | 実現方法 |
 ----|----
 |サーバー |Firebase |
 |データベース（データ永続化）|Firebase Firestore |
