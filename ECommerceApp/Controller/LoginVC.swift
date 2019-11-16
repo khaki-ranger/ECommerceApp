@@ -63,12 +63,19 @@ class LoginVC: UIViewController {
             } else if result?.isCancelled ?? true {
                 // do something
             } else {
+                self.signinFirebaseFacebook()
             }
         }
     }
     
     private func signinFirebaseFacebook() {
-        
+        let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
+        Auth.auth().signIn(with: credential) { (result, error) in
+            if let error = error {
+                debugPrint(error.localizedDescription)
+            }
+            // Facebookでログインしたユーザーが新規ユーザーかどうかを判定
+        }
     }
     
     @IBAction func guestClicked(_ sender: Any) {
