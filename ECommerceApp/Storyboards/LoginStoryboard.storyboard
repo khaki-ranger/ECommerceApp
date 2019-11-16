@@ -131,6 +131,7 @@
                         <outlet property="activityIndicator" destination="jlc-pk-1C1" id="3RO-GS-dkW"/>
                         <outlet property="emailTxt" destination="sK0-B2-YY2" id="ZW6-YJ-y34"/>
                         <outlet property="passwordTxt" destination="Hc1-Xb-5eO" id="tIV-Uj-CVL"/>
+                        <segue destination="cIa-UR-MYM" kind="show" identifier="toConnectAcount" id="pC9-LA-PV7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yu2-Yl-Wlv" userLabel="First Responder" sceneMemberID="firstResponder"/>

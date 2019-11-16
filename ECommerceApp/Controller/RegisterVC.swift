@@ -84,7 +84,7 @@ class RegisterVC: UIViewController {
             
             // アプリ内でユーザーを管理するためのオブジェクトを作成
             guard let firUser = result?.user else { return }
-            let artUser = User.init(id: firUser.uid, email: email, username: username, stripeId: "")
+            let artUser = User.init(id: firUser.uid, email: email, username: username, stripeId: "", hasSetupAccount: true)
             // Firestoreにデータをアップロードする
             self.createFirestoreUser(user: artUser)
         }

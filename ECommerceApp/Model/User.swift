@@ -13,16 +13,19 @@ struct User {
     var email: String
     var username: String
     var stripeId: String
+    var hasSetupAccount: Bool
     
     init(id: String = "",
          email: String = "",
          username: String = "",
-         stripeId: String = "") {
+         stripeId: String = "",
+         hasSetupAccount: Bool = false) {
         
         self.id = id
         self.email = email
         self.username = username
         self.stripeId = stripeId
+        self.hasSetupAccount = hasSetupAccount
     }
     
     init(data: [String: Any]) {
@@ -30,6 +33,7 @@ struct User {
         email = data["email"] as? String ?? ""
         username = data["username"] as? String ?? ""
         stripeId = data["stripeId"] as? String ?? ""
+        hasSetupAccount = data["hasSetupAccount"] as? Bool ?? false
     }
     
     static func modelToData(user: User) -> [String: Any] {
@@ -37,7 +41,8 @@ struct User {
             "id" : user.id,
             "email" : user.email,
             "username" : user.username,
-            "stripeId" : user.stripeId
+            "stripeId" : user.stripeId,
+            "hasSetupAccount" : user.hasSetupAccount
         ]
         
         return data
