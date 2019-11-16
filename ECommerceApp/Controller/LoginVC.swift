@@ -78,31 +78,47 @@ class LoginVC: UIViewController {
                 return
             }
             
-            guard let firUser = result?.user else { return }
-            
             // Facebookでログインしたユーザーが新規ユーザーかどうかを判定
             if let isNewUser = result?.additionalUserInfo?.isNewUser {
                 if isNewUser {
-                    guard let email = firUser.email, email.isNotEmpty,
-                        let username = firUser.displayName, username.isNotEmpty else { return }
-                    
-                    let appUser = User.init(id: firUser.uid, email: email, username: username, stripeId: "", hasSetupAccount: false)
-                    self.handleNewUser(user: appUser)
+                    self.handleNewUser()
                 } else {
-                    
+                    self.handlePotentialFirstTimeFBLogin()
+                }
+            }
+        }
+    }
+    
+    // Facebookでログインしたユーザーが新規ユーザーではなかった場合の処理を実装するメソッド
+    private func handlePotentialFirstTimeFBLogin() {
+        guard let user = Auth.auth().currentUser else { return }
+        Firestore.firestore().collection("users").document(user.uid).getDocument { (snap, error) in
+            if let data = snap?.data() {
+                guard let hasSetup = data["hasSetupAccount"] as? Bool else { return }
+                if hasSetup {
+                    self.dismiss(animated: true, completion: nil)
+                } else {
+                    self.handleNewUser()
                 }
             }
         }
     }
     
     // Facebookでログインしたユーザーが新規ユーザーだった場合の処理を行うメソッド
-    private func handleNewUser(user: User) {
+    private func handleNewUser() {
+        guard let user = Auth.auth().currentUser else { return }
+        var userData = [String: Any]()
+        userData = [
+            "id": user.uid,
+            "email": "",
+            "username": "",
+            "stripeId": "",
+            "hasSetupAccount": false
+        ]
         // FirestoreのDocumentReferenceを作成
-        let newUserRef = Firestore.firestore().collection("users").document(user.id)
-        // Firestoreにアップロードするために、オブジェクトのデータをString : Any型の辞書に変換
-        let data = User.modelToData(user: user)
+        let newUserRef = Firestore.firestore().collection("users").document(user.uid)
         // Firestoreにアップロードする
-        newUserRef.setData(data) { (error) in
+        newUserRef.setData(userData) { (error) in
             if let error = error {
                 Auth.auth().handleFireAuthError(error: error, vc: self)
                 debugPrint(error.localizedDescription)
