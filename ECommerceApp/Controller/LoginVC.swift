@@ -52,6 +52,10 @@ class LoginVC: UIViewController {
         }
     }
     
+    @IBAction func fbLoginClicked(_ sender: Any) {
+        print("Facebookでログイン")
+    }
+    
     @IBAction func guestClicked(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

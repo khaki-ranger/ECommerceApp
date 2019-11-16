@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="ycV-AC-vp5">
-                                <rect key="frame" x="20" y="108" width="374" height="319.5"/>
+                                <rect key="frame" x="20" y="108" width="374" height="371.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sK0-B2-YY2">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
@@ -61,8 +61,23 @@
                                             <action selector="loginClicked:" destination="qcs-UA-n8S" eventType="touchUpInside" id="H4h-3p-IYX"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYA-oM-CiY" customClass="RoundedButton" customModule="ECommerceApp" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSr-fT-lKH" customClass="RoundedButton" customModule="ECommerceApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="195" width="374" height="40"/>
+                                        <color key="backgroundColor" red="0.25882352941176467" green="0.40392156862745099" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="jin-wI-YXU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Facebookでログイン">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="fbLoginClicked:" destination="qcs-UA-n8S" eventType="touchUpInside" id="4Br-dI-XMa"/>
+                                            <segue destination="cIa-UR-MYM" kind="show" id="rH5-8e-iL2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYA-oM-CiY" customClass="RoundedButton" customModule="ECommerceApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="247" width="374" height="40"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="7FN-yS-fez"/>
@@ -76,13 +91,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPF-cU-jIU">
-                                        <rect key="frame" x="0.0" y="247" width="374" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="299" width="374" height="20.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hpi-By-mIS" customClass="RoundedButton" customModule="ECommerceApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="279.5" width="374" height="40"/>
+                                        <rect key="frame" x="0.0" y="331.5" width="374" height="40"/>
                                         <color key="backgroundColor" red="0.0039215686269999999" green="0.3411764706" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="GUM-R6-2x2"/>
@@ -122,6 +137,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yu2-Yl-Wlv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="714.49275362318849" y="-44.196428571428569"/>
+        </scene>
+        <!--Connect AccountVC-->
+        <scene sceneID="1gS-3x-SBF">
+            <objects>
+                <viewController id="cIa-UR-MYM" customClass="ConnectAccountVC" customModule="ECommerceApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E6z-kE-Ibw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="iKm-Um-tFD"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kpM-Sk-Vbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1467" y="-772"/>
         </scene>
         <!--RegisterVC-->
         <scene sceneID="xPq-2t-d01">
