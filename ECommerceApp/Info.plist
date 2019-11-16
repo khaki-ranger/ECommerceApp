@@ -41,5 +41,22 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb473203826879532</string>
+            </array>
+        </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>473203826879532</string>
+    <key>FacebookDisplayName</key>
+    <string>ECommerceApp</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fbapi</string>
+    </array>
 </dict>
 </plist>
