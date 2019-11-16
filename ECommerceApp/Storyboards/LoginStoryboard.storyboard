@@ -145,9 +145,60 @@
                     <view key="view" contentMode="scaleToFill" id="E6z-kE-Ibw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="YJV-Bt-bjw">
+                                <rect key="frame" x="20" y="108" width="374" height="92"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ユーザーネーム" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DQ9-ti-dy6">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="iuP-kh-0D0"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KYr-VE-pg6">
+                                        <rect key="frame" x="0.0" y="52" width="374" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="nMm-ll-51g"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OzG-v6-1pZ" customClass="RoundedImageView" customModule="ECommerceApp" customModuleProvider="target">
+                                <rect key="frame" x="157" y="220" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="WMi-RS-SNv"/>
+                                    <constraint firstAttribute="height" constant="100" id="vjx-xa-ch9"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="jue-cG-EdB">
+                                <rect key="frame" x="188.5" y="340" width="37" height="37"/>
+                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98431372549999996" green="0.91372549020000005" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="jue-cG-EdB" firstAttribute="centerX" secondItem="E6z-kE-Ibw" secondAttribute="centerX" id="9cA-S5-Y8m"/>
+                            <constraint firstItem="OzG-v6-1pZ" firstAttribute="centerX" secondItem="E6z-kE-Ibw" secondAttribute="centerX" id="IlF-ab-RBk"/>
+                            <constraint firstItem="OzG-v6-1pZ" firstAttribute="top" secondItem="YJV-Bt-bjw" secondAttribute="bottom" constant="20" id="PZ1-Ku-Rmp"/>
+                            <constraint firstItem="iKm-Um-tFD" firstAttribute="trailing" secondItem="YJV-Bt-bjw" secondAttribute="trailing" constant="20" id="bXl-aN-kkf"/>
+                            <constraint firstItem="YJV-Bt-bjw" firstAttribute="leading" secondItem="iKm-Um-tFD" secondAttribute="leading" constant="20" id="eKk-nA-thq"/>
+                            <constraint firstItem="jue-cG-EdB" firstAttribute="top" secondItem="OzG-v6-1pZ" secondAttribute="bottom" constant="20" id="fvV-Ul-WIc"/>
+                            <constraint firstItem="YJV-Bt-bjw" firstAttribute="top" secondItem="iKm-Um-tFD" secondAttribute="top" constant="20" id="ixQ-c1-d7P"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="iKm-Um-tFD"/>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="jue-cG-EdB" id="XI4-oV-elK"/>
+                        <outlet property="emailTxt" destination="KYr-VE-pg6" id="MUp-ju-4fw"/>
+                        <outlet property="fbAvatar" destination="OzG-v6-1pZ" id="xnd-GX-I7P"/>
+                        <outlet property="userNameTxt" destination="DQ9-ti-dy6" id="Nh2-9T-Nv6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kpM-Sk-Vbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
