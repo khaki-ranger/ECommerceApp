@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FBSDKLoginKit
 
 class LoginVC: UIViewController {
 
@@ -15,6 +16,9 @@ class LoginVC: UIViewController {
     @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    // Variables
+    let loginManager = LoginManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +57,18 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func fbLoginClicked(_ sender: Any) {
-        print("Facebookでログイン")
+        loginManager.logIn(permissions: ["email"], from: self) { (result, error) in
+            if let error = error {
+                debugPrint(error.localizedDescription)
+            } else if result?.isCancelled ?? true {
+                // do something
+            } else {
+            }
+        }
+    }
+    
+    private func signinFirebaseFacebook() {
+        
     }
     
     @IBAction func guestClicked(_ sender: Any) {

@@ -73,7 +73,6 @@
                                         </state>
                                         <connections>
                                             <action selector="fbLoginClicked:" destination="qcs-UA-n8S" eventType="touchUpInside" id="4Br-dI-XMa"/>
-                                            <segue destination="cIa-UR-MYM" kind="show" id="rH5-8e-iL2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYA-oM-CiY" customClass="RoundedButton" customModule="ECommerceApp" customModuleProvider="target">
