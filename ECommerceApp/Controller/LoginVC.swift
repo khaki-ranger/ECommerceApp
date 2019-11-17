@@ -70,7 +70,9 @@ class LoginVC: UIViewController {
     
     private func signinFirebaseFacebook() {
         let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
-        Auth.auth().signIn(with: credential) { (result, error) in
+        
+        guard let user = Auth.auth().currentUser else { return }
+        user.link(with: credential) { (result, error) in
             if let error = error {
                 debugPrint(error.localizedDescription)
                 Auth.auth().handleFireAuthError(error: error, vc: self)
