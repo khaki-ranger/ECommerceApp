@@ -11,6 +11,7 @@ def shared_pods
   pod 'Firebase/Functions', '6.1.0'
   pod 'IQKeyboardManagerSwift', '6.3.0'
   pod 'Kingfisher', '~> 4.0'
+  pod 'FBSDKLoginKit'
 end
 
 target 'ECommerceApp' do

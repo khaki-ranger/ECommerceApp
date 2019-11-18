@@ -25,7 +25,7 @@
 |ユーザー認証 |Firebase Authentication |
 |匿名ユーザー |Firebase Authentication |
 |パスワード再設定 |Firebase Authentication |
-|Oauth認証（Facebook認証） |xxx |
+|外部認証（Facebook認証） |FBSDKLoginKit |
 |カテゴリ一覧表示 |UICollectionView |
 |商品一覧表示 |UITableView |
 
@@ -59,6 +59,7 @@
 |データベース（データ永続化）|Firebase Firestore |
 |画像ストレージ |Firebase Firestorage |
 |ユーザー、セッション管理 |Firebase Authentication |
+|外部認証 |FBSDKLoginKit |
 |外部API通信 |Firebase CloudFunctions |
 |カート、決済 |StripeAPI |
 |画像キャッシュ |Kingfisher |
@@ -82,6 +83,7 @@
 
 #### その他
 
+- [FBSDKLoginKit](https://developers.facebook.com/docs/facebook-login/ios/v2.2)
 - [Stripe 15.0.1](https://github.com/stripe/stripe-ios)
 - [IQKeyboardManagerSwift 6.3.0](https://github.com/hackiftekhar/IQKeyboardManager)
 - [Kingfisher 4.0](https://github.com/onevcat/Kingfisher)
