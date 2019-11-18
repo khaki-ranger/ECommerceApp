@@ -17,6 +17,10 @@ class ConnectAccountVC: UIViewController {
     @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var fbAvatar: RoundedImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var passwordTxt: UITextField!
+    @IBOutlet weak var confirmPasswordTxt: UITextField!
+    @IBOutlet weak var passCheckImg: UIImageView!
+    @IBOutlet weak var confirmPassCheckImg: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
