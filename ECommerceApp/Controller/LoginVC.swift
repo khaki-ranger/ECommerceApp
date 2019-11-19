@@ -57,11 +57,13 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func fbLoginClicked(_ sender: Any) {
+        activityIndicator.startAnimating()
+        
         loginManager.logIn(permissions: ["email"], from: self) { (result, error) in
             if let error = error {
                 debugPrint(error.localizedDescription)
             } else if result?.isCancelled ?? true {
-                // do something
+                self.activityIndicator.stopAnimating()
             } else {
                 self.signinFirebaseFacebook()
             }
@@ -70,36 +72,37 @@ class LoginVC: UIViewController {
     
     private func signinFirebaseFacebook() {
         let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
-        Auth.auth().signIn(with: credential) { (result, error) in
+        
+        guard let user = Auth.auth().currentUser else { return }
+        user.link(with: credential) { (result, error) in
             if let error = error {
+                
                 debugPrint(error.localizedDescription)
                 Auth.auth().handleFireAuthError(error: error, vc: self)
                 self.activityIndicator.stopAnimating()
                 return
             }
             
-            // Facebookでログインしたユーザーが新規ユーザーかどうかを判定
-            if let isNewUser = result?.additionalUserInfo?.isNewUser {
-                if isNewUser {
-                    self.handleNewUser()
-                } else {
-                    self.handlePotentialFirstTimeFBLogin()
-                }
-            }
+            self.handlePotentialFirstTimeFBLogin()
         }
     }
     
-    // Facebookでログインしたユーザーが新規ユーザーではなかった場合の処理を実装するメソッド
     private func handlePotentialFirstTimeFBLogin() {
         guard let user = Auth.auth().currentUser else { return }
         Firestore.firestore().collection("users").document(user.uid).getDocument { (snap, error) in
-            if let data = snap?.data() {
-                guard let hasSetup = data["hasSetupAccount"] as? Bool else { return }
-                if hasSetup {
-                    self.dismiss(animated: true, completion: nil)
-                } else {
-                    self.handleNewUser()
+            // Facebookでログインしたユーザーが新規ユーザーかどうかを判定
+            guard let snap = snap else { return }
+            if snap.exists {
+                if let data = snap.data() {
+                    guard let hasSetup = data["hasSetupAccount"] as? Bool else { return }
+                    if hasSetup {
+                        self.dismiss(animated: true, completion: nil)
+                    } else {
+                        self.presentFirstTimeAlert()
+                    }
                 }
+            } else {
+                self.handleNewUser()
             }
         }
     }
@@ -133,7 +136,7 @@ class LoginVC: UIViewController {
     private func presentFirstTimeAlert() {
         let alert = UIAlertController(title: "ようこそ！", message: "ユーザー情報の設定がまだのようです。ユーザー情報を設定しませんか？", preferredStyle: .alert)
         let notNow = UIAlertAction(title: "今はしない", style: .default) { (alert) in
-            
+            self.dismiss(animated: true, completion: nil)
         }
         let okAction = UIAlertAction(title: "設定する", style: .default) { (alear) in
             self.performSegue(withIdentifier: Segues.ToConnectAcount, sender: self)

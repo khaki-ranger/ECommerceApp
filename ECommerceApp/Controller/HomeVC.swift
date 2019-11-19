@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FBSDKLoginKit
 
 class HomeVC: UIViewController, CartBarButtonItemDelegate, FavoritesButtonItemDelegate {
     
@@ -24,6 +25,7 @@ class HomeVC: UIViewController, CartBarButtonItemDelegate, FavoritesButtonItemDe
     var rightBarButtonItem: RightBarButtonItem!
     private let sectionInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0) // レイアウト設定
     private let itemsPerRow: CGFloat = 3 // 1行あたりのアイテム数
+    let loginManager = LoginManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +39,32 @@ class HomeVC: UIViewController, CartBarButtonItemDelegate, FavoritesButtonItemDe
     override func viewDidAppear(_ animated: Bool) {
         setCategoriesListener()
         rightBarButtonItem.changeCartItemsText()
+        setupLoginOutBtn()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        listener.remove()
+        categories.removeAll()
+        collectionView.reloadData()
+    }
+    
+    func setupInitialAnonymouseUser() {
+        if Auth.auth().currentUser == nil {
+            Auth.auth().signInAnonymously { (result, error) in
+                if let error = error  {
+                    debugPrint(error)
+                    Auth.auth().handleFireAuthError(error: error, vc: self)
+                }
+            }
+        }
+    }
+    
+    private func setupLoginOutBtn() {
+        if let user = Auth.auth().currentUser {
+            print("login as \(user.uid)")
+        } else {
+            print("currentUser is nil")
+        }
         
         if let user = Auth.auth().currentUser , !user.isAnonymous {
             // We are logged in
@@ -49,27 +77,10 @@ class HomeVC: UIViewController, CartBarButtonItemDelegate, FavoritesButtonItemDe
         }
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        listener.remove()
-        categories.removeAll()
-        collectionView.reloadData()
-    }
-    
     func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: Identifiers.CategoryCell, bundle: nil), forCellWithReuseIdentifier: Identifiers.CategoryCell)
-    }
-    
-    func setupInitialAnonymouseUser() {
-        if Auth.auth().currentUser == nil {
-            Auth.auth().signInAnonymously { (result, error) in
-                if let error = error  {
-                    debugPrint(error)
-                    Auth.auth().handleFireAuthError(error: error, vc: self)
-                }
-            }
-        }
     }
     
     func setCategoriesListener() {
@@ -110,6 +121,7 @@ class HomeVC: UIViewController, CartBarButtonItemDelegate, FavoritesButtonItemDe
         } else {
             do {
                 try Auth.auth().signOut()
+                loginManager.logOut()
                 UserService.logoutUser()
                 Auth.auth().signInAnonymously { (result, error) in
                     if let error = error {
