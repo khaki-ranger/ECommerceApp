@@ -63,7 +63,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSr-fT-lKH" customClass="RoundedButton" customModule="ECommerceApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="195" width="374" height="40"/>
-                                        <color key="backgroundColor" red="0.25882352941176467" green="0.40392156862745099" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.22745098039215686" green="0.36078431372549019" blue="0.66274509803921566" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="jin-wI-YXU"/>
                                         </constraints>
@@ -194,10 +194,6 @@
                                     <constraint firstAttribute="height" constant="100" id="vjx-xa-ch9"/>
                                 </constraints>
                             </imageView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="jue-cG-EdB">
-                                <rect key="frame" x="188.5" y="444" width="37" height="37"/>
-                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </activityIndicatorView>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red_check" translatesAutoresizingMaskIntoConstraints="NO" id="FhL-KW-ZZU">
                                 <rect key="frame" x="358" y="217" width="30" height="30"/>
                                 <constraints>
@@ -212,20 +208,41 @@
                                     <constraint firstAttribute="height" constant="30" id="VhO-9a-uke"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKG-Al-9N9" customClass="RoundedButton" customModule="ECommerceApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="444" width="374" height="40"/>
+                                <color key="backgroundColor" red="0.22745098039215686" green="0.36078431372549019" blue="0.66274509803921566" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="qvf-IE-Syj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="設定する">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="connectClicked:" destination="cIa-UR-MYM" eventType="touchUpInside" id="vSY-1E-hzt"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="jue-cG-EdB">
+                                <rect key="frame" x="188.5" y="513" width="37" height="37"/>
+                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.98431372549999996" green="0.91372549020000005" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="jue-cG-EdB" firstAttribute="top" secondItem="LKG-Al-9N9" secondAttribute="bottom" constant="29" id="03W-bo-CQi"/>
                             <constraint firstItem="jue-cG-EdB" firstAttribute="centerX" secondItem="E6z-kE-Ibw" secondAttribute="centerX" id="9cA-S5-Y8m"/>
                             <constraint firstItem="FhL-KW-ZZU" firstAttribute="centerY" secondItem="QY9-La-SBC" secondAttribute="centerY" id="BKM-uX-2Gm"/>
                             <constraint firstItem="OzG-v6-1pZ" firstAttribute="centerX" secondItem="E6z-kE-Ibw" secondAttribute="centerX" id="IlF-ab-RBk"/>
                             <constraint firstItem="FhL-KW-ZZU" firstAttribute="trailing" secondItem="QY9-La-SBC" secondAttribute="trailing" constant="-6" id="KLe-PH-r0f"/>
                             <constraint firstItem="OzG-v6-1pZ" firstAttribute="top" secondItem="YJV-Bt-bjw" secondAttribute="bottom" constant="20" id="PZ1-Ku-Rmp"/>
+                            <constraint firstItem="LKG-Al-9N9" firstAttribute="top" secondItem="OzG-v6-1pZ" secondAttribute="bottom" constant="20" id="VAs-0n-9sk"/>
                             <constraint firstItem="iKm-Um-tFD" firstAttribute="trailing" secondItem="YJV-Bt-bjw" secondAttribute="trailing" constant="20" id="bXl-aN-kkf"/>
                             <constraint firstItem="xuU-K9-1gj" firstAttribute="trailing" secondItem="KhI-BZ-cBI" secondAttribute="trailing" constant="-6" id="cM4-GC-SGu"/>
                             <constraint firstItem="YJV-Bt-bjw" firstAttribute="leading" secondItem="iKm-Um-tFD" secondAttribute="leading" constant="20" id="eKk-nA-thq"/>
-                            <constraint firstItem="jue-cG-EdB" firstAttribute="top" secondItem="OzG-v6-1pZ" secondAttribute="bottom" constant="20" id="fvV-Ul-WIc"/>
                             <constraint firstItem="YJV-Bt-bjw" firstAttribute="top" secondItem="iKm-Um-tFD" secondAttribute="top" constant="20" id="ixQ-c1-d7P"/>
+                            <constraint firstItem="iKm-Um-tFD" firstAttribute="trailing" secondItem="LKG-Al-9N9" secondAttribute="trailing" constant="20" id="mxg-Ea-OnY"/>
                             <constraint firstItem="xuU-K9-1gj" firstAttribute="centerY" secondItem="KhI-BZ-cBI" secondAttribute="centerY" id="npY-5g-1kv"/>
+                            <constraint firstItem="LKG-Al-9N9" firstAttribute="leading" secondItem="iKm-Um-tFD" secondAttribute="leading" constant="20" id="uBI-hf-Zz3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iKm-Um-tFD"/>
                     </view>
@@ -237,7 +254,7 @@
                         <outlet property="fbAvatar" destination="OzG-v6-1pZ" id="xnd-GX-I7P"/>
                         <outlet property="passCheckImg" destination="FhL-KW-ZZU" id="7QG-iG-HqW"/>
                         <outlet property="passwordTxt" destination="QY9-La-SBC" id="zqq-d2-djZ"/>
-                        <outlet property="userNameTxt" destination="DQ9-ti-dy6" id="Nh2-9T-Nv6"/>
+                        <outlet property="usernameTxt" destination="DQ9-ti-dy6" id="Nh2-9T-Nv6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kpM-Sk-Vbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
