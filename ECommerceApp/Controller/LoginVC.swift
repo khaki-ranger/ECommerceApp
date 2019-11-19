@@ -76,11 +76,26 @@ class LoginVC: UIViewController {
         guard let user = Auth.auth().currentUser else { return }
         user.link(with: credential) { (result, error) in
             if let error = error {
-                
                 debugPrint(error.localizedDescription)
-                Auth.auth().handleFireAuthError(error: error, vc: self)
-                self.activityIndicator.stopAnimating()
-                return
+                
+                do {
+                    try Auth.auth().signOut()
+                    UserService.logoutUser()
+                    Auth.auth().signIn(with: credential) { (result, error) in
+                        if let error = error {
+                            debugPrint(error)
+                            Auth.auth().handleFireAuthError(error: error, vc: self)
+                            self.activityIndicator.stopAnimating()
+                            return
+                        }
+                        
+                        self.handlePotentialFirstTimeFBLogin()
+                    }
+                    
+                } catch {
+                    debugPrint(error)
+                    Auth.auth().handleFireAuthError(error: error, vc: self)
+                }
             }
             
             self.handlePotentialFirstTimeFBLogin()
